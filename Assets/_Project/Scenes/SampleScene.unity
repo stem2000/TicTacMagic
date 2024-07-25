@@ -192,6 +192,10 @@ PrefabInstance:
       value: Tile 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1083387685}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
       objectReference: {fileID: 1795076530}
@@ -256,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 36180600}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -326,6 +334,10 @@ PrefabInstance:
       value: Tile 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 885620460}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 885620460}
@@ -395,9 +407,17 @@ PrefabInstance:
       value: Tile 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1289044688}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1289044688}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1509208086}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -484,6 +504,10 @@ PrefabInstance:
       value: Tile 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1533749326}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1533749326}
@@ -549,6 +573,10 @@ PrefabInstance:
       value: Tile 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1509208086}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1509208086}
@@ -581,6 +609,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9998049089534070, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
   m_PrefabInstance: {fileID: 865552809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &497878264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497878265}
+  m_Layer: 0
+  m_Name: --GRAPHIC PROPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &497878265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497878264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 917279115}
+  - {fileID: 619394802}
+  - {fileID: 519420032}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514012994
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,12 +808,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 497878265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &550043083
 PrefabInstance:
@@ -806,9 +868,17 @@ PrefabInstance:
       value: Tile 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 36180600}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 36180600}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 180599974}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -878,6 +948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1200677541}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -970,12 +1044,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 497878265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665359650
 GameObject:
@@ -1002,7 +1076,7 @@ Transform:
   m_GameObject: {fileID: 665359650}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0010283515, y: -0.5190976, z: -9.935403}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1062,9 +1136,17 @@ PrefabInstance:
       value: Tile 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1083387685}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1083387685}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1379248915}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -1139,7 +1221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813739677}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1215,6 +1297,10 @@ PrefabInstance:
       value: Tile 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1097457189}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1097457189}
@@ -1289,7 +1375,7 @@ Transform:
   m_LocalScale: {x: 0.9431899, y: 0.9490979, z: 1.0842052}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1471144725}
+  m_Father: {fileID: 497878265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &917279116
 SpriteRenderer:
@@ -1396,9 +1482,17 @@ PrefabInstance:
       value: Tile 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1795076530}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 1795076530}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 885620460}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -1514,9 +1608,17 @@ PrefabInstance:
       value: Tile 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 1200677541}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 36180600}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 868799397}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -1544,7 +1646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071350805}
   m_Layer: 0
-  m_Name: --GAME ROOT
+  m_Name: --GAME
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1710,7 +1812,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 917279115}
   - {fileID: 1557806403}
   - {fileID: 514012995}
   - {fileID: 1541392944}
@@ -1786,9 +1887,17 @@ PrefabInstance:
       value: Tile 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 2133129313}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 2133129313}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 361711708}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: right
       value: 
@@ -1941,9 +2050,17 @@ PrefabInstance:
       value: Tile 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 835583600}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 835583600}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1533749326}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: left
       value: 
@@ -2018,7 +2135,7 @@ MonoBehaviour:
   - {fileID: 868799397}
   - {fileID: 180599974}
   - {fileID: 1379248915}
-  player: {fileID: 8824092194074271743, guid: e367bc082a0f5bc4aa091c91abdf9f09, type: 3}
+  playerPrefab: {fileID: 8824092194074271743, guid: e367bc082a0f5bc4aa091c91abdf9f09, type: 3}
 --- !u!1001 &1745474341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2072,9 +2189,17 @@ PrefabInstance:
       value: Tile 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 2066579245}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: top
       value: 
       objectReference: {fileID: 2066579245}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 1097457189}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: right
       value: 
@@ -2189,6 +2314,10 @@ PrefabInstance:
       value: Tile 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 2133129313}
+    - target: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
       propertyPath: right
       value: 
       objectReference: {fileID: 1289044688}
@@ -2205,9 +2334,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
-  - {fileID: 619394802}
-  - {fileID: 813739680}
   - {fileID: 1471144725}
   - {fileID: 665359651}
   - {fileID: 1071350805}
+  - {fileID: 497878265}
+  - {fileID: 813739680}

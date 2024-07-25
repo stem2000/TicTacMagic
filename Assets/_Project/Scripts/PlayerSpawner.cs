@@ -6,12 +6,14 @@ namespace TicTacMagic
     public class PlayerSpawner : MonoBehaviour
     {
         [SerializeField] List<Tile> tiles;
-        [SerializeField] Player player;
+        [SerializeField] Player playerPrefab;
 
         public void SpawnPlayer()
         {
-            int tileNumber = Random.Range(0, tiles.Count - 1);
-            Instantiate(player, tiles[tileNumber].GetPosition(), Quaternion.identity);
+            var tileNumber = Random.Range(0, tiles.Count - 1);
+            var player = Instantiate(playerPrefab, tiles[tileNumber].GetPosition(), Quaternion.identity);
+
+            player.CurrentTile = tiles[tileNumber];
         }
     }
 }

@@ -6,8 +6,8 @@ namespace TicTacMagic
 {
     public class Tile : MonoBehaviour
     {
-        [SerializeField] private Tile top;
-        [SerializeField] private Tile bottom;
+        [SerializeField] private Tile up;
+        [SerializeField] private Tile down;
         [SerializeField] private Tile left;
         [SerializeField] private Tile right;
 
@@ -15,5 +15,27 @@ namespace TicTacMagic
         {
             return transform.position;
         }
+
+        public Tile GetLeftTile()
+        {
+            return left;
+        }
+
+        public Tile GetRightTile()
+        {
+            return right;
+        }
+
+        public Tile GetUpTile()
+        {
+            return up;
+        }
+
+        public Tile GetDownTile()
+        {
+            return down;
+        }
+
+
     }
 }

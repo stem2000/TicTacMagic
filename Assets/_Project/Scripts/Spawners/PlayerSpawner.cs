@@ -13,7 +13,7 @@ namespace TicTacMagic
             var tileNumber = Random.Range(0, tiles.Count - 1);
             var player = Instantiate(playerPrefab, tiles[tileNumber].GetPosition(), Quaternion.identity);
 
-            player.CurrentTile = tiles[tileNumber];
+            player.Initialize(tiles[tileNumber]);
         }
     }
 }

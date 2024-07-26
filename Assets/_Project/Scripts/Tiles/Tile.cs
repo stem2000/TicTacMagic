@@ -36,6 +36,14 @@ namespace TicTacMagic
             return down;
         }
 
+        public bool IsMyNeighbor(Tile tile)
+        {
+            if(tile == left || tile == right || tile == up || tile == down)
+                return true;
+            else
+                return false;
+        }
+
 
     }
 }

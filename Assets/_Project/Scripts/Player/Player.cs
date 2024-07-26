@@ -1,21 +1,20 @@
-using System.Collections;
+using MEC;
 using UnityEngine;
 
 namespace TicTacMagic
 {
     public class Player : MonoBehaviour
     {
-        [HideInInspector] public Tile CurrentTile;
-
         [SerializeField] float moveDuration = 0.25f;
         private Rigidbody2D rBody2D;
-        private bool movementIsBlocked = false;
+        private MovementToTile pMovement;
         private KeyCode lastKeyCode = KeyCode.None;
 
 
-        public void Awake()
+        public void Initialize(Tile startingTile)
         {
             rBody2D = GetComponent<Rigidbody2D>();
+            pMovement = new MovementToTile(startingTile, rBody2D);
         }
 
 
@@ -30,9 +29,6 @@ namespace TicTacMagic
             if (Input.GetKeyDown(KeyCode.S))
                 lastKeyCode = KeyCode.S;
 
-            if (movementIsBlocked)
-                return;
-
             Tile tile = null;
 
             if (lastKeyCode == KeyCode.A)
@@ -46,49 +42,29 @@ namespace TicTacMagic
 
             if(tile != null)
             {
-                StartCoroutine(MoveToTile(tile, moveDuration));
-                CurrentTile = tile;
-                movementIsBlocked = true;
+                pMovement.MoveTo(tile, moveDuration);
+                lastKeyCode = KeyCode.None;
             }
         }
 
 
         private Tile GetTileByDirection(MoveDirection direction)
         {
+            var currentTile = pMovement.GetCurrentTile();
+
             switch (direction)
             {
                 case MoveDirection.Left:        
-                    return CurrentTile.GetLeftTile();
+                    return currentTile.GetLeftTile();
                 case MoveDirection.Right:
-                    return CurrentTile.GetRightTile();
+                    return currentTile.GetRightTile();
                 case MoveDirection.Up:
-                    return CurrentTile.GetUpTile();
+                    return currentTile.GetUpTile();
                 case MoveDirection.Down:
-                    return CurrentTile.GetDownTile();
+                    return currentTile.GetDownTile();
             }
 
             return null;
-        }
-
-
-        private IEnumerator MoveToTile(Tile tile, float duration)
-        {
-            var startPosition = transform.position;
-            var elapsedTime = 0f;
-
-            lastKeyCode = KeyCode.None;
-            movementIsBlocked = true;
-
-            while (elapsedTime < moveDuration) 
-            {
-                var nextPosition = Vector3.Lerp(startPosition, tile.GetPosition(), elapsedTime / duration);
-                rBody2D.MovePosition(nextPosition);
-                elapsedTime += Time.fixedDeltaTime;
-                yield return new WaitForFixedUpdate();
-            }
-
-            rBody2D.MovePosition(tile.GetPosition()); // Убедимся, что объект точно достиг целевой позиции
-            movementIsBlocked = false;
         }
 
         enum MoveDirection

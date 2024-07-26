@@ -11,7 +11,7 @@ namespace TicTacMagic
         [SerializeField] private Tile left;
         [SerializeField] private Tile right;
 
-        public Vector3 GetPosition()
+        public Vector2 GetPosition()
         {
             return transform.position;
         }
@@ -42,6 +42,16 @@ namespace TicTacMagic
                 return true;
             else
                 return false;
+        }
+
+        public Tile GetNeighborByDirection(MoveDirection direction)
+        {
+            if (direction == MoveDirection.Up) return up;
+            if (direction == MoveDirection.Down) return down;
+            if (direction == MoveDirection.Left) return left;
+            if (direction == MoveDirection.Right) return right;
+
+            return null;
         }
 
 

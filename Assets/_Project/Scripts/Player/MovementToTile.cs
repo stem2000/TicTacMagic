@@ -7,7 +7,7 @@ namespace TicTacMagic
     public class MovementToTile
     {
         private Tile currentTile;
-        private Tile pastTile;
+
         private Rigidbody2D rBody2D;
         private bool isMoving = false;
 
@@ -17,38 +17,27 @@ namespace TicTacMagic
             this.rBody2D = rBody2D;
         }
 
-        public void MoveTo(Tile tile, float duration)
+        public void Move(MoveDirection direction, float duration)
         {
-            if (!isMoving)
+            var tile = currentTile.GetNeighborByDirection(direction);
+
+            if(tile != null)
             {
-                Timing.RunCoroutine(MoveToRoutine(tile, duration), Segment.FixedUpdate, "MoveTo");
-                isMoving = true;
+                Timing.KillCoroutines("MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, duration), Segment.FixedUpdate, "MoveTo");
             }
         }
 
-        public Tile GetCurrentTile()
+        private IEnumerator<float> MoveRoutine(Tile tile, float speed)
         {
-            return currentTile;
-        }
-
-        private IEnumerator<float> MoveToRoutine(Tile tile, float duration)
-        {
-            var elapsedTime = 0f;
-            var startPosition = currentTile.GetPosition();
-
-            pastTile = currentTile;
             currentTile = tile;
 
-            while (elapsedTime < duration)
+            while (rBody2D.position != tile.GetPosition())
             {
-                var nextPosition = Vector3.Lerp(startPosition, tile.GetPosition(), elapsedTime / duration);
-                rBody2D.MovePosition(nextPosition);
-                elapsedTime += Time.fixedDeltaTime;
+                Vector2 newPosition = Vector2.MoveTowards(rBody2D.position, tile.GetPosition(), speed * Time.fixedDeltaTime);
+                rBody2D.MovePosition(newPosition);
                 yield return Timing.WaitForOneFrame;
             }
-
-            rBody2D.MovePosition(tile.GetPosition()); 
-            isMoving = false;
         }
     }
 }

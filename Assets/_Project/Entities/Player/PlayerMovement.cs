@@ -6,16 +6,6 @@ namespace TicTacMagic
 {
     public class PlayerMovement
     {
-        public Vector2 CurrentTilePosition { get {return currentTile.GetPosition();} }
-
-        public bool IsOnCurrentTile 
-        { 
-            get 
-            {
-                return (rBody2D.position - CurrentTilePosition).magnitude <= playerStats.DistanceToTileChange; 
-            }
-        }
-
         private Tile currentTile;
         private Rigidbody2D rBody2D;
         private IPlayerStatsProvider playerStats;
@@ -31,7 +21,7 @@ namespace TicTacMagic
         {
             var tile = currentTile.GetNeighborByDirection(direction);
 
-            if(tile != null && IsOnCurrentTile)
+            if(tile != null)
             {
                 Timing.KillCoroutines("MoveTo");
                 Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
@@ -40,7 +30,7 @@ namespace TicTacMagic
 
         private IEnumerator<float> MoveRoutine(Tile tile, float speed)
         {
-            currentTile = tile;
+            currentTile = currentTile.IsMyNeighbor(tile) ? tile : currentTile;
 
             while (rBody2D.position != tile.GetPosition())
             {

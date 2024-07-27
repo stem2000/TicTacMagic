@@ -10,6 +10,11 @@ namespace TicTacMagic
 
         private void Start()
         {
+            SpawnPlayer();
+        }
+
+        private void SpawnPlayer()
+        {
             IInputProvider inputProvider = new PlayerInputActionsWrapper();
             playerSpawner.SpawnPlayer(inputProvider);
         }

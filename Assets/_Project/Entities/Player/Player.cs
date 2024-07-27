@@ -5,10 +5,6 @@ namespace TicTacMagic
 {
     public class Player : MonoBehaviour, IPlayer
     {        
-        public Vector2 CurrentTilePosition { get { return playerMovement.CurrentTilePosition; } }
-        public Vector2 RealBodyPosition { get { return rBody2D.position; } }
-        public bool IsOnCurrentTile { get { return playerMovement.IsOnCurrentTile; } }
-
         private Rigidbody2D rBody2D;
         private PlayerMovement playerMovement;        
         private IInputProvider inputProvider;

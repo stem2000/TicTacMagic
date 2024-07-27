@@ -18,13 +18,7 @@ namespace TicTacMagic
 
         private void Update()
         {
-            if(((Vector2)transform.position - player.RealBodyPosition).magnitude <= 0.1f)
-                Hide();
-            else
-            {
-                GoToPosition(player.CurrentTilePosition);
-                Reveal();
-            }
+
         }
 
         private void GoToPosition(Vector2 position)

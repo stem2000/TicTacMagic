@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   hp: 100
-  speed: 3
-  distanceToTileChange: 2
+  speed: 15

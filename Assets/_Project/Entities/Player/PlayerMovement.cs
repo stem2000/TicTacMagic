@@ -6,9 +6,12 @@ namespace TicTacMagic
 {
     public class PlayerMovement
     {
+        public Vector2 CurrentTilePosition { get {return currentTile.transform.position; } }
+        public Vector2 PointedTilePosition { get { return pointedTile.transform.position; } }
+
         private Tile pointedTile;
         private Tile currentTile;
-        TilePromter tilePromter;
+        private TilePromter tilePromter;
         private Rigidbody2D rBody2D;
         private IPlayerStatsProvider playerStats;
 
@@ -28,7 +31,7 @@ namespace TicTacMagic
             UpdateCurrent();
 
             tile = pointedTile.GetNeighborByDirection(direction); 
-            tile = currentTile.IsMyNeighbor(tile) ? tile : null;
+            tile = currentTile.IsMyNeighbor(tile) || tile == currentTile ? tile : null;
             
 
             if(tile != null)

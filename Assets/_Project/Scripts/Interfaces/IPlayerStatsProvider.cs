@@ -4,6 +4,5 @@
     {
         public float Speed { get;}
         public float Hp { get; }
-        public float DistanceToTileChange { get; }
     }
 }

@@ -38,5 +38,13 @@ namespace TicTacMagic
             }
         }
 
+        public void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(playerMovement.CurrentTilePosition, 0.5f);
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(playerMovement.PointedTilePosition, 0.5f);
+        }
+
     }
 }

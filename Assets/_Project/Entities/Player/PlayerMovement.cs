@@ -8,11 +8,14 @@ namespace TicTacMagic
     {
         private Tile pointedTile;
         private Tile currentTile;
+        TilePromter tilePromter;
         private Rigidbody2D rBody2D;
         private IPlayerStatsProvider playerStats;
 
         public PlayerMovement(Tile startingTile, Rigidbody2D rBody2D, IPlayerStatsProvider playerStats)
         {
+            tilePromter = new TilePromter();
+
             currentTile = pointedTile = startingTile;
             this.rBody2D = rBody2D;
             this.playerStats = playerStats;
@@ -20,10 +23,13 @@ namespace TicTacMagic
 
         public void Move(MoveDirection direction)
         {
-            var tile = pointedTile.GetNeighborByDirection(direction); 
+            Tile tile = null;
+
+            UpdateCurrent();
+
+            tile = pointedTile.GetNeighborByDirection(direction); 
+            tile = currentTile.IsMyNeighbor(tile) ? tile : null;
             
-            if(currentTile.IsMyNeighbor(tile))
-                currentTile.GetNeighborByDirection(direction);
 
             if(tile != null)
             {
@@ -41,6 +47,12 @@ namespace TicTacMagic
                 rBody2D.MovePosition(newPosition);
                 yield return Timing.WaitForOneFrame;
             }
+        }
+
+        private void UpdateCurrent()
+        {
+            if(tilePromter.GetClosestTo(rBody2D.position) == pointedTile)
+                currentTile = pointedTile;
         }
     }
 }

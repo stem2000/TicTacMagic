@@ -4,27 +4,37 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class MovementToTile
+    public class PlayerMovement
     {
+        public Vector2 CurrentTilePosition { get {return currentTile.GetPosition();} }
+
+        public bool IsOnCurrentTile 
+        { 
+            get 
+            {
+                return (rBody2D.position - CurrentTilePosition).magnitude <= playerStats.DistanceToTileChange; 
+            }
+        }
+
         private Tile currentTile;
-
         private Rigidbody2D rBody2D;
-        private bool isMoving = false;
+        private IPlayerStatsProvider playerStats;
 
-        public MovementToTile(Tile startingTile, Rigidbody2D rBody2D)
+        public PlayerMovement(Tile startingTile, Rigidbody2D rBody2D, IPlayerStatsProvider playerStats)
         {
             currentTile = startingTile;
             this.rBody2D = rBody2D;
+            this.playerStats = playerStats;
         }
 
-        public void Move(MoveDirection direction, float duration)
+        public void Move(MoveDirection direction)
         {
             var tile = currentTile.GetNeighborByDirection(direction);
 
-            if(tile != null)
+            if(tile != null && IsOnCurrentTile)
             {
                 Timing.KillCoroutines("MoveTo");
-                Timing.RunCoroutine(MoveRoutine(tile, duration), Segment.FixedUpdate, "MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
             }
         }
 

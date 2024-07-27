@@ -10,10 +10,8 @@ namespace TicTacMagic
         [SerializeField] private Tile down;
         [SerializeField] private Tile left;
         [SerializeField] private Tile right;
-        [SerializeField] private Tile topRight;
-        [SerializeField] private Tile topLeft;
-        [SerializeField] private Tile downRight;
-        [SerializeField] private Tile downLeft;
+
+        [SerializeField] private List<Tile> neighbours;
 
         public Vector2 GetPosition()
         {
@@ -42,10 +40,9 @@ namespace TicTacMagic
 
         public bool IsMyNeighbor(Tile tile)
         {
-            if (tile == left || tile == right || tile == up || tile == down)
-                return true;
-            if (tile == topRight || tile == topLeft || tile == downRight || tile == downLeft)
-                return true;
+            foreach(var neighbour in neighbours)
+                if(tile == neighbour)
+                    return true;
 
             return false;
         }

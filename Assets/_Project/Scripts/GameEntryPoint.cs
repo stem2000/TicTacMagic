@@ -7,6 +7,7 @@ namespace TicTacMagic
     public class GameEntryPoint : MonoBehaviour
     {
         [SerializeField] PlayerSpawner playerSpawner;
+        [SerializeField] LightningSpawner lightningSpawner;
         [SerializeField] HealthBar healthBar;
 
         private IPlayer player;
@@ -15,6 +16,7 @@ namespace TicTacMagic
         {
             SpawnPlayer();
             InitalizeUI(player);
+            InitializeSpawners(player);
         }
 
         private void SpawnPlayer()
@@ -26,6 +28,11 @@ namespace TicTacMagic
         private void InitalizeUI(IPlayer player)
         {
             healthBar.Initalize(player);
+        }
+
+        private void InitializeSpawners(IPlayer player)
+        {
+            lightningSpawner.Initalize(player);
         }
     }
 }

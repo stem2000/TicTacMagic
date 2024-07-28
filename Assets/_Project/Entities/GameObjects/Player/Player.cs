@@ -1,5 +1,3 @@
-using MEC;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +15,8 @@ namespace TicTacMagic
         [SerializeField] private PlayerView playerView;
 
         public IPlayerStatsProvider PlayerStatsProvider => playerStats;
+
+        public Vector2 PlayerPosition => rBody2D.position;
 
         public void Initialize(Tile startingTile, IInputProvider inputProvider)
         {
@@ -44,7 +44,7 @@ namespace TicTacMagic
             onPlayerDamaged?.Invoke(playerStats.hp);
 
             if (playerStats.hp <= 0)
-                DestroyPlayer();
+                SelfDestroy();
         }
 
         public void AddListenerToPlayerDamaged(UnityAction<float> listener)
@@ -57,7 +57,7 @@ namespace TicTacMagic
             onPlayerDeath.AddListener(listener);
         }
 
-        private void DestroyPlayer()
+        private void SelfDestroy()
         {
             onPlayerDeath?.Invoke();
             onPlayerDamaged.RemoveAllListeners();

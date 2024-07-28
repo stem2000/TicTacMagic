@@ -8,5 +8,6 @@ namespace TicTacMagic
         public void AddListenerToPlayerDamaged(UnityAction<float> listener);
         public void AddListenerToPlayerDeath(UnityAction listener);
         public IPlayerStatsProvider PlayerStatsProvider { get; }
+        public Vector2 PlayerPosition {get; }
     }
 }

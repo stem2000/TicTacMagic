@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - VFX
+  - Level Object
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2567251907
+    locked: 0
+  - name: Effects
+    uniqueID: 3270193539
     locked: 0

@@ -7,10 +7,12 @@ namespace TicTacMagic
     {
         private IPlayer player;
 
+
         public void Initialize(IPlayer player)
         {
             this.player = player;
         }
+
 
     }
 }

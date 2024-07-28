@@ -119,4 +119,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4629f8bb8f78e6a4994c20497bd6e8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goToMarker: {fileID: -1937713109757912588, guid: a247482db87324849818000eee516ff3, type: 3}

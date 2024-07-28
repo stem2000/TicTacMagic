@@ -1,5 +1,3 @@
-using System;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace TicTacMagic

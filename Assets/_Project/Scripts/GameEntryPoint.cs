@@ -7,22 +7,20 @@ namespace TicTacMagic
     public class GameEntryPoint : MonoBehaviour
     {
         [SerializeField] PlayerSpawner playerSpawner;
-        [SerializeField] LightningSpawner lightningSpawner;
+        [SerializeField] List<EffectSpawner> effectSpawners;
         [SerializeField] HealthBar healthBar;
-
-        private IPlayer player;
 
         private void Awake()
         {
-            SpawnPlayer();
+            var player = SpawnPlayer();
             InitalizeUI(player);
-            InitializeSpawners(player);
+            InitializeEffectSpawners(player);
         }
 
-        private void SpawnPlayer()
+        private IPlayer SpawnPlayer()
         {
             IInputProvider inputProvider = new PlayerInputActionsWrapper();
-            player = playerSpawner.SpawnPlayer(inputProvider);
+            return playerSpawner.SpawnPlayer(inputProvider);
         }
 
         private void InitalizeUI(IPlayer player)
@@ -30,9 +28,9 @@ namespace TicTacMagic
             healthBar.Initalize(player);
         }
 
-        private void InitializeSpawners(IPlayer player)
+        private void InitializeEffectSpawners(IPlayer player)
         {
-            lightningSpawner.Initalize(player);
+            effectSpawners.ForEach(spawner => spawner.Initialize(player));
         }
     }
 }

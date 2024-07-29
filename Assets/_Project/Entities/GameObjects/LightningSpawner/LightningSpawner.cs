@@ -6,7 +6,7 @@ namespace TicTacMagic
 {
     public class LightningSpawner : MonoBehaviour
     {
-        [SerializeField] LightningEffect prefab;
+        [SerializeField] Lightning prefab;
         [SerializeField] float resetTime = 2f;
         IPlayer player;
         bool canSpawn = true;
@@ -20,7 +20,7 @@ namespace TicTacMagic
         {
             var effect = Instantiate(prefab, player.PlayerPosition, Quaternion.identity);
 
-            effect.Spawn();
+            effect.Strike();
             Timing.RunCoroutine(SpawnerReset());
         }
 

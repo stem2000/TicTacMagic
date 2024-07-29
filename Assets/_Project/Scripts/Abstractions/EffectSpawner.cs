@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TicTacMagic
 {
     public abstract class EffectSpawner : MonoBehaviour
     {
         [SerializeField] protected List<Stage> stages;
-        protected SpawnStrategy currentStrategy;
+        protected EffectStrategy currentStrategy;
         protected IPlayer player;
 
         protected abstract void InitializeStrategies();
@@ -30,6 +31,6 @@ namespace TicTacMagic
     public class Stage 
     {
         public int number;
-        public SpawnStrategy strategy;
+        public EffectStrategy strategy;
     }
 }

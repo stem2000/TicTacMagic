@@ -9,6 +9,7 @@ namespace TicTacMagic
         public override void Initialize(IPlayer player)
         {
             base.Initialize(player);
+            InitializeStrategies();
         }
 
         protected override void InitializeStrategies()

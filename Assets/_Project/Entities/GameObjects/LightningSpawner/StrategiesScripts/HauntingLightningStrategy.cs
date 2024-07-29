@@ -6,10 +6,9 @@ using UnityEngine;
 namespace TicTacMagic
 {
     [CreateAssetMenu(fileName = "HauntingLightning", menuName = "Scriptables/LightningStrategies/HauntingLightning")]
-    public class HauntingLightningStrategy : SpawnStrategy, ITargetStrategy
+    public class HauntingLightningStrategy : EffectStrategy, ITargetStrategy
     {
         [SerializeField] Lightning prefab;
-        [SerializeField] float resetTime = 2f;
 
         public void Initalize(IPlayer player)
         {
@@ -25,7 +24,7 @@ namespace TicTacMagic
             Timing.RunCoroutine(SpawnerReset());
         }
 
-        private IEnumerator<float> SpawnerReset()
+        protected override IEnumerator<float> SpawnerReset()
         {
             readyToSpawn = false;
             yield return Timing.WaitForSeconds(resetTime);

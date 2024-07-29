@@ -10,7 +10,8 @@ namespace TicTacMagic
         [SerializeField] private Vector2 spawnDirection;
         public override void Initialize(IPlayer player)
         {
-           base.Initialize(player);
+            base.Initialize(player);
+            InitializeStrategies();
         }
 
         protected override void InitializeStrategies()

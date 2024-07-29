@@ -62,7 +62,6 @@ namespace TicTacMagic
             onPlayerDeath?.Invoke();
             onPlayerDamaged.RemoveAllListeners();
             onPlayerDeath.RemoveAllListeners();
-            Destroy(gameObject);
         }
 
         public void Update()

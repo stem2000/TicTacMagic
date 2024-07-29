@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0549ef66d315d7242ae51930b42aceea, type: 3}
   m_Name: HauntingLightning
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 6867946650251885413, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
   resetTime: 2

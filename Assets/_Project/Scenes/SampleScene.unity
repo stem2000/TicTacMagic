@@ -852,52 +852,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}
---- !u!1 &224571919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224571921}
-  - component: {fileID: 224571920}
-  m_Layer: 0
-  m_Name: LightningSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &224571920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224571919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58776487114b7cc4b89d9e98e02856aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 229640534837049239, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
-  resetTime: 2
---- !u!4 &224571921
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224571919}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 665359651}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &240362168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1665,7 +1619,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1671377293}
-  - {fileID: 224571921}
   - {fileID: 1134807169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2330,7 +2283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawner: {fileID: 1671377294}
-  lightningSpawner: {fileID: 224571920}
+  effectSpawners:
+  - {fileID: 1134807170}
   healthBar: {fileID: 320334155}
 --- !u!1001 &1010935385
 PrefabInstance:
@@ -2573,6 +2527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8372c9e829e074087d319c8c8cefbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stages:
+  - number: 0
+    strategy: {fileID: 11400000, guid: dea9351e243fe7f47888a7f919bae5fa, type: 2}
 --- !u!114 &1200677541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8037145716071466749, guid: 133e5dd5f252423439adf074cc1816cc, type: 3}

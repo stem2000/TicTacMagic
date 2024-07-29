@@ -11,10 +11,5 @@ namespace TicTacMagic
 
 
         public abstract void Spawn();
-        public virtual void Initialize(IPlayer player)
-        {
-            this.player = player;
-            readyToSpawn = true;
-        }
     }
 }

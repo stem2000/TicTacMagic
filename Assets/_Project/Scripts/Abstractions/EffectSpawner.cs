@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class EffectSpawner : MonoBehaviour
+    public abstract class EffectSpawner : MonoBehaviour
     {
-        [SerializeField] private List<Stage> stages;
-        private IPlayer player;       
-        private SpawnStrategy currentStrategy;
+        [SerializeField] protected List<Stage> stages;
+        protected SpawnStrategy currentStrategy;
+        protected IPlayer player;
 
-        public void Initialize(IPlayer player)
+        protected abstract void InitializeStrategies();
+        public virtual void Initialize(IPlayer player)
         {
             this.player = player;
-            InitializeStrategies(player);
             SetStrategy(0);
         }
 
@@ -23,17 +23,6 @@ namespace TicTacMagic
             var stage = stages.FirstOrDefault(s => s.number == stageNumber);
             if (stage != null)
                 currentStrategy = stage.strategy;
-        }
-
-        private void InitializeStrategies(IPlayer player) 
-        {
-            stages.ForEach(stage => stage.strategy.Initialize(player));
-        }
-
-        private void Update()
-        {
-            if(currentStrategy.ReadyToSpawn)
-                currentStrategy.Spawn();
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TicTacMagic
 {
     [CreateAssetMenu(fileName = "FireSkull", menuName = "Scriptables/ProjectileFactories/FireSkull")]
-    public class FireSkullFactory : ProjectileAbstractFactory
+    public class FireSkullFactory : ProjectileFactory
     {
         [SerializeField] float damage;
         [SerializeField] float speed;

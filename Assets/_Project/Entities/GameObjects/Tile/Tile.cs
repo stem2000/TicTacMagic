@@ -12,6 +12,7 @@ namespace TicTacMagic
         [SerializeField] private Tile right;
 
         [SerializeField] private List<Tile> neighbours;
+        private OnTileObject onTileObject;
 
         public Vector2 GetPosition()
         {
@@ -55,6 +56,16 @@ namespace TicTacMagic
             if (direction == MoveDirection.Right) return right;
 
             return null;
+        }
+
+        public void SetOnTileObject(OnTileObject @object)
+        {
+            onTileObject = @object;
+        }
+
+        public bool IsMoveClosed()
+        {
+            return onTileObject.IsMoveCloser();
         }
 
 

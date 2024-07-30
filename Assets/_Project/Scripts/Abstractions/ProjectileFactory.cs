@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {    
-    public abstract class ProjectileAbstractFactory : ScriptableObject
+    public abstract class ProjectileFactory : ScriptableObject
     {
         [SerializeField] protected Projectile projectilePrefab;
         protected abstract void SetFactoryStats(Projectile projectile);

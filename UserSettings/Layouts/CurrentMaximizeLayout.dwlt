@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 27470
+  controlID: 357
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 27430
+  controlID: 327
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -868,7 +868,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 29374
+  m_LastInspectedObjectInstanceID: 13954
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -937,7 +937,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b4910000
     m_LastClickedID: 37300
-    m_ExpandedIDs: 00000000907600009476000096760000987600009a7600009c7600009e760000a0760000a2760000a4760000c476000000ca9a3b
+    m_ExpandedIDs: 000000000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -965,7 +965,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000907600009476000096760000987600009a7600009c7600009e760000a0760000a2760000a4760000c476000000ca9a3b
+    m_ExpandedIDs: 000000000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 27471
+  controlID: 358
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1145,7 +1145,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4e43feff36efffffb4faffff307300006a73000092730000
+      m_ExpandedIDs: c0faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1188,8 +1188,8 @@ MonoBehaviour:
     y: 0
     width: 1286
     height: 349
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -1242,7 +1242,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Project/Entities/GameObjects/Player
+    - Assets/_Project/Entities/GameObjects/SideSpawner/StrategyFactoriesScripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1250,16 +1250,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Project/Entities/GameObjects/Player
+  - Assets/_Project/Entities/GameObjects/SideSpawner/StrategyFactoriesScripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity\Projects\TicTacMagic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: c0760000
-    m_LastClickedID: 30400
-    m_ExpandedIDs: 00000000907600009476000096760000987600009a7600009c7600009e760000a0760000a2760000a4760000c476000000ca9a3b
+    scrollPos: {x: 0, y: 171}
+    m_SelectedIDs: 48770000
+    m_LastClickedID: 30536
+    m_ExpandedIDs: 000000000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000907600009476000096760000987600009a7600009c7600009e760000a0760000a2760000a4760000c476000000ca9a3b
+    m_ExpandedIDs: 000000000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1312,8 +1312,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: be720000
-    m_LastClickedInstanceID: 29374
+    m_SelectedInstanceIDs: 82360000
+    m_LastClickedInstanceID: 13954
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000ac850000e67c00001a7b00004c90000050900000949500009c840000c28400009e8700008cb5000024b50000b07b0000623300003cc80000
     m_RenameOverlay:

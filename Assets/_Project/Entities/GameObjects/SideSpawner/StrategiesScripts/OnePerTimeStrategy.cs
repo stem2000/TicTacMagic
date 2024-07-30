@@ -7,7 +7,7 @@ namespace TicTacMagic
 {
     public class OnePerTimeStrategy : EffectStrategy, INonTargetStrategy
     {
-        [SerializeField] private ProjectileAbstractFactory projectileContainer;
+        [SerializeField] private ProjectileFactory projectileFactory;
 
         private Transform spawnPoint;
         private Vector2 spawnDirection;
@@ -23,7 +23,7 @@ namespace TicTacMagic
 
         public override void Spawn()
         {
-            var projectile = projectileContainer.Instantiate(spawnPoint.position, spawnDirection);
+            var projectile = projectileFactory.Instantiate(spawnPoint.position, spawnDirection);
 
             Timing.RunCoroutine(SpawnerReset());
         }

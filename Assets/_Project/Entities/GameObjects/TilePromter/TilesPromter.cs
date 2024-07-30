@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class TilePromter
+    public class TilesPromter : MonoBehaviour
     {
-        List<Tile> tiles;
-        
-        public TilePromter() 
-        {
-            tiles = GameObject.FindObjectsByType<Tile>(FindObjectsSortMode.None).ToList();
-        }
+        private static TilesPromter instance;
+        private List<Tile> tiles;
+
+        public static TilesPromter Instance => instance;
 
         public Tile GetClosestTo(Vector2 position)
         {
@@ -30,6 +28,15 @@ namespace TicTacMagic
             }
 
             return result;
+        }
+
+        private void Awake()
+        {
+            if (instance == null) instance = this;
+            else
+                if (instance != this) Destroy(gameObject);
+
+            tiles = FindObjectsByType<Tile>(FindObjectsSortMode.None).ToList();
         }
     }
 }

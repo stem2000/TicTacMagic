@@ -11,14 +11,11 @@ namespace TicTacMagic
 
         private Tile pointedTile;
         private Tile currentTile;
-        private TilePromter tilePromter;
         private Rigidbody2D rBody2D;
         private IPlayerStatsProvider playerStats;
 
         public PlayerMovement(Tile startingTile, Rigidbody2D rBody2D, IPlayerStatsProvider playerStats)
         {
-            tilePromter = new TilePromter();
-
             currentTile = pointedTile = startingTile;
             this.rBody2D = rBody2D;
             this.playerStats = playerStats;
@@ -54,7 +51,7 @@ namespace TicTacMagic
 
         private void UpdateCurrent()
         {
-            if(tilePromter.GetClosestTo(rBody2D.position) == pointedTile)
+            if(TilesPromter.Instance.GetClosestTo(rBody2D.position) == pointedTile)
                 currentTile = pointedTile;
         }
     }

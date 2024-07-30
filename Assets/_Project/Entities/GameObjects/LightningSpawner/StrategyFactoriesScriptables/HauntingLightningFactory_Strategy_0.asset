@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79799e119856a9f4f8fcaf8ad0f24459, type: 3}
-  m_Name: OnePerTimeFactory_Strategy_0
+  m_Script: {fileID: 11500000, guid: 905541b9bd1499d44b00b110a1402bb5, type: 3}
+  m_Name: HauntingLightningFactory_Strategy_0
   m_EditorClassIdentifier: 
-  strategyPrefab: {fileID: -720867851875181784, guid: 96548dbcc76f29a40a38ec56326090dc, type: 3}
+  strategyPrefab: {fileID: -5075181672057266368, guid: 3b3b8e2a8c6df0b4585c777028cf5ebb, type: 3}
   resetTime: 2

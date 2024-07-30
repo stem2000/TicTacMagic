@@ -10,6 +10,8 @@ namespace TicTacMagic
     {
         [SerializeField] LightningProjectile prefab;
 
+        public float ResetTime { get { return resetTime; } set { resetTime = value; } }
+
         public void Initialize(IPlayer player)
         {
             this.player = player;

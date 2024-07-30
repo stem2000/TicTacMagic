@@ -12,25 +12,19 @@ namespace TicTacMagic
         protected EffectStrategy currentStrategy;
         protected IPlayer player;
 
-        protected abstract void InitializeStrategies();
         public virtual void Initialize(IPlayer player)
         {
             this.player = player;
-            SetStrategy(0);
+            SetCurrentStrategy(0);
         }
 
-        public void SetStrategy(int stageNumber)
-        {
-            var stage = stages.FirstOrDefault(s => s.number == stageNumber);
-            if (stage != null)
-                currentStrategy = stage.strategy;
-        }
+        public abstract void SetCurrentStrategy(int stageNumber);
     }
 
     [Serializable]
     public class Stage 
     {
         public int number;
-        public EffectStrategy strategy;
+        public EffectStrategyAbstractFactory factory;
     }
 }

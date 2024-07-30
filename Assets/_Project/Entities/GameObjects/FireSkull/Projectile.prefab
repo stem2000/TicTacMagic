@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0e41488ea056e4aafe761c84c4ccf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0}
 --- !u!50 &4428599081090638930
 Rigidbody2D:
   serializedVersion: 4
@@ -109,7 +108,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.07}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.12
 --- !u!1 &7547789951110239941
 GameObject:
   m_ObjectHideFlags: 0

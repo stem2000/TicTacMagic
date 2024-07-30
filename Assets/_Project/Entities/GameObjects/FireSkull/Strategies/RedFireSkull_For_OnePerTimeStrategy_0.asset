@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0549ef66d315d7242ae51930b42aceea, type: 3}
-  m_Name: HauntingLightning
+  m_Script: {fileID: 11500000, guid: 1a2ca001a21fe674ca3fb01eac77f424, type: 3}
+  m_Name: RedFireSkull_For_OnePerTimeStrategy_0
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6867946650251885413, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
-  resetTime: 2
+  projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
+  damage: 10
+  speed: 5

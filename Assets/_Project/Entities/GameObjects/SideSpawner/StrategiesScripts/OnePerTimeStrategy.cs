@@ -5,25 +5,26 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    [CreateAssetMenu(fileName = "OneProjectileStrategy", menuName = "Scriptables/SideStrategies/OneProjectileStrategy")]
-    public class OneProjectileStrategy : EffectStrategy, INonTargetStrategy
+    public class OnePerTimeStrategy : EffectStrategy, INonTargetStrategy
     {
-        [SerializeField] private Projectile projectilePrefab;
+        [SerializeField] private ProjectileAbstractFactory projectileContainer;
 
         private Transform spawnPoint;
         private Vector2 spawnDirection;
 
-        public void Initiliaze(Transform spawnPosition, Vector2 spawnDirection)
+        public float ResetTime { get {return resetTime;} set { resetTime = value;} }
+
+        public void Initiliaze(Transform spawnPoint, Vector2 spawnDirection)
         {
-            this.spawnPoint = spawnPosition;
+            this.spawnPoint = spawnPoint;
             this.spawnDirection = spawnDirection;
             readyToSpawn = true;
         }
 
         public override void Spawn()
         {
-            var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-            projectile.direction = spawnDirection;
+            var projectile = projectileContainer.Instantiate(spawnPoint.position, spawnDirection);
+
             Timing.RunCoroutine(SpawnerReset());
         }
 
@@ -33,5 +34,6 @@ namespace TicTacMagic
             yield return Timing.WaitForSeconds(resetTime);
             readyToSpawn = true;
         }
+
     }
 }

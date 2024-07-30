@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public abstract class EffectStrategy : ScriptableObject
+    public abstract class EffectStrategy : MonoBehaviour
     {
-        [SerializeField] protected float resetTime = 2f;
+        protected float resetTime;
         protected bool readyToSpawn;
         protected IPlayer player;        
         public bool ReadyToSpawn => readyToSpawn;

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TicTacMagic
 {
     public class GameEntryPoint : MonoBehaviour
     {
-        [SerializeField] PlayerSpawner playerSpawner;
-        [SerializeField] List<EffectSpawner> effectSpawners;
+        [SerializeField] PlayerSpawner playerSpawner;        
         [SerializeField] HealthBar healthBar;
+        private List<EffectSpawner> effectSpawners;
 
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace TicTacMagic
 
         private void InitializeEffectSpawners(IPlayer player)
         {
+            effectSpawners = FindObjectsByType<EffectSpawner>(FindObjectsSortMode.None).ToList();
             effectSpawners.ForEach(spawner => spawner.Initialize(player));
         }
     }

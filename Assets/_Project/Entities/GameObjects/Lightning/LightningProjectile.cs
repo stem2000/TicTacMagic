@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class Lightning : MonoBehaviour
+    public class LightningProjectile : MonoBehaviour
     {
         [SerializeField] ParticleSystem preLightning;
         [SerializeField] ParticleSystem lightning;

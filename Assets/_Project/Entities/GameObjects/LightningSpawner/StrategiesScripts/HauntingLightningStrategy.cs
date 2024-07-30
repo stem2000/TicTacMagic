@@ -8,9 +8,9 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "HauntingLightning", menuName = "Scriptables/LightningStrategies/HauntingLightning")]
     public class HauntingLightningStrategy : EffectStrategy, ITargetStrategy
     {
-        [SerializeField] Lightning prefab;
+        [SerializeField] LightningProjectile prefab;
 
-        public void Initalize(IPlayer player)
+        public void Initialize(IPlayer player)
         {
             this.player = player;
             readyToSpawn = true;

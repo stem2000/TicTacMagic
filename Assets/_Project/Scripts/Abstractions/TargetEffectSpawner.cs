@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace TicTacMagic
 {
     public class TargetEffectSpawner : EffectSpawner
     {
-        public override void Initialize(IPlayer player)
+        public override void SetCurrentStrategy(int stageNumber)
         {
-            base.Initialize(player);
-            InitializeStrategies();
-        }
-
-        protected override void InitializeStrategies()
-        {
-            stages.ForEach(stage => ((ITargetStrategy)stage.strategy).Initalize(player));
+            var stage = stages.FirstOrDefault(stage => stage.number == stageNumber);
+            if (stage != null)
+            {
+                var strategy = stage.factory.Instantiate();
+                ((ITargetStrategy)strategy).Initialize(player);
+                currentStrategy = strategy;
+            }
         }
 
         private void Update()

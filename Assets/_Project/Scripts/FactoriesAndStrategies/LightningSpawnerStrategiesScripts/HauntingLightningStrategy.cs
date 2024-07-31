@@ -8,7 +8,7 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "HauntingLightning", menuName = "Scriptables/LightningStrategies/HauntingLightning")]
     public class HauntingLightningStrategy : EffectStrategy, ITargetStrategy
     {
-        [SerializeField] LightningProjectile prefab;
+        public LightningProjectile lightningPrefab;
 
         public float ResetTime { get { return resetTime; } set { resetTime = value; } }
 
@@ -20,7 +20,7 @@ namespace TicTacMagic
 
         public override void Spawn()
         {
-            var lightning = Instantiate(prefab, player.PlayerPosition, Quaternion.identity);
+            var lightning = Instantiate(lightningPrefab, player.PlayerPosition, Quaternion.identity);
 
             lightning.Strike();
             Timing.RunCoroutine(SpawnerReset());

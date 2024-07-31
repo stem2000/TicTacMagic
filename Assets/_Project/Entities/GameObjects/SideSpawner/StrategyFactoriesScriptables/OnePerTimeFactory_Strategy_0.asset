@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79799e119856a9f4f8fcaf8ad0f24459, type: 3}
   m_Name: OnePerTimeFactory_Strategy_0
   m_EditorClassIdentifier: 
-  strategyPrefab: {fileID: -720867851875181784, guid: 96548dbcc76f29a40a38ec56326090dc, type: 3}
+  fireSkullFactory: {fileID: 11400000, guid: 71d6d9f73a4a4de46bc3d8968ec9bd14, type: 2}
   resetTime: 2

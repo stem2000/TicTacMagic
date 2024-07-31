@@ -31,14 +31,11 @@ namespace TicTacMagic
             tile = currentTile.IsMyNeighbor(tile) || tile == currentTile ? tile : null;
             
 
-            if(tile != null)
+            if(tile != null && !tile.IsMoveBlocked())
             {
                 pointedTile = tile;
-                if (!tile.IsMoveBlocked())
-                {
-                    Timing.KillCoroutines("MoveTo");
-                    Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
-                }
+                Timing.KillCoroutines("MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
             }
         }
 

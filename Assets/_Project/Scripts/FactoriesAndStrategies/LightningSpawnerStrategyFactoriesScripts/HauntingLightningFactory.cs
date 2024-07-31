@@ -5,12 +5,14 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "HauntingLightningFactory", menuName = "Scriptables/EffectStrategyFacrories/HauntingLightningFactory")]
     public class HauntingLightningFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] HauntingLightningStrategy strategyPrefab;
+        [SerializeField] LightningProjectile lightningPrefab;
         [SerializeField] private float resetTime = 2f;
         public override EffectStrategy Instantiate()
         {
-            var strategy = Instantiate(strategyPrefab);
+            var strategy = new GameObject().AddComponent<HauntingLightningStrategy>();
+            
             strategy.ResetTime = resetTime;
+            strategy.lightningPrefab = lightningPrefab;
             return strategy;
         }
     }

@@ -1,18 +1,17 @@
 using MEC;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class OnePerTimeStrategy : EffectStrategy, INonTargetStrategy
+    public class OneProjectilePerTime : EffectStrategy, INonTargetStrategy
     {
-        [SerializeField] private ProjectileFactory projectileFactory;
+        public ProjectileFactory projectileFactory;
 
         private Transform spawnPoint;
         private Vector2 spawnDirection;
 
-        public float ResetTime { get {return resetTime;} set { resetTime = value;} }
+        public new float resetTime;
 
         public void Initiliaze(Transform spawnPoint, Vector2 spawnDirection)
         {

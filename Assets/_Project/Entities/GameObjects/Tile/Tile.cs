@@ -70,13 +70,17 @@ namespace TicTacMagic
             return false;
         }
 
-        public bool HaveTileObject()
+        public bool IsFree()
         {
             if (tileObject != null)
-                return true;
-            return false;
+                return false;
+            return true;
         }
 
+        public List<Tile> GetNeighbours()
+        {
+            return neighbours;
+        }
 
     }
 }

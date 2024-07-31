@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class OneProjectilePerTime : EffectStrategy, INonTargetStrategy
+    public class ProjectileStrategy : EffectStrategy, INonTargetStrategy
     {
         public ProjectileFactory projectileFactory;
 

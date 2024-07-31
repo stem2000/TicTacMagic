@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79799e119856a9f4f8fcaf8ad0f24459, type: 3}
-  m_Name: OnePerTimeFactory_Strategy_0
+  m_Script: {fileID: 11500000, guid: 006c755718f652542a44194a7101f175, type: 3}
+  m_Name: StoneFactory[0]
   m_EditorClassIdentifier: 
-  fireSkullFactory: {fileID: 11400000, guid: 71d6d9f73a4a4de46bc3d8968ec9bd14, type: 2}
-  resetTime: 2
+  tileObjectPrefab: {fileID: 3523662234271783451, guid: 9b47b3371f509cf449fb353274454d92, type: 3}
+  resetTime: 5

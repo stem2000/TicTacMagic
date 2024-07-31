@@ -6,7 +6,7 @@ Sprite:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fire-skull-no-fire_3
+  m_Name: view
   m_Rect:
     serializedVersion: 2
     x: 169

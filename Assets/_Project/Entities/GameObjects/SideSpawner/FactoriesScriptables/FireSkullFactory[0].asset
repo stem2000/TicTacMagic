@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 006c755718f652542a44194a7101f175, type: 3}
-  m_Name: OneTileObjectPerTimeFactory
+  m_Script: {fileID: 11500000, guid: 79799e119856a9f4f8fcaf8ad0f24459, type: 3}
+  m_Name: FireSkullFactory[0]
   m_EditorClassIdentifier: 
-  tileObjectPrefab: {fileID: 0}
-  resetTime: 5
+  fireSkullFactory: {fileID: 11400000, guid: 71d6d9f73a4a4de46bc3d8968ec9bd14, type: 2}
+  resetTime: 2

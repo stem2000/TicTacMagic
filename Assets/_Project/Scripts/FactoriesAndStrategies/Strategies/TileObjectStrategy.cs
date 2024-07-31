@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class OneTileObjectPerTime : EffectStrategy, ITargetStrategy
+    public class TileObjectStrategy : EffectStrategy, ITargetStrategy
     {
         public TileObject tileObjectPrefab;
         public List<TileObject> tileObjects;

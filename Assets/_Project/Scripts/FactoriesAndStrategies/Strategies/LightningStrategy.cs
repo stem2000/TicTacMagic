@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    [CreateAssetMenu(fileName = "HauntingLightning", menuName = "Scriptables/LightningStrategies/HauntingLightning")]
-    public class HauntingLightningStrategy : EffectStrategy, ITargetStrategy
+    [CreateAssetMenu(fileName = "LightningStrategy", menuName = "Scriptables/LightningStrategies/LightningStrategy")]
+    public class LightningStrategy : EffectStrategy, ITargetStrategy
     {
         public LightningProjectile lightningPrefab;
 

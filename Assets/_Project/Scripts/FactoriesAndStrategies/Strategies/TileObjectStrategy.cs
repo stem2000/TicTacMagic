@@ -8,6 +8,9 @@ namespace TicTacMagic
     public class TileObjectStrategy : EffectStrategy, ITargetStrategy
     {
         public TileObject tileObjectPrefab;
+        public SpawnMarker spawnMarkerPrefab;
+        public float markerDuration;
+
         public List<TileObject> tileObjects;
         public new float resetTime;
 
@@ -24,23 +27,19 @@ namespace TicTacMagic
 
             if(tile != null)
             {
-                var newTileObject = Instantiate(tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
-
-                tileObjects.Add(newTileObject);
-                tile.SetTileObject(newTileObject);
-
-                Timing.RunCoroutine(SpawnerReset());
+                readyToSpawn = false;
+                Timing.RunCoroutine(SpawnTileObjectRoutine(tile));
             }
         }
 
         protected override IEnumerator<float> SpawnerReset()
         {
-            readyToSpawn = false;
             yield return Timing.WaitForSeconds(resetTime);
             ClearTileObjects();
             readyToSpawn = true;
         }
 
+        #region OnTileSpawningMethods
         private Tile ChoiseTileToSpawn()
         {
             var rng = new System.Random();
@@ -51,18 +50,32 @@ namespace TicTacMagic
                     return tile;
             return null;
         }
-
         private bool CanSpawnOn(Tile tile)
         {
             if(tile != player.CurrentTile && tile != player.PointedTile && tile.IsFree())
                 return true;
             return false;
         }
-
         private void ClearTileObjects()
         {
             tileObjects.ForEach(stone => Destroy(stone.gameObject));
             tileObjects.Clear();
         }
+        private void SpawnTileObject(Tile tile)
+        {
+            var newTileObject = Instantiate(tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
+
+            tileObjects.Add(newTileObject);
+            tile.SetTileObject(newTileObject);
+
+            Timing.RunCoroutine(SpawnerReset());
+        }
+        private IEnumerator<float> SpawnTileObjectRoutine(Tile tile)
+        {
+            var marker = Instantiate(spawnMarkerPrefab);
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.SetOnPosition(markerDuration, tile.GetPosition())));
+            SpawnTileObject(tile);
+        }
+        #endregion
     }
 }

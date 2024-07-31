@@ -6,6 +6,8 @@ namespace TicTacMagic
     public class TileObjectStrategyFactory : EffectStrategyAbstractFactory
     {
         [SerializeField] TileObject tileObjectPrefab;
+        [SerializeField] SpawnMarker spawnMarkerPrefab;
+        [SerializeField] float markerDuration;
         [SerializeField] private float resetTime = 5f;
 
         public override EffectStrategy Instantiate()
@@ -13,6 +15,8 @@ namespace TicTacMagic
             var strategy = new GameObject("TileObjectStrategy").AddComponent<TileObjectStrategy>();
             strategy.resetTime = resetTime;
             strategy.tileObjectPrefab = tileObjectPrefab;
+            strategy.spawnMarkerPrefab = spawnMarkerPrefab;
+            strategy.markerDuration = markerDuration;
             return strategy;
         }
 

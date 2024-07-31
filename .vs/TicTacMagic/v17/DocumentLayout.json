@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\TicTacMagic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\projectilestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\projectilestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\factoriesandstrategies\\factories\\tileobjectstrategyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\factories\\tileobjectstrategyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\stone\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\stone\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\tile\\spawnmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\tile\\spawnmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\entities\\gameobjects\\tile\\tileobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\tile\\tileobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProjectileStrategy.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\ProjectileStrategy.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\ProjectileStrategy.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\ProjectileStrategy.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\ProjectileStrategy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "DocumentIndex": 2,
+              "Title": "Stone.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T14:18:46.783Z",
+              "WhenOpened": "2024-07-31T14:37:42.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TileObjectStrategyFactory.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T15:13:50.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TileObjectStrategy.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T14:26:52.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpawnMarker.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Tile\\SpawnMarker.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Tile\\SpawnMarker.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Tile\\SpawnMarker.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Tile\\SpawnMarker.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T14:39:39.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TileObject.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T14:36:59.093Z",
               "EditorCaption": ""
             }
           ]

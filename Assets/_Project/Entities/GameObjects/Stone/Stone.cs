@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class Stone : OnTileObject
+    public class Stone : TileObject
     {
-        public override bool IsMoveCloser()
+        public override bool IsMoveBlocker()
         {
             throw new System.NotImplementedException();
         }

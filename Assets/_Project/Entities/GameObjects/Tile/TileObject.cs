@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public abstract class OnTileObject : MonoBehaviour
+    public abstract class TileObject : MonoBehaviour
     {
-        public abstract bool IsMoveCloser();
+        public abstract bool IsMoveBlocker();
     }
 }

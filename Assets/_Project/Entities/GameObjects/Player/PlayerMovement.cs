@@ -34,8 +34,11 @@ namespace TicTacMagic
             if(tile != null)
             {
                 pointedTile = tile;
-                Timing.KillCoroutines("MoveTo");
-                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
+                if (!tile.IsMoveBlocked())
+                {
+                    Timing.KillCoroutines("MoveTo");
+                    Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
+                }
             }
         }
 

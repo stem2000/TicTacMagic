@@ -6,8 +6,8 @@ namespace TicTacMagic
 {
     public class PlayerMovement
     {
-        public Vector2 CurrentTilePosition { get {return currentTile.transform.position; } }
-        public Vector2 PointedTilePosition { get { return pointedTile.transform.position; } }
+        public Tile CurrentTile{ get => currentTile; }
+        public Tile PointedTile { get => pointedTile; }
 
         private Tile pointedTile;
         private Tile currentTile;

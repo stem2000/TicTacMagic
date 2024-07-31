@@ -18,6 +18,9 @@ namespace TicTacMagic
 
         public Vector2 PlayerPosition => rBody2D.position;
 
+        public Tile PointedTile { get => playerMovement.PointedTile; }
+        public Tile CurrentTile { get => playerMovement.CurrentTile; }
+
         public void Initialize(Tile startingTile, IInputProvider inputProvider)
         {
             rBody2D = GetComponent<Rigidbody2D>();
@@ -74,9 +77,9 @@ namespace TicTacMagic
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(playerMovement.CurrentTilePosition, 0.5f);
+            Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(playerMovement.PointedTilePosition, 0.5f);
+            Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
         }
     }
 }

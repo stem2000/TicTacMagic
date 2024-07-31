@@ -5,10 +5,10 @@ namespace TicTacMagic
 {
     public class OneStonePerTime : EffectStrategy
     {
-        [SerializeField] 
+        [SerializeField] Stone stone;
         public override void Spawn()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         protected override IEnumerator<float> SpawnerReset()

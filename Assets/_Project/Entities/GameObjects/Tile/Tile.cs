@@ -70,6 +70,13 @@ namespace TicTacMagic
             return false;
         }
 
+        public bool HaveTileObject()
+        {
+            if (tileObject != null)
+                return true;
+            return false;
+        }
+
 
     }
 }

@@ -10,8 +10,6 @@ namespace TicTacMagic
     {
         public Lightning lightningPrefab;
 
-        public float ResetTime { get { return resetTime; } set { resetTime = value; } }
-
         public void Initialize(IPlayer player)
         {
             this.player = player;
@@ -29,7 +27,7 @@ namespace TicTacMagic
         protected override IEnumerator<float> SpawnerReset()
         {
             readyToSpawn = false;
-            yield return Timing.WaitForSeconds(resetTime);
+            yield return Timing.WaitForSeconds(3f);
             readyToSpawn = true;
         }
     }

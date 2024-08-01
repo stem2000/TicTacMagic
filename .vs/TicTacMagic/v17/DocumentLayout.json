@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\TicTacMagic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\fireskull\\fireskullfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\fireskull\\fireskullfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,11 +66,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "FireSkullFactory.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\FireSkull\\FireSkullFactory.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\FireSkull\\FireSkullFactory.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\FireSkull\\FireSkullFactory.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\FireSkull\\FireSkullFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T17:02:17.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TileObjectStrategyFactory.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Factories\\TileObjectStrategyFactory.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TargetEffectSpawner.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Abstractions\\TargetEffectSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Abstractions\\TargetEffectSpawner.cs",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerMovement.cs",
@@ -105,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerStats.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerStats.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerStats.cs",
@@ -118,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PlayerUI.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerUI.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerUI.cs",
@@ -131,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PlayerView.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerView.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Player\\PlayerView.cs",
@@ -144,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Projectile.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Projectile\\Projectile.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Projectile\\Projectile.cs",
@@ -157,20 +174,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TileObjectStrategy.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
               "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
               "RelativeToolTip": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAlwGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-01T09:15:12.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "LightningStrategy.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
@@ -182,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Fire.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Fire\\Fire.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Fire\\Fire.cs",
@@ -194,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Lightning.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
@@ -206,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Stone.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Stone\\Stone.cs",
@@ -219,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TileObject.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Tile\\TileObject.cs",

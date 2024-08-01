@@ -11,7 +11,6 @@ namespace TicTacMagic
         {
             var strategy = new GameObject("LightningFactory").AddComponent<LightningStrategy>();
             
-            strategy.ResetTime = resetTime;
             strategy.lightningPrefab = lightningPrefab;
             return strategy;
         }

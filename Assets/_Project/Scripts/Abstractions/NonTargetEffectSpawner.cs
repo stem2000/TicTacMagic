@@ -14,7 +14,7 @@ namespace TicTacMagic
             if (stage != null)
             {
                 var strategy = stage.factory.Instantiate();
-                ((INonTargetStrategy)strategy).Initiliaze(spawnPosition, spawnDirection);
+                ((INonTargetStrategy)strategy).Initiliaze(spawnPosition);
                 currentStrategy = strategy;
             }
         }

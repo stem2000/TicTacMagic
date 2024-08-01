@@ -25,13 +25,12 @@ namespace TicTacMagic
                 readyToSpawn = false;
                 Timing.RunCoroutine(SpawnTileObjectRoutine(tile));
             }
-
-            Timing.RunCoroutine(ChangeFrame());
         }
 
         protected override IEnumerator<float> SpawnerReset()
         {
             yield return Timing.WaitForSeconds(frame.endDelay);
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(ChangeFrame()));
             readyToSpawn = true;
         }
 
@@ -73,7 +72,6 @@ namespace TicTacMagic
             index = (index + 1 <= frames.Count - 1) ? index + 1 : 0;
 
             yield return Timing.WaitForSeconds(frame.startDelay);
-
             frame = frames[index];
         }
         public void InitializeFrames(List<TOSFrame> frames)

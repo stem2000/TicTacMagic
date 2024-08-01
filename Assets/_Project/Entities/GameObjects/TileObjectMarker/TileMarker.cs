@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class TileObjectMarker : MonoBehaviour
+    public class TileMarker : MonoBehaviour
     {
         public IEnumerator<float> MarkerTile(float duration, Vector2 position)
         {

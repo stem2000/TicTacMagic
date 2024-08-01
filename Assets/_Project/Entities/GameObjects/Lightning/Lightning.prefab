@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3770953124501402249}
   - component: {fileID: 43813338273342002}
-  - component: {fileID: 6867946650251885413}
+  - component: {fileID: 4310050451296873825}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6867946650251885413
+--- !u!114 &4310050451296873825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,10 +77,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3689388616308901278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ea6c5225a74cce4994811ea053d0d57, type: 3}
+  m_Script: {fileID: 11500000, guid: 9602d8c6bbc804a4a9b31097f492352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preLightning: {fileID: 5525795230132364683, guid: 6a04f85351763b84da4e09c35d7c7919, type: 3}
   lightning: {fileID: 2021627368536931225, guid: 3717a972eb0f14b41a46055cc63cae8a, type: 3}
-  effectCollider: {fileID: 43813338273342002}
+  collider: {fileID: 43813338273342002}
   damage: 30

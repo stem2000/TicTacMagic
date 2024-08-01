@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905541b9bd1499d44b00b110a1402bb5, type: 3}
   m_Name: LightningFactory[0]
   m_EditorClassIdentifier: 
-  lightningPrefab: {fileID: 6867946650251885413, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
+  lightningPrefab: {fileID: 4310050451296873825, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
   resetTime: 2

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TicTacMagic
@@ -5,20 +7,25 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "TileObjectFactory", menuName = "Scriptables/EffectStrategyFacrories/TileObjectFactory")]
     public class TileObjectStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] TileObject tileObjectPrefab;
-        [SerializeField] SpawnMarker spawnMarkerPrefab;
-        [SerializeField] float markerDuration;
-        [SerializeField] private float resetTime = 5f;
+        [SerializeField] List<TOSFrame> frames;
 
         public override EffectStrategy Instantiate()
         {
             var strategy = new GameObject("TileObjectStrategy").AddComponent<TileObjectStrategy>();
-            strategy.resetTime = resetTime;
-            strategy.tileObjectPrefab = tileObjectPrefab;
-            strategy.spawnMarkerPrefab = spawnMarkerPrefab;
-            strategy.markerDuration = markerDuration;
+            strategy.InitializeFrames(frames);
             return strategy;
         }
 
+    }
+
+    [Serializable]
+    public class TOSFrame
+    {
+        public TileObject tileObjectPrefab;
+        public float tileObjectDuration;
+        public SpawnMarker spawnMarkerPrefab;
+        public float markerDuration;
+        public float startDelay;
+        public float endDelay;
     }
 }

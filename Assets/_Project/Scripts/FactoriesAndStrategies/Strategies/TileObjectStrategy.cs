@@ -7,18 +7,13 @@ namespace TicTacMagic
 {
     public class TileObjectStrategy : EffectStrategy, ITargetStrategy
     {
-        public TileObject tileObjectPrefab;
-        public SpawnMarker spawnMarkerPrefab;
-        public float markerDuration;
-
-        public List<TileObject> tileObjects;
-        public new float resetTime;
+        private List<TOSFrame> frames;
+        private TOSFrame frame;
 
         public void Initialize(IPlayer player)
         {
             this.player = player;
             readyToSpawn = true;
-            tileObjects = new List<TileObject>();
         }
 
         public override void Spawn()
@@ -30,12 +25,13 @@ namespace TicTacMagic
                 readyToSpawn = false;
                 Timing.RunCoroutine(SpawnTileObjectRoutine(tile));
             }
+
+            Timing.RunCoroutine(ChangeFrame());
         }
 
         protected override IEnumerator<float> SpawnerReset()
         {
-            yield return Timing.WaitForSeconds(resetTime);
-            ClearTileObjects();
+            yield return Timing.WaitForSeconds(frame.endDelay);
             readyToSpawn = true;
         }
 
@@ -56,26 +52,34 @@ namespace TicTacMagic
                 return true;
             return false;
         }
-        private void ClearTileObjects()
-        {
-            tileObjects.ForEach(stone => Destroy(stone.gameObject));
-            tileObjects.Clear();
-        }
         private void SpawnTileObject(Tile tile)
         {
-            var newTileObject = Instantiate(tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
+            var newTileObject = Instantiate(frame.tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
 
-            tileObjects.Add(newTileObject);
             tile.SetTileObject(newTileObject);
-
+            Timing.RunCoroutine(newTileObject.StartDestroing(frame.tileObjectDuration));
             Timing.RunCoroutine(SpawnerReset());
         }
         private IEnumerator<float> SpawnTileObjectRoutine(Tile tile)
         {
-            var marker = Instantiate(spawnMarkerPrefab);
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.SetOnPosition(markerDuration, tile.GetPosition())));
+            var marker = Instantiate(frame.spawnMarkerPrefab);
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.SetOnPosition(frame.markerDuration, tile.GetPosition())));
             SpawnTileObject(tile);
         }
         #endregion
+        private IEnumerator<float> ChangeFrame()
+        {
+            var index = frames.IndexOf(frame);
+            index = (index + 1 <= frames.Count - 1) ? index + 1 : 0;
+
+            yield return Timing.WaitForSeconds(frame.startDelay);
+
+            frame = frames[index];
+        }
+        public void InitializeFrames(List<TOSFrame> frames)
+        {
+            this.frames = frames;
+            frame = frames[0];
+        }
     }
 }

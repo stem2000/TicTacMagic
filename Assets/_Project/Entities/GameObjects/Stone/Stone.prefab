@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4bc491f24c019449be62ba82d9d591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 100
 --- !u!58 &6808480602640751994
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78,9 +79,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06}
+  m_Offset: {x: -0.02, y: -0.04}
   serializedVersion: 2
-  m_Radius: 0.36
+  m_Radius: 0.12
 --- !u!1 &8400764317392879184
 GameObject:
   m_ObjectHideFlags: 0

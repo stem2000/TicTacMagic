@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class LightningProjectile : MonoBehaviour
+    public class Lightning : MonoBehaviour
     {
         [SerializeField] ParticleSystem preLightning;
         [SerializeField] ParticleSystem lightning;
-        [SerializeField] CircleCollider2D effectCollider;
+        [SerializeField] CircleCollider2D collider;
         public float damage = 30;
         
         public void Strike()
@@ -21,7 +21,7 @@ namespace TicTacMagic
             Instantiate(preLightning, transform).Play();
             yield return Timing.WaitForSeconds(preLightning.main.duration);
 
-            effectCollider.enabled = true;
+            collider.enabled = true;
 
             Instantiate(lightning, transform).Play();
             yield return Timing.WaitForSeconds(lightning.main.duration);
@@ -31,7 +31,7 @@ namespace TicTacMagic
 
         private void Awake()
         {
-            effectCollider.enabled = false;
+            collider.enabled = false;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +39,10 @@ namespace TicTacMagic
             var damageable = collision.gameObject.GetComponent<IDamageable>();
 
             if (damageable != null)
+            {
                 damageable.GetDamage(damage);
+                collider.enabled = false;
+            }
         }
     }
 }

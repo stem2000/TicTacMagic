@@ -8,7 +8,7 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "LightningStrategy", menuName = "Scriptables/LightningStrategies/LightningStrategy")]
     public class LightningStrategy : EffectStrategy, ITargetStrategy
     {
-        public LightningProjectile lightningPrefab;
+        public Lightning lightningPrefab;
 
         public float ResetTime { get { return resetTime; } set { resetTime = value; } }
 

@@ -21,7 +21,7 @@ namespace TicTacMagic
 
         private void Update()
         {
-            if (currentStrategy.ReadyToSpawn)
+            if (currentStrategy != null && currentStrategy.ReadyToSpawn)
                 currentStrategy.Spawn();
         }
     }

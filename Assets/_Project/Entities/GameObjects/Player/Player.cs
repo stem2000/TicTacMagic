@@ -76,10 +76,10 @@ namespace TicTacMagic
 
         public void OnDrawGizmos()
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
+            //Gizmos.color = Color.green;
+            //Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
+            //Gizmos.color = Color.red;
+            //Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
         }
     }
 }

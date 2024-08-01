@@ -5,7 +5,7 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "LightningFactory", menuName = "Scriptables/EffectStrategyFacrories/LightningFactory")]
     public class LightningStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] LightningProjectile lightningPrefab;
+        [SerializeField] Lightning lightningPrefab;
         [SerializeField] private float resetTime = 2f;
         public override EffectStrategy Instantiate()
         {

@@ -15,7 +15,8 @@ namespace TicTacMagic
         public virtual void Initialize(IPlayer player)
         {
             this.player = player;
-            SetCurrentStrategy(0);
+            if(stages.Count > 0)
+                SetCurrentStrategy(0);
         }
 
         public abstract void SetCurrentStrategy(int stageNumber);

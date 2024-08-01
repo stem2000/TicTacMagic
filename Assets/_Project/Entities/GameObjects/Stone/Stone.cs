@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MEC;
 
 namespace TicTacMagic
 {
     public class Stone : TileObject
     {
+        [SerializeField] float damage = 100f;
         public override bool IsMoveBlocker() => true;
 
         public void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +15,13 @@ namespace TicTacMagic
             IDamageable damageable;
 
             if(collision.TryGetComponent(out damageable))
-                damageable.GetDamage(1000);
+                damageable.GetDamage(damage);
+        }
+
+        public override IEnumerator<float> StartDestroing(float lifetime)
+        {
+            yield return Timing.WaitForSeconds(lifetime);
+            Destroy(gameObject);
         }
     }
 }

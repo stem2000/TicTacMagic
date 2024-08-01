@@ -53,16 +53,17 @@ namespace TicTacMagic
         }
         private void SpawnTileObject(Tile tile)
         {
-            var newTileObject = Instantiate(frame.tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
+            var tileObject = Instantiate(frame.tileObjectPrefab, tile.GetPosition(), Quaternion.identity);
 
-            tile.SetTileObject(newTileObject);
-            Timing.RunCoroutine(newTileObject.StartDestroing(frame.tileObjectDuration));
+            tile.SetTileObject(tileObject);
+            Timing.RunCoroutine(tileObject.StartDestroing(frame.tileObjectDuration));
             Timing.RunCoroutine(SpawnerReset());
         }
         private IEnumerator<float> SpawnTileObjectRoutine(Tile tile)
         {
             var marker = Instantiate(frame.spawnMarkerPrefab);
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.SetOnPosition(frame.markerDuration, tile.GetPosition())));
+
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.MarkerTile(frame.markerDuration, tile.GetPosition())));
             SpawnTileObject(tile);
         }
         #endregion

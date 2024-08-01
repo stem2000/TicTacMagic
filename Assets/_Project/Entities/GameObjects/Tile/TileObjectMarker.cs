@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class SpawnMarker : MonoBehaviour
+    public class TileObjectMarker : MonoBehaviour
     {
-        public IEnumerator<float> SetOnPosition(float duration, Vector2 position)
+        public IEnumerator<float> MarkerTile(float duration, Vector2 position)
         {
             transform.position = position;
             yield return Timing.WaitForSeconds(duration);

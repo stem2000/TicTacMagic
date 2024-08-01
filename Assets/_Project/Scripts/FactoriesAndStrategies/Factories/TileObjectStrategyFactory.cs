@@ -23,7 +23,7 @@ namespace TicTacMagic
     {
         public TileObject tileObjectPrefab;
         public float tileObjectDuration;
-        public SpawnMarker spawnMarkerPrefab;
+        public TileObjectMarker spawnMarkerPrefab;
         public float markerDuration;
         public float startDelay;
         public float endDelay;

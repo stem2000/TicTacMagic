@@ -37,8 +37,11 @@ namespace TicTacMagic
         }
         private bool CanSpawnOn(Tile tile)
         {
-            if(tile != player.CurrentTile && tile != player.PointedTile && tile.IsFree())
+            if(frame.TileToSpawnOn != null && tile.IsFree())
                 return true;
+            else if(tile != player.CurrentTile && tile != player.PointedTile && tile.IsFree())
+                return true;
+
             return false;
         }
         private TileObject SpawnTileObject(Tile tile)

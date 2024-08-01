@@ -56,6 +56,7 @@ namespace TicTacMagic
         {
             var marker = Instantiate(frame.spawnMarkerPrefab);
 
+            tile.SetTileMarker(marker);
             return marker;
         }
         private void ChangeFrame()

@@ -12,6 +12,8 @@ namespace TicTacMagic
         [SerializeField] private Tile right;
 
         [SerializeField] private List<Tile> neighbours;
+
+        private TileMarker marker;
         private TileObject tileObject;
 
         public Vector2 GetPosition()
@@ -58,6 +60,11 @@ namespace TicTacMagic
             return null;
         }
 
+        public void SetTileMarker(TileMarker marker)
+        {
+            this.marker = marker;
+        }
+
         public void SetTileObject(TileObject @object)
         {
             tileObject = @object;
@@ -72,7 +79,7 @@ namespace TicTacMagic
 
         public bool IsFree()
         {
-            if (tileObject != null)
+            if (tileObject != null || marker != null)
                 return false;
             return true;
         }

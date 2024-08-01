@@ -82,5 +82,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preLightning: {fileID: 5525795230132364683, guid: 6a04f85351763b84da4e09c35d7c7919, type: 3}
   lightning: {fileID: 2021627368536931225, guid: 3717a972eb0f14b41a46055cc63cae8a, type: 3}
-  collider: {fileID: 43813338273342002}
+  myCollider: {fileID: 43813338273342002}
   damage: 30

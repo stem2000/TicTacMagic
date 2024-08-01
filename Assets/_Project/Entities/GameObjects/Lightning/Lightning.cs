@@ -8,8 +8,8 @@ namespace TicTacMagic
     {
         [SerializeField] ParticleSystem preLightning;
         [SerializeField] ParticleSystem lightning;
-        [SerializeField] CircleCollider2D collider;
-        public float damage = 30;
+        [SerializeField] CircleCollider2D myCollider;
+        [SerializeField] float damage = 30;
         
         public void Strike()
         {
@@ -21,7 +21,7 @@ namespace TicTacMagic
             Instantiate(preLightning, transform).Play();
             yield return Timing.WaitForSeconds(preLightning.main.duration);
 
-            collider.enabled = true;
+            myCollider.enabled = true;
 
             Instantiate(lightning, transform).Play();
             yield return Timing.WaitForSeconds(lightning.main.duration);
@@ -31,7 +31,7 @@ namespace TicTacMagic
 
         private void Awake()
         {
-            collider.enabled = false;
+            myCollider.enabled = false;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +41,7 @@ namespace TicTacMagic
             if (damageable != null)
             {
                 damageable.GetDamage(damage);
-                collider.enabled = false;
+                myCollider.enabled = false;
             }
         }
     }

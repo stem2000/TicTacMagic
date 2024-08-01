@@ -8,9 +8,9 @@ namespace TicTacMagic
         private Rigidbody2D rBody2D;
         private PlayerMovement playerMovement;        
         private IInputProvider inputProvider;
-        private UnityEvent onPlayerDeath;
-        private UnityEvent<float> onPlayerDamaged;
 
+        [SerializeField] private UnityEvent onPlayerDeath;
+        [SerializeField] private UnityEvent<float> onPlayerDamaged;
         [SerializeField] private PlayerStats playerStats;
         [SerializeField] private PlayerView playerView;
 

@@ -21,11 +21,21 @@ namespace TicTacMagic
     [Serializable]
     public class TOSFrame
     {
-        public TileObject tileObjectPrefab;
-        public float tileObjectDuration;
-        public TileMarker spawnMarkerPrefab;
-        public float markerDuration;
-        public float startDelay;
-        public float endDelay;
+        public TileObject TileObjectPrefab;
+        public float TileObjectDuration;
+        public TileMarker SpawnMarkerPrefab;
+        [HideInInspector] public Tile TileToSpawnOn;
+        [SerializeField] private string tileToSpawnOnName;
+        public float MarkerDuration;
+        public float StartDelay;
+        public float EndDelay;
+
+        public void FindTile()
+        {
+            var @object = GameObject.Find(tileToSpawnOnName);
+
+            if(@object != null) 
+                TileToSpawnOn = @object.GetComponent<Tile>();
+        }
     }
 }

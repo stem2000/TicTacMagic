@@ -12,6 +12,7 @@ namespace TicTacMagic
             healthSlider.maxValue = player.PlayerStatsProvider.Hp;
             healthSlider.value = healthSlider.maxValue;
             player.AddListenerToPlayerDamaged(SetHp);
+            player.AddListenerToPlayerHealed(SetHp);
         }
 
         public void SetHp(float hp)

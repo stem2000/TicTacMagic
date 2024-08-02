@@ -16,12 +16,6 @@ namespace TicTacMagic
             return false;
         }
 
-        public override IEnumerator<float> StartDestroing(float lifetime)
-        {
-            yield return Timing.WaitForSeconds(lifetime);
-            Destroy(gameObject);
-        }
-
         public void OnTriggerEnter2D(Collider2D collision)
         {
             IDamageable damageable;

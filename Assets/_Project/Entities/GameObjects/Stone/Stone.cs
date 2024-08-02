@@ -17,11 +17,5 @@ namespace TicTacMagic
             if(collision.TryGetComponent(out damageable))
                 damageable.GetDamage(damage);
         }
-
-        public override IEnumerator<float> StartDestroing(float lifetime)
-        {
-            yield return Timing.WaitForSeconds(lifetime);
-            Destroy(gameObject);
-        }
     }
 }

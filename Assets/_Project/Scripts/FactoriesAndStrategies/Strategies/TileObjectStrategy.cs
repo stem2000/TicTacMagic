@@ -97,7 +97,7 @@ namespace TicTacMagic
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker.MarkerTile(frame.MarkerDuration, tile.GetPosition())));
 
             tileObject = SpawnTileObject(tile);
-            Timing.RunCoroutine(tileObject.StartDestroing(frame.TileObjectDuration));
+            Timing.RunCoroutine(tileObject.StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
         }
     }
 }

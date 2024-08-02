@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace TicTacMagic
 {
-    public class Player : MonoBehaviour, IPlayer, IDamageable
+    public class Player : MonoBehaviour, IPlayer, IDamageable, IHealable
     {        
         private Rigidbody2D rBody2D;
         private PlayerMovement playerMovement;        
@@ -11,6 +11,7 @@ namespace TicTacMagic
 
         [SerializeField] private UnityEvent onPlayerDeath;
         [SerializeField] private UnityEvent<float> onPlayerDamaged;
+        [SerializeField] private UnityEvent<float> onPlayerHealed;
         [SerializeField] private PlayerStats playerStats;
         [SerializeField] private PlayerView playerView;
 
@@ -50,9 +51,23 @@ namespace TicTacMagic
                 SelfDestroy();
         }
 
+        public void GetHp(float hp)
+        {
+            playerStats.hp += hp;
+            if(playerStats.hp > 100)
+                playerStats.hp = 100;
+
+            onPlayerHealed?.Invoke(playerStats.hp);
+        }
+
         public void AddListenerToPlayerDamaged(UnityAction<float> listener)
         {
             onPlayerDamaged.AddListener(listener);
+        }
+
+        public void AddListenerToPlayerHealed(UnityAction<float> listener)
+        {
+            onPlayerHealed.AddListener(listener);
         }
 
         public void AddListenerToPlayerDeath(UnityAction listener)

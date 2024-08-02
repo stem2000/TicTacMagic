@@ -6,8 +6,16 @@ namespace TicTacMagic
 {
     public abstract class TileObject : MonoBehaviour
     {
+        private void Start()
+        {
+            gameObject.SetActive(false);
+        }
         public abstract bool IsMoveBlocker();
-        public virtual IEnumerator<float> StartDestroing(float lifetime)
+        public virtual void Activate()
+        {
+            gameObject.SetActive(true);
+        }
+        public virtual IEnumerator<float> _StartDestroing(float lifetime)
         {
             yield return Timing.WaitForSeconds(lifetime);
             Destroy(gameObject);

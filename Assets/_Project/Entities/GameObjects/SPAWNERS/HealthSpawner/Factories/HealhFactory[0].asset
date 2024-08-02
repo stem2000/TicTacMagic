@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frames:
   - TileObjectPrefab: {fileID: 8262426728448422790, guid: a87497589575f2f41aa523550e7167c8, type: 3}
-    TileObjectDuration: 8
+    TileObjectDuration: 1
     SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: b7dac1af16f58b84c86d3735851b6acf, type: 3}
     TileToSpawnOn: {fileID: 0}
-    tileToSpawnOnName: 
+    tileToSpawnOnName: Tile 2.1
     MarkerDuration: 1
-    StartDelay: 5
-    EndDelay: 0
+    StartDelay: 0
+    EndDelay: 2.1

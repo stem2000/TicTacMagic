@@ -31,13 +31,13 @@ namespace TicTacMagic
         {
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(FrameDelay()));
             SpawnProjectile();
-            Timing.RunCoroutine(SpawnerReset());
+            Timing.RunCoroutine(_SpawnerReset());
         }
         private IEnumerator<float> FrameDelay()
         {
             yield return Timing.WaitForSeconds(frame.StartDelay);
         }
-        protected override IEnumerator<float> SpawnerReset()
+        protected override IEnumerator<float> _SpawnerReset()
         {
             yield return Timing.WaitForSeconds(frame.EndDelay);
             ChangeFrame();

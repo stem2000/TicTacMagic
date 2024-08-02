@@ -19,5 +19,21 @@ MonoBehaviour:
     TileToSpawnOn: {fileID: 0}
     tileToSpawnOnName: Tile 2.1
     MarkerDuration: 1
-    StartDelay: 7
+    StartDelay: 3
+    EndDelay: 0
+  - TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
+    TileObjectDuration: 5
+    SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: fa56e5add1863b54bb977fc3063bdc43, type: 3}
+    TileToSpawnOn: {fileID: 0}
+    tileToSpawnOnName: Tile 3.2
+    MarkerDuration: 1
+    StartDelay: 0
+    EndDelay: 0
+  - TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
+    TileObjectDuration: 5
+    SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: fa56e5add1863b54bb977fc3063bdc43, type: 3}
+    TileToSpawnOn: {fileID: 0}
+    tileToSpawnOnName: Tile 4.3
+    MarkerDuration: 1
+    StartDelay: 0
     EndDelay: 0

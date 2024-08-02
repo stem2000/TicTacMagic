@@ -1,6 +1,7 @@
 using MEC;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace TicTacMagic
@@ -15,13 +16,15 @@ namespace TicTacMagic
 
         public override void Spawn()
         {
+            if(frame == null)
+                return;
+
             var tile = ChoiseTileToSpawn();
 
-
-            if(tile != null && frame != null)
+            if(tile != null)
             {
                 readyToSpawn = false;
-                Timing.RunCoroutine(_SpawnRoutine(tile));
+                Timing.RunCoroutine(_Spawn(tile));
             }
 
         }
@@ -58,30 +61,35 @@ namespace TicTacMagic
             frame = frames[0];
 
         }
-        private IEnumerator<float> _FrameDelay()
+        private IEnumerator<float> _Spawn(Tile tile)
+        {
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
+            Timing.RunCoroutine(_SpawnTileObject(tile));
+            Timing.RunCoroutine(_ResetSpawner());
+        }
+        private IEnumerator<float> _RunFrameStartDelay()
         {
             yield return Timing.WaitForSeconds(frame.StartDelay);
+            Timing.RunCoroutine(_ResetSpawner());
         }
-        protected override IEnumerator<float> _SpawnerReset()
+        protected override IEnumerator<float> _ResetSpawner()
         {
             yield return Timing.WaitForSeconds(frame.EndDelay);
             ChangeFrame();
             readyToSpawn = true;
         }
-        private IEnumerator<float> _SpawnRoutine(Tile tile)
+        private IEnumerator<float> _SpawnTileObject(Tile tile)
         {
             var tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
             tile.PutObjectOnTile(tileObject);
 
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_FrameDelay()));
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_SpawnMarkerRoutine(tile, tileObject)));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_SpawnMarker(tile, tileObject)));
 
             tileObject.Activate();
 
             Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
-            Timing.RunCoroutine(_SpawnerReset());
         }
-        private IEnumerator<float> _SpawnMarkerRoutine(Tile tile, TileObject tileObject)
+        private IEnumerator<float> _SpawnMarker(Tile tile, TileObject tileObject)
         {
             TileMarker marker = Instantiate(frame.SpawnMarkerPrefab);
 

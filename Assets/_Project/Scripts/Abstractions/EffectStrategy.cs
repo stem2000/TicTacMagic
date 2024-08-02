@@ -15,7 +15,7 @@ namespace TicTacMagic
 
 
         public abstract void Spawn();
-        protected abstract IEnumerator<float> _SpawnerReset();
+        protected abstract IEnumerator<float> _ResetSpawner();
         protected virtual void ChangeFrame()
         {
             var index = frames.IndexOf(frame);

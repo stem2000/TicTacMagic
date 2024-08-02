@@ -17,7 +17,7 @@ MonoBehaviour:
     TileObjectDuration: 1
     SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: b7dac1af16f58b84c86d3735851b6acf, type: 3}
     TileToSpawnOn: {fileID: 0}
-    tileToSpawnOnName: Tile 2.1
+    tileToSpawnOnName: Tile 1.4
     MarkerDuration: 1
     StartDelay: 0
     EndDelay: 2.1

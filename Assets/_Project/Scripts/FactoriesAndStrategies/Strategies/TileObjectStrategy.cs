@@ -70,7 +70,6 @@ namespace TicTacMagic
         private IEnumerator<float> _RunFrameStartDelay()
         {
             yield return Timing.WaitForSeconds(frame.StartDelay);
-            Timing.RunCoroutine(_ResetSpawner());
         }
         protected override IEnumerator<float> _ResetSpawner()
         {

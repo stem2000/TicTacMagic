@@ -36,4 +36,4 @@ MonoBehaviour:
     tileToSpawnOnName: Tile 4.3
     MarkerDuration: 1
     StartDelay: 0
-    EndDelay: 0
+    EndDelay: 5

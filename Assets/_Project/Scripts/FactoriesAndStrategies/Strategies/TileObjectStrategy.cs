@@ -5,11 +5,8 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class TileObjectStrategy : EffectStrategy, ITargetStrategy
+    public class TileObjectStrategy : EffectStrategy<TOSFrame>, ITargetStrategy
     {
-        private List<TOSFrame> frames;
-        private TOSFrame frame;
-
         public void Initialize(IPlayer player)
         {
             this.player = player;
@@ -21,14 +18,13 @@ namespace TicTacMagic
             var tile = ChoiseTileToSpawn();
 
 
-            if(tile != null)
+            if(tile != null && frame != null)
             {
                 readyToSpawn = false;
                 Timing.RunCoroutine(SpawnWithDelay(tile));
             }
 
         }
-
         private Tile ChoiseTileToSpawn()
         {
             if(frame.TileToSpawnOn != null && CanSpawnOn(frame.TileToSpawnOn))
@@ -58,13 +54,6 @@ namespace TicTacMagic
             tile.SetTileMarker(marker);
             return marker;
         }
-        private void ChangeFrame()
-        {
-            var index = frames.IndexOf(frame);
-
-            index = (index + 1 <= frames.Count - 1) ? index + 1 : 0;
-            frame = frames[index];
-        }
         private Tile GetRandomTile()
         {
             var rng = new System.Random();
@@ -75,12 +64,13 @@ namespace TicTacMagic
                     return tile;
             return null;
         }
-        public void InitializeFrames(List<TOSFrame> frames)
+        public override void InitializeFrames(List<TOSFrame> frames)
         {
             this.frames = frames;
             frames.ForEach(frame => frame.FindTile());
 
             frame = frames[0];
+
         }
         private IEnumerator<float> FrameDelay()
         {

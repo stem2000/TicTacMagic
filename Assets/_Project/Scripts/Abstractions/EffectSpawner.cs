@@ -9,7 +9,7 @@ namespace TicTacMagic
     public abstract class EffectSpawner : MonoBehaviour
     {
         [SerializeField] protected List<Stage> stages;
-        protected EffectStrategy currentStrategy;
+        protected IStrategy currentStrategy;
         protected IPlayer player;
 
         public virtual void Initialize(IPlayer player)

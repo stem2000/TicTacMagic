@@ -6,6 +6,6 @@ namespace TicTacMagic
 {
     public abstract class EffectStrategyAbstractFactory : ScriptableObject
     {
-        public abstract EffectStrategy Instantiate();
+        public abstract IStrategy Instantiate();
     }
 }

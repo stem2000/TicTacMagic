@@ -9,7 +9,7 @@ namespace TicTacMagic
         [SerializeField] ParticleSystem preLightning;
         [SerializeField] ParticleSystem lightning;
         [SerializeField] CircleCollider2D myCollider;
-        [SerializeField] float damage = 30;
+        [HideInInspector] public float Damage;
         
         public void Strike()
         {
@@ -40,7 +40,7 @@ namespace TicTacMagic
 
             if (damageable != null)
             {
-                damageable.GetDamage(damage);
+                damageable.GetDamage(Damage);
                 myCollider.enabled = false;
             }
         }

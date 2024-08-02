@@ -9,7 +9,7 @@ namespace TicTacMagic
     {
         [SerializeField] List<TOSFrame> frames;
 
-        public override EffectStrategy Instantiate()
+        public override IStrategy Instantiate()
         {
             var strategy = new GameObject("TileObjectStrategy").AddComponent<TileObjectStrategy>();
             strategy.InitializeFrames(frames);

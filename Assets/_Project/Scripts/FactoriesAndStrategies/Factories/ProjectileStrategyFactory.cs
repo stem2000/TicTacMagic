@@ -10,7 +10,7 @@ namespace TicTacMagic
     {
         [SerializeField] List<PSFrame> frames;
 
-        public override EffectStrategy Instantiate()
+        public override IStrategy Instantiate()
         {
             var strategy = new GameObject("ProjectileFactory").AddComponent<ProjectileStrategy>();
             strategy.InitializeFrames(frames);

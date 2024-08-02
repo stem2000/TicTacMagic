@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TicTacMagic
@@ -5,14 +7,22 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "LightningFactory", menuName = "Scriptables/EffectStrategyFacrories/LightningFactory")]
     public class LightningStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] Lightning lightningPrefab;
-        [SerializeField] private float resetTime = 2f;
-        public override EffectStrategy Instantiate()
+        [SerializeField] List<LSFrame> frames;
+        public override IStrategy Instantiate()
         {
             var strategy = new GameObject("LightningFactory").AddComponent<LightningStrategy>();
             
-            strategy.lightningPrefab = lightningPrefab;
+            strategy.InitializeFrames(frames);
             return strategy;
         }
+    }
+
+    [Serializable]
+    public class LSFrame
+    {
+        public Lightning LightningPrefab;
+        public float StartDelay;
+        public float EndDelay;
+        public float Damage;
     }
 }

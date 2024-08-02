@@ -5,10 +5,8 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class ProjectileStrategy : EffectStrategy, INonTargetStrategy
+    public class ProjectileStrategy : EffectStrategy<PSFrame>, INonTargetStrategy
     {
-        private List<PSFrame> frames;
-        private PSFrame frame;
         private Transform spawnPoint;
 
         public void Initiliaze(Transform spawnPoint)
@@ -16,13 +14,12 @@ namespace TicTacMagic
             this.spawnPoint = spawnPoint;
             readyToSpawn = true;
         }
-
         public override void Spawn()
         {
             readyToSpawn = false;
-            Timing.RunCoroutine(SpawnWithDelay());
+            if(frame != null)
+                Timing.RunCoroutine(SpawnWithDelay());
         }
-
         private void SpawnProjectile()
         {
             var projectile = Instantiate(frame.projectilePrefab, spawnPoint.position, Quaternion.identity);
@@ -30,8 +27,7 @@ namespace TicTacMagic
             projectile.Damage = frame.Damage;
             projectile.Direction = frame.Direction;
         }
-
-        private IEnumerator<float> SpawnWithDelay()
+        protected IEnumerator<float> SpawnWithDelay()
         {
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(FrameDelay()));
             SpawnProjectile();
@@ -41,26 +37,11 @@ namespace TicTacMagic
         {
             yield return Timing.WaitForSeconds(frame.StartDelay);
         }
-
         protected override IEnumerator<float> SpawnerReset()
         {
             yield return Timing.WaitForSeconds(frame.EndDelay);
             ChangeFrame();
             readyToSpawn = true;
-        }
-
-        internal void InitializeFrames(List<PSFrame> frames)
-        {
-            this.frames = frames;
-            frame = frames[0];
-        }
-
-        private void ChangeFrame()
-        {
-            var index = frames.IndexOf(frame);
-
-            index = (index + 1 <= frames.Count - 1) ? index + 1 : 0;
-            frame = frames[index];
         }
     }
 }

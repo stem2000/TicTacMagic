@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7579647001052186103}
   - component: {fileID: 3191798592727611162}
   m_Layer: 0
-  m_Name: FireMarker
+  m_Name: HealthMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 579327607
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e2657043ee0416d47a6726fda7414079, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81f936a2f640bf74f8611ca04b9a5093, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

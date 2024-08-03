@@ -19,13 +19,11 @@ namespace TicTacMagic
     }
 
     [Serializable]
-    public class PSFrame
+    public class PSFrame : Frame
     {
         public Projectile projectilePrefab;
         public Vector2 Direction;
         public float Speed;
         public float Damage;
-        public float StartDelay;
-        public float EndDelay;
     }
 }

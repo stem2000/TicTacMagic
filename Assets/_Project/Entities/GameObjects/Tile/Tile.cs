@@ -59,7 +59,7 @@ namespace TicTacMagic
             return null;
         }
 
-        public void PutObjectOnTile(TileObject @object)
+        public void MakeUnfreeWith(TileObject @object)
         {
             tileObject = @object;
         }

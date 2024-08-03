@@ -18,11 +18,9 @@ namespace TicTacMagic
     }
 
     [Serializable]
-    public class LSFrame
+    public class LSFrame : Frame
     {
         public Lightning LightningPrefab;
-        public float StartDelay;
-        public float EndDelay;
         public float Damage;
     }
 }

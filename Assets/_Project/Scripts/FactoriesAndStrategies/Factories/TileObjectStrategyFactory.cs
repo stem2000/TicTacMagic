@@ -19,7 +19,7 @@ namespace TicTacMagic
     }
 
     [Serializable]
-    public class TOSFrame
+    public class TOSFrame : Frame
     {
         public TileObject TileObjectPrefab;
         public float TileObjectDuration;
@@ -27,8 +27,6 @@ namespace TicTacMagic
         [HideInInspector] public Tile TileToSpawnOn;
         [SerializeField] private string tileToSpawnOnName;
         public float MarkerDuration;
-        public float StartDelay;
-        public float EndDelay;
 
         public void FindTile()
         {

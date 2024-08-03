@@ -14,12 +14,16 @@ namespace TicTacMagic
             this.spawnPoint = spawnPoint;
             readyToSpawn = true;
         }
+
         public override void Spawn()
         {
+            if(frame == null) 
+                return;
+
             readyToSpawn = false;
-            if(frame != null)
-                Timing.RunCoroutine(SpawnWithDelay());
+            Timing.RunCoroutine(SpawnWithDelay());
         }
+
         private void SpawnProjectile()
         {
             var projectile = Instantiate(frame.projectilePrefab, spawnPoint.position, Quaternion.identity);
@@ -27,21 +31,12 @@ namespace TicTacMagic
             projectile.Damage = frame.Damage;
             projectile.Direction = frame.Direction;
         }
+
         protected IEnumerator<float> SpawnWithDelay()
         {
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(FrameDelay()));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
             SpawnProjectile();
-            Timing.RunCoroutine(_ResetSpawner());
-        }
-        private IEnumerator<float> FrameDelay()
-        {
-            yield return Timing.WaitForSeconds(frame.StartDelay);
-        }
-        protected override IEnumerator<float> _ResetSpawner()
-        {
-            yield return Timing.WaitForSeconds(frame.EndDelay);
-            ChangeFrame();
-            readyToSpawn = true;
+            Timing.RunCoroutine(_RunFrameEndDelay());
         }
     }
 }

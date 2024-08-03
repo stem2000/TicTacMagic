@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public abstract class EffectStrategy<T> : MonoBehaviour, IStrategy
+    public abstract class EffectStrategy<T> : MonoBehaviour, IStrategy where T : Frame
     {
         protected bool readyToSpawn;
         protected IPlayer player;        
@@ -15,7 +15,6 @@ namespace TicTacMagic
 
 
         public abstract void Spawn();
-        protected abstract IEnumerator<float> _ResetSpawner();
         protected virtual void ChangeFrame()
         {
             var index = frames.IndexOf(frame);
@@ -30,6 +29,16 @@ namespace TicTacMagic
                 this.frames = frames;
                 frame = frames[0];
             }
+        }
+        protected virtual IEnumerator<float> _RunFrameStartDelay()
+        {
+            yield return Timing.WaitForSeconds(frame.StartDelay);
+        }
+        protected virtual IEnumerator<float> _RunFrameEndDelay()
+        {
+            yield return Timing.WaitForSeconds(frame.EndDelay);
+            ChangeFrame();
+            readyToSpawn = true;
         }
     }
 }

@@ -14,10 +14,13 @@ namespace TicTacMagic
 
         public override void Spawn()
         {
+            if(frame == null)
+                return;
+
             readyToSpawn = false;
-            if (frame != null)
-                Timing.RunCoroutine(SpawnWithDelay());
+            Timing.RunCoroutine(SpawnWithDelay());
         }
+
         private void SpawnLightning()
         {
             var lightning = Instantiate(frame.LightningPrefab, player.PlayerPosition, Quaternion.identity);
@@ -25,21 +28,12 @@ namespace TicTacMagic
             lightning.Damage = frame.Damage;
             lightning.Strike();
         }
+
         private IEnumerator<float> SpawnWithDelay()
         {
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(FrameDelay()));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
             SpawnLightning();
-            Timing.RunCoroutine(_ResetSpawner());
-        }
-        private IEnumerator<float> FrameDelay()
-        {
-            yield return Timing.WaitForSeconds(frame.StartDelay);
-        }
-        protected override IEnumerator<float> _ResetSpawner()
-        {
-            yield return Timing.WaitForSeconds(frame.EndDelay);
-            ChangeFrame();
-            readyToSpawn = true;
+            Timing.RunCoroutine(_RunFrameEndDelay());
         }
     }
 }

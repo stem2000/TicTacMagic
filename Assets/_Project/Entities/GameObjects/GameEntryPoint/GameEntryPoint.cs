@@ -10,16 +10,18 @@ namespace TicTacMagic
         [SerializeField] private PlayerSpawner playerSpawner;        
         [SerializeField] private HealthBar healthBar;
         [SerializeField] private BoundsPromter boundsPromter;
-        [SerializeField] private TilesPromter tilesPromter;
+        [SerializeField] private TilePromter tilesPromter;
 
         private List<EffectSpawner> effectSpawners;
 
         private void Awake()
         {
-            var player = SpawnPlayer();
+            IPlayer player;
+
+            InstantiateSingletons();
+            player = SpawnPlayer();
             InitalizeUI(player);
             InitializeEffectSpawners(player);
-            InstantiateSingletons();
         }
 
         private IPlayer SpawnPlayer()

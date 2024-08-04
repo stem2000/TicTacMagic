@@ -1,7 +1,6 @@
 using MEC;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace TicTacMagic
@@ -48,7 +47,7 @@ namespace TicTacMagic
         private Tile GetRandomTile()
         {
             var rng = new System.Random();
-            var tiles = player.CurrentTile.GetNeighbours().OrderBy(tile => rng.Next()).ToList();
+            var tiles = TilePromter.Instance.GetTiles().OrderBy(tile => rng.Next()).ToList();
 
             foreach (var tile in tiles)
                 if (CanSpawnOn(tile))

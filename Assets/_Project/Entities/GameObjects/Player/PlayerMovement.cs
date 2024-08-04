@@ -51,7 +51,7 @@ namespace TicTacMagic
 
         private void UpdateCurrent()
         {
-            if(TilesPromter.Instance.GetClosestTo(rBody2D.position) == pointedTile)
+            if(TilePromter.Instance.GetClosestTo(rBody2D.position) == pointedTile)
                 currentTile = pointedTile;
         }
     }

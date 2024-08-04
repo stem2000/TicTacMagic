@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class TilesPromter : MonoBehaviour
+    public class TilePromter : MonoBehaviour
     {
-        private static TilesPromter instance;
+        private static TilePromter instance;
         private List<Tile> tiles;
 
-        public static TilesPromter Instance => instance;
+        public static TilePromter Instance => instance;
 
         public Tile GetClosestTo(Vector2 position)
         {
@@ -28,6 +28,11 @@ namespace TicTacMagic
             }
 
             return result;
+        }
+
+        public List<Tile> GetTiles() 
+        {
+            return tiles;
         }
 
         private void Awake()

@@ -9,11 +9,14 @@ namespace TicTacMagic
     public class ProjectileStrategyFactory : EffectStrategyAbstractFactory
     {
         [SerializeField] List<PSFrame> frames;
+        [SerializeField] float initialDelay;
 
         public override IStrategy Instantiate()
         {
             var strategy = new GameObject("ProjectileFactory").AddComponent<ProjectileStrategy>();
+
             strategy.InitializeFrames(frames);
+            strategy.InitialDelay = initialDelay;
             return strategy;
         }
     }

@@ -37,3 +37,4 @@ MonoBehaviour:
     TileToSpawnOn: {fileID: 0}
     tileToSpawnOnName: Tile 4.3
     MarkerDuration: 1
+  initialDelay: 4

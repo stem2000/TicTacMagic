@@ -12,7 +12,7 @@ namespace TicTacMagic
         public void Initiliaze(Transform spawnPoint)
         {
             this.spawnPoint = spawnPoint;
-            readyToSpawn = true;
+            Timing.RunCoroutine(_RunInitialDelay());
         }
 
         public override void Spawn()

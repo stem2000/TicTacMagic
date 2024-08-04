@@ -8,11 +8,14 @@ namespace TicTacMagic
     public class LightningStrategyFactory : EffectStrategyAbstractFactory
     {
         [SerializeField] List<LSFrame> frames;
+        [SerializeField] float initialDelay;
+
         public override IStrategy Instantiate()
         {
             var strategy = new GameObject("LightningFactory").AddComponent<LightningStrategy>();
             
             strategy.InitializeFrames(frames);
+            strategy.InitialDelay = initialDelay;
             return strategy;
         }
     }

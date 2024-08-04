@@ -10,7 +10,7 @@ namespace TicTacMagic
         public void Initialize(IPlayer player)
         {
             this.player = player;
-            readyToSpawn = true;
+            Timing.RunCoroutine(_RunInitialDelay());
         }
 
         public override void Spawn()

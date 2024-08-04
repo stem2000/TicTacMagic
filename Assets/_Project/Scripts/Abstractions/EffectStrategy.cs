@@ -11,6 +11,7 @@ namespace TicTacMagic
         protected IPlayer player;        
         protected List<T> frames;
         protected T frame;
+        public float InitialDelay;
         public bool ReadyToSpawn => readyToSpawn;
 
 
@@ -38,6 +39,11 @@ namespace TicTacMagic
         {
             yield return Timing.WaitForSeconds(frame.EndDelay);
             ChangeFrame();
+            readyToSpawn = true;
+        }
+        protected virtual IEnumerator<float> _RunInitialDelay()
+        {
+            yield return Timing.WaitForSeconds(InitialDelay);
             readyToSpawn = true;
         }
     }

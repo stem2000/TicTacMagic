@@ -8,11 +8,14 @@ namespace TicTacMagic
     public class TileObjectStrategyFactory : EffectStrategyAbstractFactory
     {
         [SerializeField] List<TOSFrame> frames;
+        [SerializeField] float initialDelay;
 
         public override IStrategy Instantiate()
         {
             var strategy = new GameObject("TileObjectStrategy").AddComponent<TileObjectStrategy>();
+
             strategy.InitializeFrames(frames);
+            strategy.InitialDelay = initialDelay;
             return strategy;
         }
 

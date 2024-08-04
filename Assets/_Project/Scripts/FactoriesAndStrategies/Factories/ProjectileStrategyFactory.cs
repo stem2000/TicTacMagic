@@ -8,8 +8,8 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "ProjectileFactory", menuName = "Scriptables/EffectStrategyFacrories/ProjectileFactory")]
     public class ProjectileStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] List<PSFrame> frames;
         [SerializeField] float initialDelay;
+        [SerializeField] List<PSFrame> frames;
 
         public override IStrategy Instantiate()
         {

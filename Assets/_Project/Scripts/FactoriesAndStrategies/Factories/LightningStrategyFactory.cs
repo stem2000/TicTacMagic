@@ -7,8 +7,8 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "LightningFactory", menuName = "Scriptables/EffectStrategyFacrories/LightningFactory")]
     public class LightningStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] List<LSFrame> frames;
         [SerializeField] float initialDelay;
+        [SerializeField] List<LSFrame> frames;
 
         public override IStrategy Instantiate()
         {

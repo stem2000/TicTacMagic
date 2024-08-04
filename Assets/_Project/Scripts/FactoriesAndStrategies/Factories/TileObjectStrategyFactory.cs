@@ -7,8 +7,8 @@ namespace TicTacMagic
     [CreateAssetMenu(fileName = "TileObjectFactory", menuName = "Scriptables/EffectStrategyFacrories/TileObjectFactory")]
     public class TileObjectStrategyFactory : EffectStrategyAbstractFactory
     {
-        [SerializeField] List<TOSFrame> frames;
         [SerializeField] float initialDelay;
+        [SerializeField] List<TOSFrame> frames;
 
         public override IStrategy Instantiate()
         {

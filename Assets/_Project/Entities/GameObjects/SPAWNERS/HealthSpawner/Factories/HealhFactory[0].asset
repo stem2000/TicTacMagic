@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006c755718f652542a44194a7101f175, type: 3}
   m_Name: HealhFactory[0]
   m_EditorClassIdentifier: 
+  initialDelay: 0
   frames:
   - StartDelay: 0
     EndDelay: 6
@@ -21,4 +22,3 @@ MonoBehaviour:
     TileToSpawnOn: {fileID: 0}
     tileToSpawnOnName: 
     MarkerDuration: 1
-  initialDelay: 0

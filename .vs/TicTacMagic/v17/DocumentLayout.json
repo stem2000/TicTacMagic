@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\TicTacMagic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\wavecontoller\\wavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\wavecontoller\\wavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\audiosystem\\soundemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\audiosystem\\soundemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\ui\\timerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\ui\\timerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\audiosystem\\persistentsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\audiosystem\\persistentsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\entities\\gameobjects\\timer\\timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\timer\\timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\entities\\gameobjects\\sceneinitializer\\sceneinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\sceneinitializer\\sceneinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\audiosystem\\sounddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\audiosystem\\sounddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TimerUI.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\UI\\TimerUI.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\UI\\TimerUI.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\UI\\TimerUI.cs",
-              "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\UI\\TimerUI.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABOAAAA",
+              "DocumentIndex": 0,
+              "Title": "SoundEmitter.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\SoundEmitter.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\AudioSystem\\SoundEmitter.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\SoundEmitter.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\AudioSystem\\SoundEmitter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA5wAkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T10:01:57.847Z",
+              "WhenOpened": "2024-08-05T14:12:10.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Timer.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Timer\\Timer.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Timer\\Timer.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Timer\\Timer.cs",
-              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Timer\\Timer.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBoAAAAJAAAA",
+              "Title": "SoundData.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\SoundData.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\AudioSystem\\SoundData.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\SoundData.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\AudioSystem\\SoundData.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:19:52.838Z",
+              "WhenOpened": "2024-08-05T14:11:52.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SceneInitializer.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\SceneInitializer\\SceneInitializer.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\SceneInitializer\\SceneInitializer.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\SceneInitializer\\SceneInitializer.cs",
-              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\SceneInitializer\\SceneInitializer.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "PersistentSingleton.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\PersistentSingleton.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\AudioSystem\\PersistentSingleton.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\AudioSystem\\PersistentSingleton.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\AudioSystem\\PersistentSingleton.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:55:27.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WaveController.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\WaveContoller\\WaveController.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\WaveContoller\\WaveController.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\WaveContoller\\WaveController.cs",
-              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\WaveContoller\\WaveController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwB8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T08:37:53.823Z",
+              "WhenOpened": "2024-08-05T14:10:15.25Z",
               "EditorCaption": ""
             }
           ]

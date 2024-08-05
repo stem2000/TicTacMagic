@@ -18,11 +18,11 @@ MonoBehaviour:
     EndDelay: 2
     projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
     Direction: {x: -1, y: 0}
-    Speed: 10
+    Speed: 7
     Damage: 10
   - StartDelay: 0
     EndDelay: 4
     projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
     Direction: {x: -1, y: 0}
-    Speed: 5
+    Speed: 3
     Damage: 10

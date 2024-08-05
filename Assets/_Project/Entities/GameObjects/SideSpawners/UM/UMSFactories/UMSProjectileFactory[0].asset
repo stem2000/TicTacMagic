@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79799e119856a9f4f8fcaf8ad0f24459, type: 3}
   m_Name: UMSProjectileFactory[0]
   m_EditorClassIdentifier: 
+  initialDelay: 0
   frames:
-  - projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
+  - StartDelay: 0
+    EndDelay: 3
+    projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
     Direction: {x: 0, y: -1}
-    Speed: 5
+    Speed: 3
     Damage: 10
-    StartDelay: 0
+  - StartDelay: 0
     EndDelay: 1
-  - projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
+    projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
     Direction: {x: 0, y: -1}
-    Speed: 10
+    Speed: 6
     Damage: 10
-    StartDelay: 0
-    EndDelay: 1

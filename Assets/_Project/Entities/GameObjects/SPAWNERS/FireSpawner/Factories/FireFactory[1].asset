@@ -10,31 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 006c755718f652542a44194a7101f175, type: 3}
-  m_Name: FireFactory[0]
+  m_Name: FireFactory[1]
   m_EditorClassIdentifier: 
-  initialDelay: 1
+  initialDelay: 2
   frames:
   - StartDelay: 0
-    EndDelay: 1
+    EndDelay: 0
     TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
-    TileObjectDuration: 5
+    TileObjectDuration: 3
     SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: fa56e5add1863b54bb977fc3063bdc43, type: 3}
     TileToSpawnOn: {fileID: 0}
-    tileToSpawnOnName: Tile 2.1
+    tileToSpawnOnName: Tile 2.3
     MarkerDuration: 1
   - StartDelay: 0
-    EndDelay: 1
+    EndDelay: 4
     TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
-    TileObjectDuration: 5
+    TileObjectDuration: 3
     SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: fa56e5add1863b54bb977fc3063bdc43, type: 3}
     TileToSpawnOn: {fileID: 0}
-    tileToSpawnOnName: Tile 3.2
-    MarkerDuration: 1
-  - StartDelay: 0
-    EndDelay: 8
-    TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
-    TileObjectDuration: 5
-    SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: fa56e5add1863b54bb977fc3063bdc43, type: 3}
-    TileToSpawnOn: {fileID: 0}
-    tileToSpawnOnName: Tile 4.3
+    tileToSpawnOnName: Tile 3.4
     MarkerDuration: 1

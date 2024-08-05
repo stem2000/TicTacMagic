@@ -4,12 +4,12 @@ namespace TicTacMagic
 {
     public class TargetEffectSpawner : EffectSpawner
     {
-        public override void SetCurrentStrategy(int stageNumber)
+        public override void SetCurrentStrategy(int waveNumber)
         {
-            var stage = stages.FirstOrDefault(stage => stage.number == stageNumber);
-            if (stage != null)
+            var wave = waves.FirstOrDefault(wave => wave.number == waveNumber);
+            if (wave != null)
             {
-                var strategy = stage.factory.Instantiate();
+                var strategy = wave.factory.Instantiate();
                 ((ITargetStrategy)strategy).Initialize(player);
                 currentStrategy = strategy;
             }

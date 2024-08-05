@@ -8,12 +8,12 @@ namespace TicTacMagic
         [SerializeField] private Transform spawnPosition;
         [SerializeField] private Vector2 spawnDirection;
 
-        public override void SetCurrentStrategy(int stageNumber)
+        public override void SetCurrentStrategy(int waveNumber)
         {
-            var stage = stages.FirstOrDefault(stage => stage.number == stageNumber);
-            if (stage != null)
+            var wave = waves.FirstOrDefault(wave => wave.number == waveNumber);
+            if (wave != null)
             {
-                var strategy = stage.factory.Instantiate();
+                var strategy = wave.factory.Instantiate();
                 ((INonTargetStrategy)strategy).Initiliaze(spawnPosition);
                 currentStrategy = strategy;
             }

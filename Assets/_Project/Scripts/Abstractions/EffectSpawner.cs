@@ -8,18 +8,18 @@ namespace TicTacMagic
 {
     public abstract class EffectSpawner : MonoBehaviour
     {
-        [SerializeField] protected List<Stage> stages;
+        [SerializeField] protected List<Stage> waves;
         protected IStrategy currentStrategy;
         protected IPlayer player;
 
         public virtual void Initialize(IPlayer player)
         {
             this.player = player;
-            if(stages.Count > 0)
+            if(waves.Count > 0)
                 SetCurrentStrategy(0);
         }
 
-        public abstract void SetCurrentStrategy(int stageNumber);
+        public abstract void SetCurrentStrategy(int waveNumber);
     }
 
     [Serializable]

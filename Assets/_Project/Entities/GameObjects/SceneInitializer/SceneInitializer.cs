@@ -7,7 +7,8 @@ namespace TicTacMagic
 {
     public class SceneInitializer : MonoBehaviour
     {
-        [SerializeField] private PlayerSpawner playerSpawner;        
+        [SerializeField] private PlayerSpawner playerSpawner;
+        [SerializeField] private WaveController waveController;
         [SerializeField] private HealthBar healthBar;
 
         [SerializeField] private float topBound;
@@ -25,6 +26,7 @@ namespace TicTacMagic
             player = SpawnPlayer();
             InitalizeUI(player);
             InitializeEffectSpawners(player);
+            InitializeWaveController();
         }
 
         private IPlayer SpawnPlayer()
@@ -42,6 +44,12 @@ namespace TicTacMagic
         {
             effectSpawners = FindObjectsByType<EffectSpawner>(FindObjectsSortMode.None).ToList();
             effectSpawners.ForEach(spawner => spawner.Initialize(player));
+        }
+
+        private void InitializeWaveController()
+        {
+            waveController.Initialize(effectSpawners);
+            waveController.StartWaves();
         }
 
         private void InitializeSingletons()

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 253
+  controlID: 2627
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 223
+  controlID: 2564
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,8 +170,8 @@ MonoBehaviour:
     y: 0
     width: 711
     height: 575
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -836,8 +836,8 @@ MonoBehaviour:
     y: 0
     width: 656
     height: 575
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -911,7 +911,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 29678
+  m_LastInspectedObjectInstanceID: 29404
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 254
+  controlID: 2628
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1231,8 +1231,8 @@ MonoBehaviour:
     y: 0
     width: 1605
     height: 372
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -1285,7 +1285,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Project/Entities/GameObjects/SceneInitializer
+    - Assets/_Project/Entities/GameObjects/Player
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1293,30 +1293,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/_Project/Entities/GameObjects/SceneInitializer
+  - Assets/_Project/Entities/GameObjects/Player
   m_LastFoldersGridSize: 67
   m_LastProjectPath: D:\Unity\Projects\TicTacMagic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 65}
-    m_SelectedIDs: 7c780000
-    m_LastClickedID: 30844
+    m_SelectedIDs: 80780000
+    m_LastClickedID: 30848
     m_ExpandedIDs: 000000009e760000a0760000a2760000a4760000a6760000a8760000aa760000ac760000ae760000b0760000b2760000b476000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: SceneInitializer
+      m_OriginalName: SceneInitializer
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30844
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 15}
     m_SearchString: 
@@ -1355,9 +1355,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ee730000
-    m_LastClickedInstanceID: 29678
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: dc720000
+    m_LastClickedInstanceID: 29404
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000ac850000e67c00001a7b00004c90000050900000949500009c840000c28400009e8700008cb5000024b50000b07b0000623300003cc800005a7f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

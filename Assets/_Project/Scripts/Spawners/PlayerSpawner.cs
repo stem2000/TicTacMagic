@@ -5,11 +5,11 @@ namespace TicTacMagic
 {
     public class PlayerSpawner : MonoBehaviour
     {
-        [SerializeField] List<Tile> tiles;
         [SerializeField] Player playerPrefab;
 
         public IPlayer SpawnPlayer(IInputProvider inputProvider)
         {
+            var tiles = TilePromter.Instance.GetTiles();
             var tileNumber = Random.Range(0, tiles.Count - 1);
             var player = Instantiate(playerPrefab, tiles[tileNumber].GetPosition(), Quaternion.identity);
 

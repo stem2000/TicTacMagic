@@ -3412,7 +3412,7 @@ GameObject:
   - component: {fileID: 966630081}
   - component: {fileID: 966630082}
   m_Layer: 0
-  m_Name: GameEntryPoint
+  m_Name: SceneInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3447,8 +3447,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawner: {fileID: 1671377294}
   healthBar: {fileID: 320334155}
-  boundsPromter: {fileID: 4210664037049069026, guid: c9e6e300fb6a3c149937adba9ab398e8, type: 3}
-  tilesPromter: {fileID: 3486349494949611006, guid: 3fb5b6148968ff749aa97079763bbeb9, type: 3}
+  topBound: 4.5
+  bottomBound: -4.5
+  leftBound: -5.5
+  rightBound: 5.5
 --- !u!1001 &1010935385
 PrefabInstance:
   m_ObjectHideFlags: 0

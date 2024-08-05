@@ -5,12 +5,15 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class GameEntryPoint : MonoBehaviour
+    public class SceneInitializer : MonoBehaviour
     {
         [SerializeField] private PlayerSpawner playerSpawner;        
         [SerializeField] private HealthBar healthBar;
-        [SerializeField] private BoundsPromter boundsPromter;
-        [SerializeField] private TilePromter tilesPromter;
+
+        [SerializeField] private float topBound;
+        [SerializeField] private float bottomBound;
+        [SerializeField] private float leftBound;
+        [SerializeField] private float rightBound;
 
         private List<EffectSpawner> effectSpawners;
 
@@ -18,7 +21,7 @@ namespace TicTacMagic
         {
             IPlayer player;
 
-            InstantiateSingletons();
+            InitializeSingletons();
             player = SpawnPlayer();
             InitalizeUI(player);
             InitializeEffectSpawners(player);
@@ -41,10 +44,10 @@ namespace TicTacMagic
             effectSpawners.ForEach(spawner => spawner.Initialize(player));
         }
 
-        private void InstantiateSingletons()
+        private void InitializeSingletons()
         {
-            boundsPromter = Instantiate(boundsPromter);
-            tilesPromter = Instantiate(tilesPromter);
+            TilePromter.Instance.Initialize();
+            BoundsPromter.Instance.Initialize(topBound, bottomBound, leftBound, rightBound);
         }
     }
 }

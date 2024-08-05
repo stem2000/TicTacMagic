@@ -9,7 +9,26 @@ namespace TicTacMagic
         private static TilePromter instance;
         private List<Tile> tiles;
 
-        public static TilePromter Instance => instance;
+        public static TilePromter Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = FindObjectOfType<TilePromter>();
+
+                    if (instance == null)
+                    {
+                        GameObject tilePromter = new GameObject();
+                        instance = tilePromter.AddComponent<TilePromter>();
+                        tilePromter.name = typeof(TilePromter).ToString() + " (Singleton)";
+
+                        DontDestroyOnLoad(tilePromter);
+                    }
+                }
+                return instance;
+            }
+        }
 
         public Tile GetClosestTo(Vector2 position)
         {
@@ -34,13 +53,19 @@ namespace TicTacMagic
         {
             return tiles;
         }
-
         private void Awake()
         {
-            if (instance == null) instance = this;
-            else
-                if (instance != this) Destroy(gameObject);
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else if (instance != this)
+                Destroy(gameObject);
+        }
 
+        public void Initialize()
+        {
             tiles = FindObjectsByType<Tile>(FindObjectsSortMode.None).ToList();
         }
     }

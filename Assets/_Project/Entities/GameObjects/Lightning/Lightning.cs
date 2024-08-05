@@ -6,7 +6,6 @@ namespace TicTacMagic
 {
     public class Lightning : MonoBehaviour
     {
-        [SerializeField] ParticleSystem preLightning;
         [SerializeField] ParticleSystem lightning;
         [SerializeField] CircleCollider2D myCollider;
         [HideInInspector] public float Damage;
@@ -18,9 +17,6 @@ namespace TicTacMagic
 
         private IEnumerator<float> StrikeRoutine()
         {
-            Instantiate(preLightning, transform).Play();
-            yield return Timing.WaitForSeconds(preLightning.main.duration);
-
             myCollider.enabled = true;
 
             Instantiate(lightning, transform).Play();

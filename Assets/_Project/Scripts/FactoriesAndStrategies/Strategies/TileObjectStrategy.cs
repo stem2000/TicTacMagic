@@ -64,9 +64,9 @@ namespace TicTacMagic
 
         private IEnumerator<float> _SpawnMarkerThenActivateObject(Tile tile, TileObject tileObject)
         {
-            var marker = Instantiate(frame.SpawnMarkerPrefab);
+            var marker = Instantiate(frame.MarkerPrefab);
 
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnTile(frame.MarkerDuration, tile.GetPosition())));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, tile.GetPosition())));
             tileObject.Activate();
             Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
         }

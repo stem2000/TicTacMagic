@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905541b9bd1499d44b00b110a1402bb5, type: 3}
   m_Name: LightningFactory[0]
   m_EditorClassIdentifier: 
-  initialDelay: 2
+  initialDelay: 0
   frames:
   - StartDelay: 0
-    EndDelay: 1
+    EndDelay: 1.5
     LightningPrefab: {fileID: 4310050451296873825, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
     Damage: 15
+    TileObjectPrefab: {fileID: 3124918073362325268, guid: c9fe6a77acacac54db32e035fe778a93, type: 3}
+    TileObjectSpawnDelay: 0.4
+    TileObjectDuration: 2
+    MarkerPrefab: {fileID: 8241585313677884129, guid: b7dac1af16f58b84c86d3735851b6acf, type: 3}
+    MarkerDuration: 0.3

@@ -3491,7 +3491,7 @@ MonoBehaviour:
     startTime: 30
   - number: 1
     startTime: 20
-  workTime: 30
+  workTime: 60
   OnTimeIsUp:
     m_PersistentCalls:
       m_Calls: []

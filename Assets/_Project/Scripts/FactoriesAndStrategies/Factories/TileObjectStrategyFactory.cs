@@ -26,7 +26,7 @@ namespace TicTacMagic
     {
         public TileObject TileObjectPrefab;
         public float TileObjectDuration;
-        public TileMarker SpawnMarkerPrefab;
+        public Marker MarkerPrefab;
         [HideInInspector] public Tile TileToSpawnOn;
         [SerializeField] private string tileToSpawnOnName;
         public float MarkerDuration;

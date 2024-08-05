@@ -44,11 +44,11 @@ TagManager:
   - name: Tiles
     uniqueID: 3043246399
     locked: 0
-  - name: Markers
-    uniqueID: 579327607
-    locked: 0
   - name: Player
     uniqueID: 2567251907
+    locked: 0
+  - name: Markers
+    uniqueID: 579327607
     locked: 0
   - name: Effects
     uniqueID: 3270193539

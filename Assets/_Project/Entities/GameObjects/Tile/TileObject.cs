@@ -6,7 +6,7 @@ namespace TicTacMagic
 {
     public abstract class TileObject : MonoBehaviour
     {
-        private void Start()
+        private void Awake()
         {
             gameObject.SetActive(false);
         }

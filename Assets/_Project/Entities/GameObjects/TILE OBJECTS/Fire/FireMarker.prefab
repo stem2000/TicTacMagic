@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780564396015963964}
   - component: {fileID: 7579647001052186103}
-  - component: {fileID: 3191798592727611162}
+  - component: {fileID: 6320740854602462269}
   m_Layer: 0
   m_Name: FireMarker
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3191798592727611162
+--- !u!114 &6320740854602462269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 475803601446918135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7785c6cb3ddc5d4b9c720b75fb88a91, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a28bba634aab2e448762ac240544615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

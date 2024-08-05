@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006c755718f652542a44194a7101f175, type: 3}
   m_Name: StoneFactory[0]
   m_EditorClassIdentifier: 
+  initialDelay: 0
   frames:
   - StartDelay: 4
     EndDelay: 0
     TileObjectPrefab: {fileID: 3523662234271783451, guid: 9b47b3371f509cf449fb353274454d92, type: 3}
     TileObjectDuration: 4
-    SpawnMarkerPrefab: {fileID: 3191798592727611162, guid: e465457b8327fb94292f2d186667b2f3, type: 3}
+    MarkerPrefab: {fileID: 400233580934849122, guid: e465457b8327fb94292f2d186667b2f3, type: 3}
     TileToSpawnOn: {fileID: 0}
     tileToSpawnOnName: 
     MarkerDuration: 1

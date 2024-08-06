@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\TicTacMagic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\abstractions\\targeteffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\abstractions\\targeteffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\abstractions\\nontargeteffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\abstractions\\nontargeteffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\abstractions\\effectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\abstractions\\effectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\lightningstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\lightningstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\lightningstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\lightningstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\factoriesandstrategies\\strategies\\tileobjectstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\entities\\gameobjects\\lightning\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\entities\\gameobjects\\lightning\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NonTargetEffectSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\NonTargetEffectSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\Abstractions\\NonTargetEffectSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\NonTargetEffectSpawner.cs",
+              "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\Abstractions\\NonTargetEffectSpawner.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T14:36:28.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TargetEffectSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\TargetEffectSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\Abstractions\\TargetEffectSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\TargetEffectSpawner.cs",
+              "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\Abstractions\\TargetEffectSpawner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T14:36:08.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EffectSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\EffectSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\Abstractions\\EffectSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\Abstractions\\EffectSpawner.cs",
+              "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\Abstractions\\EffectSpawner.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T14:35:24.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TileObjectStrategy.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\TileObjectStrategy.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAcwEgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T14:06:36.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Lightning.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
+              "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Lightning\\Lightning.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T14:06:28.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Entities\\GameObjects\\Player\\Player.cs",
               "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Entities\\GameObjects\\Player\\Player.cs",
               "RelativeToolTip": "Assets\\_Project\\Entities\\GameObjects\\Player\\Player.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwB8AAAAzAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAxwB8AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T11:34:40.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "LightningStrategy.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
               "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
               "RelativeToolTip": "Assets\\_Project\\SCRIPTS\\FactoriesAndStrategies\\Strategies\\LightningStrategy.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAmwEIAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCcAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T10:20:53.893Z",
               "EditorCaption": ""

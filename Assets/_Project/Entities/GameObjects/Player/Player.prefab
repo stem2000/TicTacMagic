@@ -87,6 +87,9 @@ MonoBehaviour:
   onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerHealed:
+    m_PersistentCalls:
+      m_Calls: []
   playerStats: {fileID: 11400000, guid: e09f7ab78e614794d9facef6d0d727ff, type: 2}
   playerView: {fileID: 2315531347546619740, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
 --- !u!50 &7186799234853021246

@@ -29,18 +29,15 @@ namespace TicTacMagic
             lightning.Strike();  
         }
 
-        private IEnumerator<float> _SpawnTileObject(float delay, Vector2 strikePosition)
+        private TileObject SpawnTileObject(Vector2 strikePosition)
         {
-            yield return Timing.WaitForSeconds(delay);
+            TileObject tileObject = null;
+            Tile tile = TilePromter.Instance.GetClosestTo(strikePosition);
 
-            var tile = TilePromter.Instance.GetClosestTo(strikePosition);
+            if (tile.IsFree())            
+                tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
 
-            if (tile.IsFree())
-            {
-                var tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
-                tileObject.Activate();
-                Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration));
-            }
+            return tileObject;
         }
 
         private IEnumerator<float> _SpawnMarker(Vector2 strikePosition)
@@ -52,16 +49,27 @@ namespace TicTacMagic
 
         private IEnumerator<float> SpawnWithDelay()
         {
+            TileObject tileObject = null;
+            Vector2 strikePosition = Vector2.zero;
+
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
 
-            var strikePosition = player.PlayerPosition;
+            strikePosition = player.PlayerPosition;
 
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_SpawnMarker(strikePosition)));
 
             SpawnLightning(strikePosition);
 
             if (frame.TileObjectPrefab != null)
-                Timing.RunCoroutine(_SpawnTileObject(frame.TileObjectSpawnDelay, strikePosition));
+                tileObject = SpawnTileObject(strikePosition);
+
+            yield return Timing.WaitForSeconds(frame.TileObjectSpawnDelay);
+
+            if(tileObject != null)
+            {
+                tileObject.Activate();
+                Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration));
+            }
 
             Timing.RunCoroutine(_RunFrameEndDelay());
         }

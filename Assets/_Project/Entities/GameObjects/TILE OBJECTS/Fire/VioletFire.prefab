@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1024773757
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -524583168, guid: 596ddd916cca24141818bf705106f45e, type: 3}
+  m_Sprite: {fileID: -1863672090, guid: dbd94af59feb2e849bd70417ad1354b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 5926807337108182972}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ede5bd99b107dcc418c607e65cc5079a, type: 2}
+  m_Controller: {fileID: 9100000, guid: c36c6d7a9510cac43a58c6b0ba187b7c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3124918073362325268}
   - component: {fileID: 1014189566646186986}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: VioletFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fccc6d3a77a9d649a3cccccd9fafd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  damageCooldown: 1
+  damage: 30
+  damageCooldown: 1.5
   myCollider: {fileID: 1014189566646186986}
 --- !u!58 &1014189566646186986
 CircleCollider2D:

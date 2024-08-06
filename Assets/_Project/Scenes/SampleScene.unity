@@ -3488,9 +3488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - number: 0
-    startTime: 30
+    startTime: 60
   - number: 1
-    startTime: 20
+    startTime: 40
   workTime: 60
   OnTimeIsUp:
     m_PersistentCalls:

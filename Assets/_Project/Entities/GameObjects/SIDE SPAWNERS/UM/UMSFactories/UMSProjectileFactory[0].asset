@@ -16,7 +16,7 @@ MonoBehaviour:
   frames:
   - StartDelay: 0
     EndDelay: 3
-    projectilePrefab: {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
+    projectilePrefab: {fileID: 8389433308789224605, guid: fda13efde5516b1428b90b462f246c19, type: 3}
     Direction: {x: 0, y: -1}
     Speed: 3
     Damage: 20

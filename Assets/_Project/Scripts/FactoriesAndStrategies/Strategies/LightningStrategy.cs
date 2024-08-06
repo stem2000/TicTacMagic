@@ -34,8 +34,11 @@ namespace TicTacMagic
             TileObject tileObject = null;
             Tile tile = TilePromter.Instance.GetClosestTo(strikePosition);
 
-            if (tile.IsFree())            
+            if (tile.IsFree())
+            {
                 tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
+                tile.MakeUnfreeWith(tileObject);
+            }    
 
             return tileObject;
         }

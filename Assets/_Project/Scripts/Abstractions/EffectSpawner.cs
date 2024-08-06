@@ -15,8 +15,6 @@ namespace TicTacMagic
         public virtual void Initialize(IPlayer player)
         {
             this.player = player;
-            if(waves.Count > 0)
-                SetCurrentStrategy(0);
         }
 
         public abstract void SetCurrentStrategy(int waveNumber);

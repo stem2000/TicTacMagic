@@ -16,7 +16,7 @@ MonoBehaviour:
   frames:
   - StartDelay: 0
     EndDelay: 10
-    TileObjectPrefab: {fileID: 3523662234271783451, guid: c72f7672453b1d6489ece908bf7f1839, type: 3}
+    TileObjectPrefab: {fileID: -3089161107060279010, guid: c72f7672453b1d6489ece908bf7f1839, type: 3}
     TileObjectDuration: 6
     MarkerPrefab: {fileID: 400233580934849122, guid: 9d6b81b4a6a3818458c4b678a813d313, type: 3}
     TileToSpawnOn: {fileID: 0}

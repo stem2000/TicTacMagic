@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 780564396015963964}
   - component: {fileID: 7579647001052186103}
-  - component: {fileID: 8241585313677884129}
+  - component: {fileID: 6320740854602462269}
   m_Layer: 0
-  m_Name: HealthMarker
+  m_Name: LightningMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: edd0e6857d584ef4b88699a62b16544d, type: 3}
-  m_Color: {r: 0.23634696, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8241585313677884129
+--- !u!114 &6320740854602462269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

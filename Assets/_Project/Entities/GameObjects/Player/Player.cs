@@ -29,17 +29,8 @@ namespace TicTacMagic
             onPlayerDeath = new UnityEvent();
             onPlayerDamaged = new UnityEvent<float>();
             this.inputProvider = inputProvider;
-
-            InitializePlayerView();
-        }
-
-        private void InitializePlayerView()
-        {
-            if(playerView != null)
-            {
-                playerView = Instantiate(playerView, transform);
-                playerView.Initialize(this);
-            }
+            playerStats = Instantiate(playerStats);
+            playerView.Initialize(this);
         }
 
         public void GetDamage(float damage)

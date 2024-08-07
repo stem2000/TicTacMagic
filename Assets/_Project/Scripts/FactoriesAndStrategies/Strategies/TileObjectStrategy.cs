@@ -62,21 +62,27 @@ namespace TicTacMagic
             frame = frames[0];
         }
 
-        private IEnumerator<float> _SpawnMarkerAndObject(Tile tile)
+        private IEnumerator<float> _SpawnMarkerAndActivateObject(Tile tile, TileObject tileObject)
         {
             var marker = Instantiate(frame.MarkerPrefab);
-            var tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
-
-            tile.MakeUnfreeWith(tileObject);
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, tile.GetPosition())));
             tileObject.Activate();
             Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
         }
 
+        private TileObject SpawnTileObject(Tile tile)
+        {
+            var tileObject = Instantiate(frame.TileObjectPrefab, tile.GetPosition(), Quaternion.identity);
+            tile.MakeUnfreeWith(tileObject);
+            return tileObject;
+        }
+
         private IEnumerator<float> _Spawn(Tile tile)
         {
+            var tileObject = SpawnTileObject(tile);
+
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
-            Timing.RunCoroutine(_SpawnMarkerAndObject(tile));
+            Timing.RunCoroutine(_SpawnMarkerAndActivateObject(tile, tileObject));
             Timing.RunCoroutine(_RunFrameEndDelay());
         }
     }

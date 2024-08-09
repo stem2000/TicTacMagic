@@ -6,6 +6,7 @@ namespace TicTacMagic
     public class TileBinder : MonoBehaviour
     {
         public List<Tile> tiles;
+        public float DistanceToNeighbour = 1.9f;
 
         private void OnValidate()
         {
@@ -42,7 +43,7 @@ namespace TicTacMagic
                 var fTilePos = fTile.GetPosition();
                 var tilePos = tile.GetPosition();
 
-                if (Vector2.Angle(fTilePos - tilePos, direction) == 0)
+                if (Vector2.Angle(fTilePos - tilePos, direction) == 0 && (fTilePos - tilePos).magnitude < DistanceToNeighbour)
                 {
                     if (rTile == null) rTile = fTile;
                     else

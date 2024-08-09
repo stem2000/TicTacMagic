@@ -53,16 +53,6 @@ namespace TicTacMagic
         {
             return tiles;
         }
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else if (instance != this)
-                Destroy(gameObject);
-        }
 
         public void Initialize()
         {

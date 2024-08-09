@@ -64,7 +64,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MenuOpenClose"",
+                    ""name"": ""PauseUnpause"",
                     ""type"": ""Button"",
                     ""id"": ""735dbc84-6a48-49ee-8323-220b6c23c81e"",
                     ""expectedControlType"": ""Button"",
@@ -125,7 +125,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MenuOpenClose"",
+                    ""action"": ""PauseUnpause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -140,7 +140,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_MoveRight = m_Player.FindAction("MoveRight", throwIfNotFound: true);
         m_Player_MoveUp = m_Player.FindAction("MoveUp", throwIfNotFound: true);
         m_Player_MoveDown = m_Player.FindAction("MoveDown", throwIfNotFound: true);
-        m_Player_MenuOpenClose = m_Player.FindAction("MenuOpenClose", throwIfNotFound: true);
+        m_Player_PauseUnpause = m_Player.FindAction("PauseUnpause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -206,7 +206,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveRight;
     private readonly InputAction m_Player_MoveUp;
     private readonly InputAction m_Player_MoveDown;
-    private readonly InputAction m_Player_MenuOpenClose;
+    private readonly InputAction m_Player_PauseUnpause;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -215,7 +215,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MoveRight => m_Wrapper.m_Player_MoveRight;
         public InputAction @MoveUp => m_Wrapper.m_Player_MoveUp;
         public InputAction @MoveDown => m_Wrapper.m_Player_MoveDown;
-        public InputAction @MenuOpenClose => m_Wrapper.m_Player_MenuOpenClose;
+        public InputAction @PauseUnpause => m_Wrapper.m_Player_PauseUnpause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -237,9 +237,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MoveDown.started += instance.OnMoveDown;
             @MoveDown.performed += instance.OnMoveDown;
             @MoveDown.canceled += instance.OnMoveDown;
-            @MenuOpenClose.started += instance.OnMenuOpenClose;
-            @MenuOpenClose.performed += instance.OnMenuOpenClose;
-            @MenuOpenClose.canceled += instance.OnMenuOpenClose;
+            @PauseUnpause.started += instance.OnPauseUnpause;
+            @PauseUnpause.performed += instance.OnPauseUnpause;
+            @PauseUnpause.canceled += instance.OnPauseUnpause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -256,9 +256,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MoveDown.started -= instance.OnMoveDown;
             @MoveDown.performed -= instance.OnMoveDown;
             @MoveDown.canceled -= instance.OnMoveDown;
-            @MenuOpenClose.started -= instance.OnMenuOpenClose;
-            @MenuOpenClose.performed -= instance.OnMenuOpenClose;
-            @MenuOpenClose.canceled -= instance.OnMenuOpenClose;
+            @PauseUnpause.started -= instance.OnPauseUnpause;
+            @PauseUnpause.performed -= instance.OnPauseUnpause;
+            @PauseUnpause.canceled -= instance.OnPauseUnpause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -282,6 +282,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMoveRight(InputAction.CallbackContext context);
         void OnMoveUp(InputAction.CallbackContext context);
         void OnMoveDown(InputAction.CallbackContext context);
-        void OnMenuOpenClose(InputAction.CallbackContext context);
+        void OnPauseUnpause(InputAction.CallbackContext context);
     }
 }

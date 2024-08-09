@@ -9,6 +9,7 @@ namespace TicTacMagic
     {
         [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private WaveController waveController;
+        [SerializeField] private GameController gameController;
         [SerializeField] private HealthBar healthBar;
 
         [SerializeField] private float topBound;
@@ -24,6 +25,7 @@ namespace TicTacMagic
 
             InitializeSingletons();
             player = SpawnPlayer();
+            gameController.SetPlayer((Player)player);
             InitalizeUI(player);
             InitializeEffectSpawners(player);
             InitializeWaveController();

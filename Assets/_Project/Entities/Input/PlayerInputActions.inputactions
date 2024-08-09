@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MenuOpenClose",
+                    "name": "PauseUnpause",
                     "type": "Button",
                     "id": "735dbc84-6a48-49ee-8323-220b6c23c81e",
                     "expectedControlType": "Button",
@@ -103,7 +103,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MenuOpenClose",
+                    "action": "PauseUnpause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

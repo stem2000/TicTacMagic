@@ -7,7 +7,7 @@ namespace TicTacMagic
     {
         [SerializeField] Player playerPrefab;
 
-        public IPlayer SpawnPlayer(IInputProvider inputProvider)
+        public IPlayer SpawnPlayer(IDirectionProvider inputProvider)
         {
             var tiles = TilePromter.Instance.GetTiles();
             var tileNumber = Random.Range(0, tiles.Count - 1);

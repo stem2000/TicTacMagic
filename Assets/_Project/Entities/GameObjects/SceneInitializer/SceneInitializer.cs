@@ -31,8 +31,8 @@ namespace TicTacMagic
 
         private IPlayer SpawnPlayer()
         {
-            IInputProvider inputProvider = new PlayerInputActionsWrapper();
-            return playerSpawner.SpawnPlayer(inputProvider);
+            IDirectionProvider directionProvider = new PlayerInputActionsWrapper();
+            return playerSpawner.SpawnPlayer(directionProvider);
         }
 
         private void InitalizeUI(IPlayer player)

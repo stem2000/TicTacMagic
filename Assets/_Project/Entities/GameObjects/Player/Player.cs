@@ -7,7 +7,7 @@ namespace TicTacMagic
     {        
         private Rigidbody2D rBody2D;
         private PlayerMovement playerMovement;        
-        private IInputProvider inputProvider;
+        private IDirectionProvider inputProvider;
 
         [SerializeField] private UnityEvent onPlayerDeath;
         [SerializeField] private UnityEvent<float> onPlayerDamaged;
@@ -22,7 +22,7 @@ namespace TicTacMagic
         public Tile PointedTile { get => playerMovement.PointedTile; }
         public Tile CurrentTile { get => playerMovement.CurrentTile; }
 
-        public void Initialize(Tile startingTile, IInputProvider inputProvider)
+        public void Initialize(Tile startingTile, IDirectionProvider inputProvider)
         {
             rBody2D = GetComponent<Rigidbody2D>();
             playerMovement = new PlayerMovement(startingTile, rBody2D, playerStats);

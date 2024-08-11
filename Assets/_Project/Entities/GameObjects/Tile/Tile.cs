@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace TicTacMagic
 {
     public class Tile : MonoBehaviour
     {
-        [SerializeField] private Tile up;
-        [SerializeField] private Tile down;
-        [SerializeField] private Tile left;
-        [SerializeField] private Tile right;
+        [SerializeField] public Tile up;
+        [SerializeField] public Tile down;
+        [SerializeField] public Tile left;
+        [SerializeField] public Tile right;
 
-        [SerializeField] private List<Tile> neighbours;
+        [SerializeField] public List<Tile> neighbours;
 
         private TileObject tileObject;
 

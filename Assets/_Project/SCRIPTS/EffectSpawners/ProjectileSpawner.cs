@@ -1,23 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace TicTacMagic
 {
-    public class LightningSpawner : EffectSpawner
+    public class ProjectileSpawner : EffectSpawner
     {
-        [SerializeField] private List<WaveData<LSFrame>> waveDatas; 
-        private LightningStrategy strategy;
+        [SerializeField] private List<WaveData<PSFrame>> waveDatas;
+        [SerializeField] private Transform spawnPoint;
+        private ProjectileStrategy strategy;
 
         private void Awake()
         {
-            strategy = new GameObject("LightningStrategy").AddComponent<LightningStrategy>();
-        }
-
-        public void SetPlayer(IPlayer player)
-        {
-            strategy.Initialize(player);
+            strategy = new GameObject("ProjectileStrategy").AddComponent<ProjectileStrategy>();
+            strategy.SetupStrategy(spawnPoint);
         }
 
         public override void SetCurrentStrategy(int waveNumber)
@@ -28,6 +24,7 @@ namespace TicTacMagic
             {
                 strategy.InitializeFrames(waveData.framesPack.frames);
                 strategy.InitialDelay = waveData.framesPack.initialDelay;
+                strategy.RunInitialDelay();
             }
         }
 

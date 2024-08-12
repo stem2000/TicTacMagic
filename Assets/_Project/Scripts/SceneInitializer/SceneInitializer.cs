@@ -48,7 +48,8 @@ namespace TicTacMagic
 
         private void InitializeSpawner(EffectSpawner spawner, IPlayer player)
         {
-            if(spawner is LightningSpawner) ((LightningSpawner)spawner).SetPlayer(player);
+            if (spawner is LightningSpawner) ((LightningSpawner)spawner).SetupStrategy(player);
+            if (spawner is TileObjectSpawner) ((TileObjectSpawner)spawner).SetupStrategy(player);
         }
 
         private void InitializeWaveController()

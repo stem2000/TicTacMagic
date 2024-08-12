@@ -5,12 +5,11 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class TileObjectStrategy : EffectStrategy<TOSFrame>, ITargetStrategy
+    public class TileObjectStrategy : EffectStrategy<TOSFrame>
     {
-        public void Initialize(IPlayer player)
+        public void SetPlayer(IPlayer player)
         {
             this.player = player;
-            Timing.RunCoroutine(_RunInitialDelay());
         }
 
         public override void Spawn()

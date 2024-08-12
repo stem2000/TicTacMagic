@@ -16,6 +16,10 @@ namespace TicTacMagic
 
 
         public abstract void Spawn();
+        public virtual void RunInitialDelay()
+        {
+            Timing.RunCoroutine(_RunInitialDelay());
+        }
         protected virtual void ChangeFrame()
         {
             var index = frames.IndexOf(frame);
@@ -46,5 +50,6 @@ namespace TicTacMagic
             yield return Timing.WaitForSeconds(InitialDelay);
             readyToSpawn = true;
         }
+
     }
 }

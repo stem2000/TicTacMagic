@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class LightningStrategy : EffectStrategy<LSFrame>, ITargetStrategy
+    public class LightningStrategy : EffectStrategy<LSFrame>
     {
-        public void Initialize(IPlayer player)
+        public void SetPlayer(IPlayer player)
         {
             this.player = player;
-            Timing.RunCoroutine(_RunInitialDelay());
         }
 
         public override void Spawn()

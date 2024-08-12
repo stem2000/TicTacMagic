@@ -9,10 +9,9 @@ namespace TicTacMagic
     {
         private Transform spawnPoint;
 
-        public void Initiliaze(Transform spawnPoint)
+        public void SetupStrategy(Transform spawnPoint)
         {
             this.spawnPoint = spawnPoint;
-            Timing.RunCoroutine(_RunInitialDelay());
         }
 
         public override void Spawn()

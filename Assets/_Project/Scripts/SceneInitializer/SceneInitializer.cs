@@ -43,7 +43,12 @@ namespace TicTacMagic
         private void InitializeEffectSpawners(IPlayer player)
         {
             effectSpawners = FindObjectsByType<EffectSpawner>(FindObjectsSortMode.None).ToList();
-            effectSpawners.ForEach(spawner => spawner.Initialize(player));
+            effectSpawners.ForEach(spawner => InitializeSpawner(spawner, player));
+        }
+
+        private void InitializeSpawner(EffectSpawner spawner, IPlayer player)
+        {
+            if(spawner is LightningSpawner) ((LightningSpawner)spawner).SetPlayer(player);
         }
 
         private void InitializeWaveController()

@@ -4,23 +4,6 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    [CreateAssetMenu(fileName = "TileObjectFactory", menuName = "Scriptables/EffectStrategyFacrories/TileObjectFactory")]
-    public class TileObjectStrategyFactory : EffectStrategyAbstractFactory
-    {
-        [SerializeField] float initialDelay;
-        [SerializeField] List<TOSFrame> frames;
-
-        public override IStrategy Instantiate()
-        {
-            var strategy = new GameObject("TileObjectStrategy").AddComponent<TileObjectStrategy>();
-
-            strategy.InitializeFrames(frames);
-            strategy.InitialDelay = initialDelay;
-            return strategy;
-        }
-
-    }
-
     [Serializable]
     public class TOSFrame : Frame
     {

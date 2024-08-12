@@ -1619,6 +1619,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1671377293}
+  - {fileID: 1677425289}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &736481835
@@ -3087,6 +3088,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8824092194074271743, guid: e367bc082a0f5bc4aa091c91abdf9f09, type: 3}
+--- !u!1 &1677425288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677425289}
+  - component: {fileID: 1677425290}
+  m_Layer: 0
+  m_Name: LightningSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677425289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677425288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 665359651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677425290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677425288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79ccae7a7d90054193368fa4e900c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveDatas:
+  - number: 0
+    framesPack:
+      initialDelay: 0
+      frames:
+      - StartDelay: 0
+        EndDelay: 0
+        LightningPrefab: {fileID: 4310050451296873825, guid: b983a20f61566324caecbf818f0a8de9, type: 3}
+        Damage: 30
+        TileObjectPrefab: {fileID: 3124918073362325268, guid: be8909cd0db913741863c1a1605e328d, type: 3}
+        TileObjectSpawnDelay: 0.3
+        TileObjectDuration: 3
+        MarkerPrefab: {fileID: 6320740854602462269, guid: 02d74eb784a324b4bb9dd6f9f30d2838, type: 3}
+        MarkerDuration: 1
+  - number: 0
+    framesPack:
+      initialDelay: 0
+      frames: []
 --- !u!1001 &1745474341
 PrefabInstance:
   m_ObjectHideFlags: 0

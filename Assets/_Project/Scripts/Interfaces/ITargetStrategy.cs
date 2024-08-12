@@ -6,6 +6,6 @@ namespace TicTacMagic
 {
     public interface ITargetStrategy
     {
-        public void Initialize(IPlayer player);
+        public void SetPlayer(IPlayer player);
     }
 }

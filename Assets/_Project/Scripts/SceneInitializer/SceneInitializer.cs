@@ -18,7 +18,7 @@ namespace TicTacMagic
 
         private List<EffectSpawner> effectSpawners;
 
-        private void Awake()
+        private void Start()
         {
             IPlayer player;
 

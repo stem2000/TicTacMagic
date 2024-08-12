@@ -6,6 +6,6 @@ namespace TicTacMagic
 {
     public interface INonTargetStrategy
     {
-        public void Initiliaze(Transform spawnPosition);
+        public void SetupStrategy(Transform spawnPosition);
     }
 }

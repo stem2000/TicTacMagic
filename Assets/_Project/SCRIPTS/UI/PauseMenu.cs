@@ -8,17 +8,7 @@ namespace TicTacMagic
 {
     public class PauseMenu : MonoBehaviour
     {
-        [SerializeField] Button resumeButton;
-        [SerializeField] Button exitButton;
-
-        public void AddListenerToResumeButtonOnClick(UnityAction action)
-        {
-            resumeButton.onClick.AddListener(action);
-        }
-
-        public void RemoveListenerFromResumeButtonOnClick(UnityAction action)
-        {
-            resumeButton.onClick.RemoveListener(action);
-        }
+        public Button resumeButton;
+        public Button exitButton;
     }
 }

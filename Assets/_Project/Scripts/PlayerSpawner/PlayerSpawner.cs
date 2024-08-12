@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TicTacMagic
@@ -9,7 +10,7 @@ namespace TicTacMagic
 
         public IPlayer SpawnPlayer(IDirectionProvider inputProvider)
         {
-            var tiles = TilePromter.Instance.GetTiles();
+            var tiles = FindObjectsByType<Tile>(FindObjectsSortMode.None).ToList();
             var tileNumber = Random.Range(0, tiles.Count - 1);
             var player = Instantiate(playerPrefab, tiles[tileNumber].GetPosition(), Quaternion.identity);
 

@@ -7,31 +7,12 @@ namespace TicTacMagic
     {
         [SerializeField] PauseMenu pauseMenu;
 
-        private UnityEvent OnPauseSwitch = new UnityEvent();
+        [HideInInspector] public UnityEvent OnMenuClosed = new UnityEvent();
+        [HideInInspector] public UnityEvent OnEscape = new UnityEvent();
 
         private void Awake()
         {
-           InitializePauseMenu();
-        }
-
-        public void AddListenerToUIOnPauseSwitch(UnityAction action)
-        {
-            OnPauseSwitch.AddListener(action);
-        }
-
-        public void RemoveListenerFromUIOnPauseSwitch(UnityAction action)
-        {
-            OnPauseSwitch.RemoveListener(action);
-        }
-
-        private void InvokeOnPauseSwitch()
-        {
-            OnPauseSwitch?.Invoke();
-        }
-
-        private void InitializePauseMenu()
-        {
-            pauseMenu.AddListenerToResumeButtonOnClick(InvokeOnPauseSwitch);
+            pauseMenu.resumeButton.onClick.AddListener(ClosePauseMenu);
             pauseMenu.gameObject.SetActive(false);
         }
 
@@ -43,6 +24,7 @@ namespace TicTacMagic
         public void ClosePauseMenu()
         {
             pauseMenu.gameObject.SetActive(false);
+            OnMenuClosed?.Invoke();
         }
     }
 }

@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace TicTacMagic
 {
     public class GameController : MonoBehaviour
     {
-        public UnityEvent OnPauseGame;
-        public UnityEvent OnUnpauseGame;
+        public UnityEvent OnPause;
+        public UnityEvent OnUnpause;
+        public UnityEvent OnStopGame;
+        public UnityEvent OnRunGame;
+        public UnityEvent OnPlayerWin;
+        public UnityEvent OnLose;
 
         private PlayerInputActions inputActions;
         private Player player;
@@ -15,31 +20,59 @@ namespace TicTacMagic
         {
             inputActions = new PlayerInputActions();
 
-            inputActions.Enable();
-            inputActions.Player.PauseUnpause.performed += ctx => PauseGame();
-        }
-
-        public void SetPlayer(Player player)
-        {
-            this.player = player;
+            inputActions.Player.OnEscape.Enable();
+            inputActions.Player.OnEscape.performed += ctx => PauseGame();
         }
 
         public void PauseGame()
         {
-            Time.timeScale = 0;
-            player.enabled = false;
-            inputActions.Disable();
-            OnPauseGame?.Invoke();
+            StopGame();
+            OnPause?.Invoke();
         }
 
         public void UnpauseGame()
         {
-            Time.timeScale = 1;
-            player.enabled = true;
-            inputActions.Enable();
-            OnUnpauseGame?.Invoke();
+            RunGame();
+            OnUnpause?.Invoke();
         }
 
+        public void HandlePlayerWin()
+        {
+            OnPlayerWin?.Invoke();
+        }
+
+        public void HandlePlayerLose()
+        {
+            StopGame();
+            OnLose?.Invoke();
+        }
+
+        public void RestartGame()
+        {
+            var scene = SceneManager.GetActiveScene();
+
+            SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
+            RunGame();
+        }
+
+        public void ExitGame()
+        {
+            
+        }
+
+        private void StopGame()
+        {
+            Time.timeScale = 0;
+            inputActions.Player.OnEscape.Disable();
+            OnStopGame?.Invoke();
+        }
+
+        private void RunGame()
+        {
+            Time.timeScale = 1;
+            inputActions.Player.OnEscape.Enable();
+            OnRunGame?.Invoke();
+        }
 
     }
 }

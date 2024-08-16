@@ -20,7 +20,7 @@ namespace TicTacMagic
                 return;
 
             readyToSpawn = false;
-            Timing.RunCoroutine(SpawnWithDelay());
+            Timing.RunCoroutine(SpawnWithDelay().CancelWith(gameObject));
         }
 
         private void SpawnProjectile()

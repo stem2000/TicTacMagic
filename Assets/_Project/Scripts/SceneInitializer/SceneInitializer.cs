@@ -11,7 +11,7 @@ namespace TicTacMagic
         [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private WaveController waveController;
         [SerializeField] private GameController gameController;
-        [SerializeField] private GameMenuManager menuManager;
+        [SerializeField] private GameUIManager uiManager;
 
         [SerializeField] private HealthBar healthBar;
 
@@ -29,7 +29,7 @@ namespace TicTacMagic
             InitializeSingletons();
             InitializeGameObjects(player);
 
-            SetupGameObjects();
+            SetupGameObjects((Player)player);
         }
 
         private IPlayer SpawnPlayer()
@@ -61,11 +61,6 @@ namespace TicTacMagic
             waveController.StartWaves();
         }
 
-        private void InitializeGameController(Player player)
-        {
-            gameController.SetPlayer(player);
-        }
-
         private void InitializeSingletons()
         {
             TilePromter.Instance.Initialize();
@@ -77,15 +72,16 @@ namespace TicTacMagic
             InitializeEffectSpawners(player);
             InitializeUI(player);
             InitializeWaveController();
-            InitializeGameController((Player)player);
         }
 
-        private void SetupGameObjects()
+        private void SetupGameObjects(Player player)
         {
-            gameController.OnPauseGame.AddListener(menuManager.OpenPauseMenu);
-            gameController.OnPauseGame.AddListener(musicPlayer.Pause);
-            gameController.OnUnpauseGame.AddListener(musicPlayer.Play);
-            menuManager.OnMenuClosed.AddListener(gameController.UnpauseGame);
+            gameController.OnStopGame.AddListener(musicPlayer.Pause);
+            gameController.OnRunGame.AddListener(musicPlayer.Play); 
+            
+            player.AddListenerToPlayerDeath(gameController.HandlePlayerLose);
+            
+            uiManager.LinkToController(gameController);
         }
     }
 }

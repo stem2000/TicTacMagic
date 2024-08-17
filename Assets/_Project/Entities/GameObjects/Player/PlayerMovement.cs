@@ -35,7 +35,7 @@ namespace TicTacMagic
             {
                 pointedTile = tile;
                 Timing.KillCoroutines("MoveTo");
-                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed), Segment.FixedUpdate, "MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed).CancelWith(rBody2D.gameObject), Segment.FixedUpdate, "MoveTo");
             }
         }
 

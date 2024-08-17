@@ -62,6 +62,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OnEscape"",
+                    ""type"": ""Button"",
+                    ""id"": ""735dbc84-6a48-49ee-8323-220b6c23c81e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,45 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""MoveDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d54e206-bda1-4281-974c-16b393962ce1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OnEscape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""2fd21454-1bc1-4501-aa81-d5194dfa323c"",
+            ""actions"": [
+                {
+                    ""name"": ""UIEscape"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4404004-b2ff-4035-9814-54d022893e36"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c30c58a4-a975-41b4-a9fc-d4798a3148de"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UIEscape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +168,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_MoveRight = m_Player.FindAction("MoveRight", throwIfNotFound: true);
         m_Player_MoveUp = m_Player.FindAction("MoveUp", throwIfNotFound: true);
         m_Player_MoveDown = m_Player.FindAction("MoveDown", throwIfNotFound: true);
+        m_Player_OnEscape = m_Player.FindAction("OnEscape", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_UIEscape = m_UI.FindAction("UIEscape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +237,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveRight;
     private readonly InputAction m_Player_MoveUp;
     private readonly InputAction m_Player_MoveDown;
+    private readonly InputAction m_Player_OnEscape;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -193,6 +246,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MoveRight => m_Wrapper.m_Player_MoveRight;
         public InputAction @MoveUp => m_Wrapper.m_Player_MoveUp;
         public InputAction @MoveDown => m_Wrapper.m_Player_MoveDown;
+        public InputAction @OnEscape => m_Wrapper.m_Player_OnEscape;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +268,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MoveDown.started += instance.OnMoveDown;
             @MoveDown.performed += instance.OnMoveDown;
             @MoveDown.canceled += instance.OnMoveDown;
+            @OnEscape.started += instance.OnOnEscape;
+            @OnEscape.performed += instance.OnOnEscape;
+            @OnEscape.canceled += instance.OnOnEscape;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -230,6 +287,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MoveDown.started -= instance.OnMoveDown;
             @MoveDown.performed -= instance.OnMoveDown;
             @MoveDown.canceled -= instance.OnMoveDown;
+            @OnEscape.started -= instance.OnOnEscape;
+            @OnEscape.performed -= instance.OnOnEscape;
+            @OnEscape.canceled -= instance.OnOnEscape;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -247,11 +307,62 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_UIEscape;
+    public struct UIActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public UIActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @UIEscape => m_Wrapper.m_UI_UIEscape;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @UIEscape.started += instance.OnUIEscape;
+            @UIEscape.performed += instance.OnUIEscape;
+            @UIEscape.canceled += instance.OnUIEscape;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @UIEscape.started -= instance.OnUIEscape;
+            @UIEscape.performed -= instance.OnUIEscape;
+            @UIEscape.canceled -= instance.OnUIEscape;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     public interface IPlayerActions
     {
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnMoveRight(InputAction.CallbackContext context);
         void OnMoveUp(InputAction.CallbackContext context);
         void OnMoveDown(InputAction.CallbackContext context);
+        void OnOnEscape(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnUIEscape(InputAction.CallbackContext context);
     }
 }

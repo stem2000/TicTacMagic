@@ -2,7 +2,7 @@ using UnityEngine.InputSystem;
 
 namespace TicTacMagic
 {
-    public class PlayerInputActionsWrapper : IInputProvider
+    public class PlayerInputActionsWrapper : IDirectionProvider
     {
         PlayerInputActions inputActions;
 

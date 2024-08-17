@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66f066ecaaa07a74e9d5b976c42f9a22
+guid: c7a7cc1f0b2ed2d428959ca7e49c8cd1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,11 +119,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire_skull_green_0
+      name: fire_skull_violet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e9766eb2812a3c4c92a8201a872b444
-      internalID: 2144623376
+      spriteID: 06f9390948246364390667f4137137f7
+      internalID: -1041929622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_1
+      name: fire_skull_violet_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87ada993e9cc9db41b1dc9026a5e9885
-      internalID: -549867691
+      spriteID: ce501bc58770c60499cd507d7a90e95e
+      internalID: -297904274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_2
+      name: fire_skull_violet_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1833bb1af4798f45a47d356d41615ea
-      internalID: -1180131203
+      spriteID: 36f92febc27036944bf04b26925caf8a
+      internalID: -475300234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_3
+      name: fire_skull_violet_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d56a9a343a8c384cb87dae29382e1a5
-      internalID: -155686796
+      spriteID: 5f18994a8b870384db2cad0d866a3277
+      internalID: 234487680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_4
+      name: fire_skull_violet_4
       rect:
         serializedVersion: 2
         x: 384
@@ -221,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d2af52e0e28aea4bbc4f6bc865e3092
-      internalID: 1372620
+      spriteID: c111d7d3565bebf4e8c5af430d336345
+      internalID: 942359407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_5
+      name: fire_skull_violet_5
       rect:
         serializedVersion: 2
         x: 480
@@ -242,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56908439d753f33479e2226923244ed3
-      internalID: -1680589107
+      spriteID: 11a65850aa9c1ef40a4744f53301fc82
+      internalID: -282890980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_6
+      name: fire_skull_violet_6
       rect:
         serializedVersion: 2
         x: 576
@@ -263,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa2e95e157cdf3346a128fa7061eb4d2
-      internalID: 1486038584
+      spriteID: cf12d4d7f89b0214f8e4bf9abf761384
+      internalID: -1089733709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_skull_green_7
+      name: fire_skull_violet_7
       rect:
         serializedVersion: 2
         x: 672
@@ -284,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e87b19fbf056034ba7d3340f1ba5bcb
-      internalID: -1657879183
+      spriteID: 1ed2b0a136713784fac9f2fc279b3cfc
+      internalID: -1933105609
       vertices: []
       indices: 
       edges: []
@@ -301,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire_skull_green_0: 2144623376
-      fire_skull_green_1: -549867691
-      fire_skull_green_2: -1180131203
-      fire_skull_green_3: -155686796
-      fire_skull_green_4: 1372620
-      fire_skull_green_5: -1680589107
-      fire_skull_green_6: 1486038584
-      fire_skull_green_7: -1657879183
+      fire_skull_violet_0: -1041929622
+      fire_skull_violet_1: -297904274
+      fire_skull_violet_2: -475300234
+      fire_skull_violet_3: 234487680
+      fire_skull_violet_4: 942359407
+      fire_skull_violet_5: -282890980
+      fire_skull_violet_6: -1089733709
+      fire_skull_violet_7: -1933105609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

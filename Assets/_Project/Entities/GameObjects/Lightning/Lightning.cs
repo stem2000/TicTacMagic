@@ -12,7 +12,7 @@ namespace TicTacMagic
         
         public void Strike()
         {
-            Timing.RunCoroutine(StrikeRoutine());
+            Timing.RunCoroutine(StrikeRoutine().CancelWith(gameObject));
         }
 
         private IEnumerator<float> StrikeRoutine()

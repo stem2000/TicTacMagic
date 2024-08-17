@@ -17,7 +17,7 @@ namespace TicTacMagic
                 return;
 
             readyToSpawn = false;
-            Timing.RunCoroutine(SpawnWithDelay());
+            Timing.RunCoroutine(SpawnWithDelay().CancelWith(gameObject));
         }
 
         private void SpawnLightning(Vector2 strikePosition)
@@ -46,7 +46,7 @@ namespace TicTacMagic
         {
             var marker = Instantiate(frame.MarkerPrefab, strikePosition, Quaternion.identity);
 
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, strikePosition)));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, strikePosition).CancelWith(marker.gameObject)));
         }
 
         private IEnumerator<float> SpawnWithDelay()
@@ -58,7 +58,7 @@ namespace TicTacMagic
 
             strikePosition = player.PlayerPosition;
 
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_SpawnMarker(strikePosition)));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(_SpawnMarker(strikePosition).CancelWith(gameObject)));
 
             SpawnLightning(strikePosition);
 
@@ -70,7 +70,7 @@ namespace TicTacMagic
             if(tileObject != null)
             {
                 tileObject.Activate();
-                Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration));
+                Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
             }
 
             Timing.RunCoroutine(_RunFrameEndDelay());

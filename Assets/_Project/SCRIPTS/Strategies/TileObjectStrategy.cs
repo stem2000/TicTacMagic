@@ -22,7 +22,7 @@ namespace TicTacMagic
             if(tile != null)
             {
                 readyToSpawn = false;
-                Timing.RunCoroutine(_Spawn(tile));
+                Timing.RunCoroutine(_Spawn(tile).CancelWith(gameObject));
             }
 
         }
@@ -64,7 +64,7 @@ namespace TicTacMagic
         private IEnumerator<float> _SpawnMarkerAndActivateObject(Tile tile, TileObject tileObject)
         {
             var marker = Instantiate(frame.MarkerPrefab);
-            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, tile.GetPosition())));
+            yield return Timing.WaitUntilDone(Timing.RunCoroutine(marker._StayOnSpot(frame.MarkerDuration, tile.GetPosition()).CancelWith(marker.gameObject)));
             tileObject.Activate();
             Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
         }
@@ -81,7 +81,7 @@ namespace TicTacMagic
             var tileObject = SpawnTileObject(tile);
 
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
-            Timing.RunCoroutine(_SpawnMarkerAndActivateObject(tile, tileObject));
+            Timing.RunCoroutine(_SpawnMarkerAndActivateObject(tile, tileObject).CancelWith(gameObject));
             Timing.RunCoroutine(_RunFrameEndDelay());
         }
     }

@@ -49,10 +49,6 @@ namespace TicTacMagic
             return result;
         }
 
-        public List<Tile> GetTiles() 
-        {
-            return tiles;
-        }
         private void Awake()
         {
             if (instance == null)
@@ -62,6 +58,11 @@ namespace TicTacMagic
             }
             else if (instance != this)
                 Destroy(gameObject);
+        }
+
+        public List<Tile> GetTiles() 
+        {
+            return tiles;
         }
 
         public void Initialize()

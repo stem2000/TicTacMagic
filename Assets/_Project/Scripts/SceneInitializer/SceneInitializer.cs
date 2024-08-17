@@ -7,8 +7,12 @@ namespace TicTacMagic
 {
     public class SceneInitializer : MonoBehaviour
     {
+        [SerializeField] private MusicPlayer musicPlayer;
         [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private WaveController waveController;
+        [SerializeField] private GameController gameController;
+        [SerializeField] private GameUIManager uiManager;
+
         [SerializeField] private HealthBar healthBar;
 
         [SerializeField] private float topBound;
@@ -20,22 +24,21 @@ namespace TicTacMagic
 
         private void Start()
         {
-            IPlayer player;
+            var player = SpawnPlayer();
 
             InitializeSingletons();
-            player = SpawnPlayer();
-            InitalizeUI(player);
-            InitializeEffectSpawners(player);
-            InitializeWaveController();
+            InitializeGameObjects(player);
+
+            SetupGameObjects((Player)player);
         }
 
         private IPlayer SpawnPlayer()
         {
-            IInputProvider inputProvider = new PlayerInputActionsWrapper();
-            return playerSpawner.SpawnPlayer(inputProvider);
+            IDirectionProvider directionProvider = new PlayerInputActionsWrapper();
+            return playerSpawner.SpawnPlayer(directionProvider);
         }
 
-        private void InitalizeUI(IPlayer player)
+        private void InitializeUI(IPlayer player)
         {
             healthBar.Initalize(player);
         }
@@ -62,6 +65,23 @@ namespace TicTacMagic
         {
             TilePromter.Instance.Initialize();
             BoundsPromter.Instance.Initialize(topBound, bottomBound, leftBound, rightBound);
+        }
+
+        private void InitializeGameObjects(IPlayer player)
+        {
+            InitializeEffectSpawners(player);
+            InitializeUI(player);
+            InitializeWaveController();
+        }
+
+        private void SetupGameObjects(Player player)
+        {
+            gameController.OnStopGame.AddListener(musicPlayer.Pause);
+            gameController.OnRunGame.AddListener(musicPlayer.Play); 
+            
+            player.AddListenerToPlayerDeath(gameController.HandlePlayerLose);
+            
+            uiManager.LinkToController(gameController);
         }
     }
 }

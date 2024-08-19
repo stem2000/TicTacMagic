@@ -16,11 +16,10 @@ namespace TicTacMagic
 
         private void BindTiles()
         {
-            foreach (var tile in tiles)
-            {
+            foreach (var tile in tiles)          
                 BindDefinedNeighbours(tile);
+            foreach (var tile in tiles)
                 BindAllNeighbours(tile);
-            }
         }
 
         private void BindDefinedNeighbours(Tile tile)

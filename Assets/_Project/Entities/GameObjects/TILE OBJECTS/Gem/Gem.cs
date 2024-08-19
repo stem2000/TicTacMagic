@@ -5,7 +5,7 @@ namespace TicTacMagic
 {
     public class Gem : TileObject
     {
-        public static UnityEvent OnCollect;
+        public static UnityEvent OnCollect = new UnityEvent();
 
         public override bool IsMoveBlocker()
         {

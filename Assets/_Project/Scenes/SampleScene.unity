@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7602022971cb2a4f8fd60bbe60f63b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemNumberToWin: 3
+  numberToWin: 3
   OnGemCollected:
     m_PersistentCalls:
       m_Calls: []
@@ -3067,7 +3067,7 @@ MonoBehaviour:
       initialDelay: 5
       frames:
       - StartDelay: 0
-        EndDelay: 10
+        EndDelay: 12
         TileObjectPrefab: {fileID: -3089161107060279010, guid: c72f7672453b1d6489ece908bf7f1839, type: 3}
         TileObjectDuration: 5
         MarkerPrefab: {fileID: 400233580934849122, guid: 9d6b81b4a6a3818458c4b678a813d313, type: 3}
@@ -3075,7 +3075,7 @@ MonoBehaviour:
         tileToSpawnOnName: Tile 1.4
         MarkerDuration: 1
       - StartDelay: 0
-        EndDelay: 10
+        EndDelay: 12
         TileObjectPrefab: {fileID: -3089161107060279010, guid: c72f7672453b1d6489ece908bf7f1839, type: 3}
         TileObjectDuration: 5
         MarkerPrefab: {fileID: 400233580934849122, guid: 9d6b81b4a6a3818458c4b678a813d313, type: 3}
@@ -4501,7 +4501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2108056834
 RectTransform:
   m_ObjectHideFlags: 0

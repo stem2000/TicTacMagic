@@ -7,10 +7,10 @@ namespace TicTacMagic
     {
         [SerializeField] PauseMenu pauseMenu;
         [SerializeField] LoseMenu loseMenu;
+        [SerializeField] WinMenu winMenu;
+        [SerializeField] WinMenu girlWinMenu;
 
         [HideInInspector] private UnityEvent OnMenuFold = new UnityEvent();
-        [HideInInspector] private UnityEvent OnRestartActivated = new UnityEvent();
-        [HideInInspector] private UnityEvent OnExitActivated = new UnityEvent();
 
         private PlayerInputActions inputActions;
         private IMenu currentMenu;
@@ -29,8 +29,12 @@ namespace TicTacMagic
         {
             gameController.OnPause.AddListener(OpenPauseMenu);
             gameController.OnLose.AddListener(OpenLoseMenu);
+            gameController.OnPlayerWin.AddListener(OpenWinMenu);
+            gameController.OnPlayerWinGirl.AddListener(OpenGirlWinMenu);
 
             loseMenu.RestartButton.onClick.AddListener(gameController.RestartGame);
+            winMenu.ContinueButton.onClick.AddListener(gameController.RestartGame);
+            girlWinMenu.ContinueButton.onClick.AddListener(gameController.RestartGame);
 
             OnMenuFold.AddListener(gameController.UnpauseGame);
         }
@@ -39,6 +43,8 @@ namespace TicTacMagic
         {
             pauseMenu.gameObject.SetActive(false);
             loseMenu.gameObject.SetActive(false);
+            winMenu.gameObject.SetActive(false);
+            girlWinMenu.gameObject.SetActive(false);
         }
 
         public void OpenPauseMenu()
@@ -62,9 +68,21 @@ namespace TicTacMagic
             currentMenu = loseMenu;
         }
 
+        public void OpenWinMenu()
+        {
+            winMenu.gameObject.SetActive(true);
+            currentMenu = winMenu;
+        }
+
+        public void OpenGirlWinMenu()
+        {
+            girlWinMenu.gameObject.SetActive(true);
+            currentMenu = girlWinMenu;
+        }
+
         private void CloseMenuOnEscape()
         {
-            if (currentMenu is PauseMenu)
+            if (currentMenu.Equals(pauseMenu))
                 ClosePauseMenu();
         }
     }

@@ -57,8 +57,8 @@ namespace TicTacMagic
         public override void InitializeFrames(List<TOSFrame> frames)
         {
             this.frames = frames;
-            frames.ForEach(frame => frame.FindTile());
-            frame = frames[0];
+            this.frames.ForEach(frame => frame.FindTile());
+            frame = this.frames[0];
         }
 
         private IEnumerator<float> _SpawnMarkerAndActivateObject(Tile tile, TileObject tileObject)

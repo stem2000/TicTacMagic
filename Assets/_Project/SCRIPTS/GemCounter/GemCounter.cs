@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +21,14 @@ namespace TicTacMagic
         {
             currentGemNumber += 1;
             OnGemCollected?.Invoke(currentGemNumber);
+        }
+
+        public bool DoesPlayerGetGirl()
+        {
+            if(currentGemNumber >= numberToWin) 
+                return true;
+            else 
+                return false;
         }
     }
 }

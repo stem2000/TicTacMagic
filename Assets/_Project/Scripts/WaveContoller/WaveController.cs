@@ -9,14 +9,14 @@ namespace TicTacMagic
     {
         [SerializeField] private List<Wave> waves;
         [SerializeField] private float workTime;
-        [SerializeField] private UnityEvent OnTimeIsUp;
+        public UnityEvent OnTimeIsUp;
         [SerializeField] private UnityEvent<float> OnTimeChanged;
 
         private List<EffectSpawner> effectSpawners;
         private Timer timer;
         private int currentWave;
         private bool CanStartWaves;
-   
+
 
         public void Initialize(List<EffectSpawner> effectSpawners)
         {
@@ -28,6 +28,7 @@ namespace TicTacMagic
             CanStartWaves = true;
 
             timer = new GameObject().AddComponent<Timer>();
+            timer.OnTimeIsUp.AddListener(InvokeOnTimeIsUp);
             timer.ResetTimer(workTime);
         }
 
@@ -46,6 +47,11 @@ namespace TicTacMagic
             {
                 spawner.SetCurrentStrategy(waveNumber);
             }
+        }
+
+        private void InvokeOnTimeIsUp() 
+        {
+            OnTimeIsUp?.Invoke();    
         }
 
         private void Update()

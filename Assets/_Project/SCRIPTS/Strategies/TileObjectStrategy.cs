@@ -59,6 +59,8 @@ namespace TicTacMagic
             this.frames = frames;
             this.frames.ForEach(frame => frame.FindTile());
             frame = this.frames[0];
+
+            Timing.KillCoroutines(tagEDR);
         }
 
         private IEnumerator<float> _SpawnMarkerAndActivateObject(Tile tile, TileObject tileObject)
@@ -82,7 +84,7 @@ namespace TicTacMagic
 
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
             Timing.RunCoroutine(_SpawnMarkerAndActivateObject(tile, tileObject).CancelWith(gameObject));
-            Timing.RunCoroutine(_RunFrameEndDelay());
+            Timing.RunCoroutine(_RunFrameEndDelay(), tagEDR);
         }
     }
 }

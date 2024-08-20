@@ -11,9 +11,16 @@ namespace TicTacMagic
         protected IPlayer player;        
         protected List<T> frames;
         protected T frame;
+        protected string tagEDR;
+
         public float InitialDelay;
         public bool ReadyToSpawn => readyToSpawn;
+        
 
+        protected virtual void Awake()
+        {
+            tagEDR = gameObject.GetInstanceID().ToString() + "EDR";
+        }
 
         public abstract void Spawn();
         public virtual void RunInitialDelay()
@@ -34,6 +41,8 @@ namespace TicTacMagic
                 this.frames = frames;
                 frame = this.frames[0];
             }
+
+            Timing.KillCoroutines(tagEDR);
         }
         protected virtual IEnumerator<float> _RunFrameStartDelay()
         {

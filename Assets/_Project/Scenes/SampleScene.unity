@@ -257,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &41313416
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
         MarkerDuration: 1
   - number: 1
     framesPack:
-      initialDelay: 0
+      initialDelay: 3
       frames:
       - StartDelay: 0
         EndDelay: 0
@@ -4322,7 +4322,7 @@ MonoBehaviour:
         MarkerDuration: 1
   - number: 1
     framesPack:
-      initialDelay: 0
+      initialDelay: 3
       frames:
       - StartDelay: 0
         EndDelay: 0

@@ -73,7 +73,7 @@ namespace TicTacMagic
                 Timing.RunCoroutine(tileObject._StartDestroing(frame.TileObjectDuration).CancelWith(tileObject.gameObject));
             }
 
-            Timing.RunCoroutine(_RunFrameEndDelay());
+            Timing.RunCoroutine(_RunFrameEndDelay(), FEDRutineTag);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace TicTacMagic
         {
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
             SpawnProjectile();
-            Timing.RunCoroutine(_RunFrameEndDelay());
+            Timing.RunCoroutine(_RunFrameEndDelay(), FEDRutineTag);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace TicTacMagic
 
         private bool CanSpawnOn(Tile tile)
         {
-            if (frame.TileToSpawnOn == tile && tile.IsFree())
+            if (frame.TileToSpawnOn == tile)
                 return true;
             else if(tile != player.CurrentTile && tile != player.PointedTile && tile.IsFree())
                 return true;
@@ -60,7 +60,7 @@ namespace TicTacMagic
             this.frames.ForEach(frame => frame.FindTile());
             frame = this.frames[0];
 
-            Timing.KillCoroutines(tagEDR);
+            Timing.KillCoroutines(FEDRutineTag);
         }
 
         private IEnumerator<float> _SpawnMarkerAndActivateObject(Tile tile, TileObject tileObject)
@@ -84,7 +84,7 @@ namespace TicTacMagic
 
             yield return Timing.WaitUntilDone(Timing.RunCoroutine(_RunFrameStartDelay()));
             Timing.RunCoroutine(_SpawnMarkerAndActivateObject(tile, tileObject).CancelWith(gameObject));
-            Timing.RunCoroutine(_RunFrameEndDelay(), tagEDR);
+            Timing.RunCoroutine(_RunFrameEndDelay(), FEDRutineTag);
         }
     }
 }

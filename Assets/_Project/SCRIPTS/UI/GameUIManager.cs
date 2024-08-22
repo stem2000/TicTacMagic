@@ -33,8 +33,15 @@ namespace TicTacMagic
             gameController.OnPlayerWinGirl.AddListener(OpenGirlWinMenu);
 
             loseMenu.RestartButton.onClick.AddListener(gameController.RestartGame);
-            winMenu.ContinueButton.onClick.AddListener(gameController.RestartGame);
-            girlWinMenu.ContinueButton.onClick.AddListener(gameController.RestartGame);
+            pauseMenu.RestartButton.onClick.AddListener(gameController.RestartGame);
+
+            winMenu.ContinueButton.onClick.AddListener(gameController.RunNextLevel);
+            girlWinMenu.ContinueButton.onClick.AddListener(gameController.RunNextLevel);
+
+            loseMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
+            winMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
+            girlWinMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
+            pauseMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
 
             OnMenuFold.AddListener(gameController.UnpauseGame);
         }

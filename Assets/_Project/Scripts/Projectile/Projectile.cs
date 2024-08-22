@@ -4,10 +4,13 @@ namespace TicTacMagic
 {
     public class Projectile : MonoBehaviour
     {
-        private Rigidbody2D rBody2D;
-        public Vector2 Direction { get; set;}
+        public Vector2 Direction { get{ return direction;} set{ direction = value; LookDirection(); } }
         public float Speed { get; set;}
         public float Damage { get; set; }
+
+        [SerializeField] private SpriteRenderer sprite;
+        private Rigidbody2D rBody2D;
+        private Vector2 direction;
 
         private void TryToDeactivate() 
         {
@@ -40,6 +43,12 @@ namespace TicTacMagic
                 damageable.GetDamage(Damage);
                 Deactivate();
             }
+        }
+
+        private void LookDirection()
+        {
+            if(Direction == Vector2.right)
+                sprite.flipX = true;
         }
 
     }

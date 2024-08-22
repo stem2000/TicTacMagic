@@ -119,3 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4629f8bb8f78e6a4994c20497bd6e8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5250076688212910601}
+  damageHighlightDuration: 0.3
+  damageHiglihghtColor: {r: 0.9137255, g: 0, b: 1, a: 1}

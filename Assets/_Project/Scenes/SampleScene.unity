@@ -4371,6 +4371,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498155619699501700, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2119692987, guid: 8a412b7c7d581bf4583bc22a00408f67, type: 3}
     - target: {fileID: 2131207842740254010, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4451,6 +4455,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2148810347477272432, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148810347477272432, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148810347477272432, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4441540848394640753, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
       propertyPath: gemCounter
       value: 
@@ -4461,7 +4477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289086445016062459, guid: c1b7b7306ff897043aacf6f3f7ce2072, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -52.999878
+      value: -53.000244
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4481,6 +4497,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 10299713}
     m_Modifications:
+    - target: {fileID: 2025305546571744123, guid: 65e8d526ccfe5fe448b9545ab620f4b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.499939
+      objectReference: {fileID: 0}
     - target: {fileID: 2606388447527139792, guid: 65e8d526ccfe5fe448b9545ab620f4b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

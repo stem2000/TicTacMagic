@@ -18,10 +18,10 @@ namespace TicTacMagic
         private void Awake()
         {
             inputActions = new PlayerInputActions();
-
             inputActions.UI.UIEscape.performed += ctx => CloseMenuOnEscape();
 
             pauseMenu.ResumeButton.onClick.AddListener(ClosePauseMenu);
+            pauseMenu.RestartButton.onClick.AddListener(inputActions.UI.Disable);
             DeactivateAllMenu();
         }
 

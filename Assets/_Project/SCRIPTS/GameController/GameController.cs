@@ -80,7 +80,7 @@ namespace TicTacMagic
 
         public void ExitGame()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
 
         private void StopGame()

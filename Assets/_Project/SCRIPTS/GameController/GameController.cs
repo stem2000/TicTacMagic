@@ -10,11 +10,12 @@ namespace TicTacMagic
         public UnityEvent OnUnpause;
         public UnityEvent OnStopGame;
         public UnityEvent OnRunGame;
+        public UnityEvent OnPlayerWinGirl;
         public UnityEvent OnPlayerWin;
         public UnityEvent OnLose;
 
         private PlayerInputActions inputActions;
-        private Player player;
+        private GemCounter gemCounter;
 
         private void Awake()
         {
@@ -22,6 +23,11 @@ namespace TicTacMagic
 
             inputActions.Player.OnEscape.Enable();
             inputActions.Player.OnEscape.performed += ctx => PauseGame();
+        }
+
+        public void SetGemCounter(GemCounter gemCounter)
+        {
+            this.gemCounter = gemCounter;
         }
 
         public void PauseGame()
@@ -38,6 +44,13 @@ namespace TicTacMagic
 
         public void HandlePlayerWin()
         {
+            StopGame();
+            if (gemCounter.DoesPlayerGetGirl())
+            {
+                OnPlayerWinGirl?.Invoke();
+                return;
+            }
+
             OnPlayerWin?.Invoke();
         }
 

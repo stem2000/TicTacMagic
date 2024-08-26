@@ -11,9 +11,16 @@ namespace TicTacMagic
         protected IPlayer player;        
         protected List<T> frames;
         protected T frame;
+        protected string FEDRutineTag;
+
         public float InitialDelay;
         public bool ReadyToSpawn => readyToSpawn;
+        
 
+        protected virtual void Awake()
+        {
+            FEDRutineTag = gameObject.GetInstanceID().ToString() + "EDR";
+        }
 
         public abstract void Spawn();
         public virtual void RunInitialDelay()
@@ -32,8 +39,10 @@ namespace TicTacMagic
             if(frames != null && frames.Count > 0)
             {
                 this.frames = frames;
-                frame = frames[0];
+                frame = this.frames[0];
             }
+
+            Timing.KillCoroutines(FEDRutineTag);
         }
         protected virtual IEnumerator<float> _RunFrameStartDelay()
         {

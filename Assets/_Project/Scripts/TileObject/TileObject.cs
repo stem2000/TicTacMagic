@@ -20,5 +20,10 @@ namespace TicTacMagic
             yield return Timing.WaitForSeconds(lifetime);
             Destroy(gameObject);
         }
+
+        public virtual void DestroyImmediately()
+        {
+            Destroy(gameObject);
+        }
     }
 }

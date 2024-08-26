@@ -6,7 +6,7 @@ namespace TicTacMagic
     public class Timer : MonoBehaviour
     {
         [SerializeField] private float time;
-        private UnityEvent OnTimeIsUp;
+        public UnityEvent OnTimeIsUp = new UnityEvent();
         private bool IsStopped = true;
 
         private void Update()

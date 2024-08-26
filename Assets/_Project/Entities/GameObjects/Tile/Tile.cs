@@ -62,6 +62,9 @@ namespace TicTacMagic
 
         public void MakeUnfreeWith(TileObject @object)
         {
+            if(tileObject != null)
+                tileObject.DestroyImmediately();
+
             tileObject = @object;
         }
 

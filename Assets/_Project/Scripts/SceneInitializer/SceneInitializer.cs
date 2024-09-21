@@ -10,9 +10,6 @@ namespace TicTacMagic
         [SerializeField] private MusicPlayer musicPlayer;
         [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private WaveController waveController;
-        [SerializeField] private GameController gameController;
-        [SerializeField] private GameUIManager uiManager;
-        [SerializeField] private GemCounter gemCounter;
 
         [SerializeField] private HealthBar healthBar;
 
@@ -29,8 +26,6 @@ namespace TicTacMagic
 
             InitializeSingletons();
             InitializeGameObjects(player);
-
-            SetupGameObjects((Player)player);
         }
 
         private IPlayer SpawnPlayer()
@@ -73,20 +68,6 @@ namespace TicTacMagic
             InitializeEffectSpawners(player);
             InitializeUI(player);
             InitializeWaveController();
-        }
-
-        private void SetupGameObjects(Player player)
-        {
-            gameController.SetGemCounter(gemCounter);
-
-            gameController.OnStopGame.AddListener(musicPlayer.Pause);
-            gameController.OnRunGame.AddListener(musicPlayer.Play); 
-            
-            player.AddListenerToPlayerDeath(gameController.HandlePlayerLose);
-
-            waveController.OnTimeIsUp.AddListener(gameController.HandlePlayerWin);
-            
-            uiManager.LinkToController(gameController);
         }
     }
 }

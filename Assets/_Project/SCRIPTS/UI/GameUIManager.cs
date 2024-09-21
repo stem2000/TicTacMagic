@@ -25,27 +25,6 @@ namespace TicTacMagic
             DeactivateAllMenu();
         }
 
-        public void LinkToController(GameController gameController)
-        {
-            gameController.OnPause.AddListener(OpenPauseMenu);
-            gameController.OnLose.AddListener(OpenLoseMenu);
-            gameController.OnPlayerWin.AddListener(OpenWinMenu);
-            gameController.OnPlayerWinGirl.AddListener(OpenGirlWinMenu);
-
-            loseMenu.RestartButton.onClick.AddListener(gameController.RestartGame);
-            pauseMenu.RestartButton.onClick.AddListener(gameController.RestartGame);
-
-            winMenu.ContinueButton.onClick.AddListener(gameController.RunNextLevel);
-            girlWinMenu.ContinueButton.onClick.AddListener(gameController.RunNextLevel);
-
-            loseMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
-            winMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
-            girlWinMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
-            pauseMenu.ExitButton.onClick.AddListener(gameController.ExitGame);
-
-            OnMenuFold.AddListener(gameController.UnpauseGame);
-        }
-
         private void DeactivateAllMenu()
         {
             pauseMenu.gameObject.SetActive(false);

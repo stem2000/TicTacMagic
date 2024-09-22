@@ -6,53 +6,52 @@ namespace TicTacMagic
 {
     public class PlayerMovement
     {
-        public Tile CurrentTile{ get => currentTile; }
-        public Tile PointedTile { get => pointedTile; }
+        public Tile CurrentTile{ get => _currentTile; }
+        public Tile PointedTile { get => _pointedTile; }
 
-        private Tile pointedTile;
-        private Tile currentTile;
-        private Rigidbody2D rBody2D;
-        private IPlayerStatsProvider playerStats;
+        private Tile _pointedTile;
+        private Tile _currentTile;
+        private Rigidbody2D _rBody;
+        private PlayerModel _playerModel;
 
-        public PlayerMovement(Tile startingTile, Rigidbody2D rBody2D, IPlayerStatsProvider playerStats)
+        public PlayerMovement(Tile startingTile, Rigidbody2D rBody2D, PlayerModel playerModel)
         {
-            currentTile = pointedTile = startingTile;
-            this.rBody2D = rBody2D;
-            this.playerStats = playerStats;
+            _currentTile = _pointedTile = startingTile;
+            this._rBody = rBody2D;
+            this._playerModel = playerModel;
         }
 
         public void Move(MoveDirection direction)
         {
-            Tile tile = null;
-
             UpdateCurrent();
 
-            tile = pointedTile.GetNeighborByDirection(direction); 
-            tile = currentTile.IsMyNeighbor(tile) || tile == currentTile ? tile : null;
+            Tile tile = null;
+            tile = _pointedTile.GetNeighborByDirection(direction); 
+            tile = _currentTile.IsMyNeighbor(tile) || tile == _currentTile ? tile : null;
             
 
             if(tile != null && !tile.IsMoveBlocked())
             {
-                pointedTile = tile;
+                _pointedTile = tile;
                 Timing.KillCoroutines("MoveTo");
-                Timing.RunCoroutine(MoveRoutine(tile, playerStats.Speed).CancelWith(rBody2D.gameObject), Segment.FixedUpdate, "MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, _playerModel.Speed).CancelWith(_rBody.gameObject), Segment.FixedUpdate, "MoveTo");
             }
         }
 
         private IEnumerator<float> MoveRoutine(Tile tile, float speed)
         {
-            while (rBody2D.position != tile.GetPosition())
+            while (_rBody.position != tile.GetPosition())
             {
-                Vector2 newPosition = Vector2.MoveTowards(rBody2D.position, tile.GetPosition(), speed * Time.fixedDeltaTime);
-                rBody2D.MovePosition(newPosition);
+                Vector2 newPosition = Vector2.MoveTowards(_rBody.position, tile.GetPosition(), speed * Time.fixedDeltaTime);
+                _rBody.MovePosition(newPosition);
                 yield return Timing.WaitForOneFrame;
             }
         }
 
         private void UpdateCurrent()
         {
-            if(TilePromter.Instance.GetClosestTo(rBody2D.position) == pointedTile)
-                currentTile = pointedTile;
+            if(TilePromter.Instance.GetTileClosestTo(_rBody.position) == _pointedTile)
+                _currentTile = _pointedTile;
         }
     }
 }

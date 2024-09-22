@@ -82,17 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975d16d0374a26a44a732c6e8474a21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlayerDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlayerDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlayerHealed:
-    m_PersistentCalls:
-      m_Calls: []
-  playerStats: {fileID: 11400000, guid: e09f7ab78e614794d9facef6d0d727ff, type: 2}
-  playerView: {fileID: 931373333835114531}
+  _playerModel: {fileID: 11400000, guid: e09f7ab78e614794d9facef6d0d727ff, type: 2}
+  _playerView: {fileID: 2315531347546619740, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
 --- !u!50 &7186799234853021246
 Rigidbody2D:
   serializedVersion: 4
@@ -177,17 +168,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
---- !u!114 &931373333835114531 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2315531347546619740, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
-  m_PrefabInstance: {fileID: 3228672338632333183}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4629f8bb8f78e6a4994c20497bd6e8ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3222225770406611980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34103719117020019, guid: 16b7228872fa8d94ab82218732b450df, type: 3}

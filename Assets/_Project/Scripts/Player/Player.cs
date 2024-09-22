@@ -1,21 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace TicTacMagic
 {
-    public class Player : MonoBehaviour, IPlayer, IDamageable, IHealable
-    {        
+    public class Player : MonoBehaviour, IDamageable, IHealable
+    {
+        public event Action OnDead;
+        public event Action<float> OnDamaged;
+        public event Action<float> OnHealed;
+
+        [SerializeField] 
+        private PlayerModel _playerModel;
+        [SerializeField] 
+        private PlayerView _playerView;
+
         private Rigidbody2D rBody2D;
         private PlayerMovement playerMovement;        
         private IDirectionProvider inputProvider;
-
-        [SerializeField] private UnityEvent onPlayerDeath;
-        [SerializeField] private UnityEvent<float> onPlayerDamaged;
-        [SerializeField] private UnityEvent<float> onPlayerHealed;
-        [SerializeField] private PlayerStats playerStats;
-        [SerializeField] private PlayerView playerView;
-
-        public IPlayerStatsProvider PlayerStatsProvider => playerStats;
 
         public Vector2 PlayerPosition => rBody2D.position;
 
@@ -25,52 +27,33 @@ namespace TicTacMagic
         public void Initialize(Tile startingTile, IDirectionProvider inputProvider)
         {
             rBody2D = GetComponent<Rigidbody2D>();
-            playerMovement = new PlayerMovement(startingTile, rBody2D, playerStats);
-            onPlayerDeath = new UnityEvent();
-            onPlayerDamaged = new UnityEvent<float>();
+            playerMovement = new PlayerMovement(startingTile, rBody2D, _playerModel);
             this.inputProvider = inputProvider;
-            playerStats = Instantiate(playerStats);
-            playerView.Initialize(this);
+
+            _playerModel = Instantiate(_playerModel);
         }
 
         public void GetDamage(float damage)
         {
-            playerStats.hp -= damage;
-            onPlayerDamaged?.Invoke(playerStats.hp);
+            _playerModel.Hp -= damage;
+            OnDamaged?.Invoke(_playerModel.Hp);
 
-            if (playerStats.hp <= 0)
+            if (_playerModel.Hp <= 0)
                 SelfDestroy();
         }
 
         public void GetHp(float hp)
         {
-            playerStats.hp += hp;
-            if(playerStats.hp > 100)
-                playerStats.hp = 100;
+            _playerModel.Hp += hp;
+            if(_playerModel.Hp > 100)
+                _playerModel.Hp = 100;
 
-            onPlayerHealed?.Invoke(playerStats.hp);
-        }
-
-        public void AddListenerToPlayerDamaged(UnityAction<float> listener)
-        {
-            onPlayerDamaged.AddListener(listener);
-        }
-
-        public void AddListenerToPlayerHealed(UnityAction<float> listener)
-        {
-            onPlayerHealed.AddListener(listener);
-        }
-
-        public void AddListenerToPlayerDeath(UnityAction listener)
-        {
-            onPlayerDeath.AddListener(listener);
+            OnHealed?.Invoke(_playerModel.Hp);
         }
 
         private void SelfDestroy()
         {
-            onPlayerDeath?.Invoke();
-            onPlayerDamaged.RemoveAllListeners();
-            onPlayerDeath.RemoveAllListeners();
+            OnDead?.Invoke();
         }
 
         public void Update()
@@ -82,10 +65,10 @@ namespace TicTacMagic
 
         public void OnDrawGizmos()
         {
-            //Gizmos.color = Color.green;
-            //Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
-            //Gizmos.color = Color.red;
-            //Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
         }
     }
 }

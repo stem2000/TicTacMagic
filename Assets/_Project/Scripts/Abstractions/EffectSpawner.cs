@@ -4,6 +4,6 @@ namespace TicTacMagic
 {
     public abstract class EffectSpawner : MonoBehaviour
     {
-        public abstract void SetCurrentStrategy(int waveNumber);
+        public abstract void Spawn();
     }
 }

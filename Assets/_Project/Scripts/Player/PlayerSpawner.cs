@@ -1,25 +1,32 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace TicTacMagic
 {
     public class PlayerSpawner : MonoBehaviour
     {
         [SerializeField] 
-        Player playerPrefab;        
+        private Player playerPrefab;
 
-        private void Start() {
-            SpawnPlayer(new PlayerInputActionsWrapper());
+        private TileField tileField;
+
+        [Inject]
+        public void Construct(TileField tileField) {
+            this.tileField = tileField;
         }
 
-        public void SpawnPlayer(IDirectionProvider inputProvider)
-        {
-            var tiles = FindObjectsByType<Tile>(FindObjectsSortMode.None).ToList();
-            var tileNumber = Random.Range(0, tiles.Count - 1);
-            var player = Instantiate(playerPrefab, tiles[tileNumber].GetPosition(), Quaternion.identity);
+        private void Start() {
+            SpawnPlayer(new InputActionsWrapper());
+        }
 
-            player.Initialize(tiles[tileNumber], inputProvider);
+        public void SpawnPlayer(IInputProvider inputProvider)
+        {
+            Player.PlayerBuilder playerBuilder = new Player.PlayerBuilder();
+
+            playerBuilder
+                .InsantiatePlayer(playerPrefab, tileField.GetRandomTile())
+                .SetTileField(tileField)
+                .SetDefaultInputProvider();
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine.InputSystem;
 
 namespace TicTacMagic
 {
-    public class PlayerInputActionsWrapper : IDirectionProvider
+    public class InputActionsWrapper : IInputProvider
     {
         PlayerInputActions inputActions;
 
@@ -14,7 +14,7 @@ namespace TicTacMagic
         MoveDirection currentDirection = MoveDirection.None;
 
 
-        public PlayerInputActionsWrapper()
+        public InputActionsWrapper()
         {
             inputActions = new PlayerInputActions();
             inputActions.Player.Enable();

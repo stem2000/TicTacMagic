@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 namespace TicTacMagic
 {
@@ -11,64 +12,81 @@ namespace TicTacMagic
         public event Action<float> OnHealed;
 
         [SerializeField] 
-        private PlayerModel _playerModel;
+        private PlayerModel playerModel;
         [SerializeField] 
-        private PlayerView _playerView;
+        private PlayerView playerView;
 
-        private Rigidbody2D rBody2D;
-        private PlayerMovement playerMovement;        
-        private IDirectionProvider inputProvider;
+        private Movement movement;        
+        private IInputProvider inputProvider;
 
-        public Vector2 PlayerPosition => rBody2D.position;
-
-        public Tile PointedTile { get => playerMovement.PointedTile; }
-        public Tile CurrentTile { get => playerMovement.CurrentTile; }
-
-        public void Initialize(Tile startingTile, IDirectionProvider inputProvider)
-        {
-            rBody2D = GetComponent<Rigidbody2D>();
-            playerMovement = new PlayerMovement(startingTile, rBody2D, _playerModel);
-            this.inputProvider = inputProvider;
-
-            _playerModel = Instantiate(_playerModel);
-        }
+        public Tile PointedTile { get => movement.PointedTile; }
+        public Tile CurrentTile { get => movement.CurrentTile; }
 
         public void GetDamage(float damage)
         {
-            _playerModel.Hp -= damage;
-            OnDamaged?.Invoke(_playerModel.Hp);
+            this.playerModel.Hp -= damage;
+            this.OnDamaged?.Invoke(playerModel.Hp);
 
-            if (_playerModel.Hp <= 0)
+            if (this.playerModel.Hp <= 0)
                 SelfDestroy();
         }
 
         public void GetHp(float hp)
         {
-            _playerModel.Hp += hp;
-            if(_playerModel.Hp > 100)
-                _playerModel.Hp = 100;
+            this.playerModel.Hp += hp;
+            if(this.playerModel.Hp > 100)
+                this.playerModel.Hp = 100;
 
-            OnHealed?.Invoke(_playerModel.Hp);
+            this.OnHealed?.Invoke(this.playerModel.Hp);
         }
 
         private void SelfDestroy()
         {
-            OnDead?.Invoke();
+            this.OnDead?.Invoke();
         }
 
-        public void Update()
-        {
-            var direction = inputProvider.GetMoveDirection();
+        private void Awake() {
+            this.movement = new Movement();
+        }
 
-            playerMovement.Move(direction);
+        private void Update()
+        {
+            var direction = this.inputProvider.GetMoveDirection();
+
+            this.movement.Move(direction);
         }
 
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(playerMovement.CurrentTile.transform.position, 0.5f);
+            Gizmos.DrawSphere(movement.CurrentTile.transform.position, 0.5f);
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(playerMovement.PointedTile.transform.position, 0.5f);
+            Gizmos.DrawSphere(movement.PointedTile.transform.position, 0.5f);
+        }
+
+        public class PlayerBuilder {
+            Player player;
+
+            public PlayerBuilder InsantiatePlayer(Player player, Tile tile) {
+                this.player = Instantiate(player, tile.transform.position, Quaternion.identity);
+                this.player.movement.CurrentTile = this.player.movement.PointedTile = tile;
+                this.player.movement.Rbody = this.player.GetComponent<Rigidbody2D>();
+                this.player.movement.Model = this.player.playerModel;
+                return this;
+            }
+
+            public PlayerBuilder SetTileField(TileField tileField) {
+                this.player.movement.Field = tileField;
+
+                return this;
+            }
+
+            public PlayerBuilder SetDefaultInputProvider() {
+                InputActionsWrapper actionsWrapper = new InputActionsWrapper();
+
+                this.player.inputProvider = actionsWrapper;
+                return this;
+            }
         }
     }
 }

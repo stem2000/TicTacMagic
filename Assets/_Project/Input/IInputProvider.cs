@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace TicTacMagic
 {
-    public interface IDirectionProvider
+    public interface IInputProvider
     {
         public MoveDirection GetMoveDirection();
     }

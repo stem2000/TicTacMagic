@@ -8,7 +8,5 @@ namespace TicTacMagic
     public class PlayerView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private float damageHighlightDuration = 0.3f;
-        [SerializeField] private Color damageHiglihghtColor = Color.red;
     }
 }

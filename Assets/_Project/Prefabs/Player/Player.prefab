@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975d16d0374a26a44a732c6e8474a21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerModel: {fileID: 11400000, guid: e09f7ab78e614794d9facef6d0d727ff, type: 2}
-  _playerView: {fileID: 2315531347546619740, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
+  playerModel: {fileID: 11400000, guid: e09f7ab78e614794d9facef6d0d727ff, type: 2}
+  playerView: {fileID: 2315531347546619740, guid: 16b7228872fa8d94ab82218732b450df, type: 3}
 --- !u!50 &7186799234853021246
 Rigidbody2D:
   serializedVersion: 4

@@ -1,15 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace TicTacMagic
 {
-    public class ProjectileSpawner : EffectSpawner
-    {
-        [SerializeField] private Transform spawnPoint;
-
+    public class OnPlayerEffectSpawner : EffectSpawner {
         public override void Spawn() {
-           
+            
         }
     }
 }

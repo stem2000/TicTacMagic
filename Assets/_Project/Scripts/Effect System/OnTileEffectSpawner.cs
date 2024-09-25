@@ -2,36 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace TicTacMagic
 {
-    public class TileObjectSpawner : EffectSpawner
+    public class OnTileEffectSpawner : EffectSpawner
     {
-        private bool _readyToSpawn;
-        private Player _player;
+        private bool isReady;
+        private Player player;
+        private TileField tileField;
+
+
+        [Inject]
+        public void Construct(TileField tileField) {
+            this.tileField = tileField;
+        }
 
         public override void Spawn() {
             var tile = ChoiseTileToSpawn();
 
             if (tile != null) {
-                _readyToSpawn = false;
+                isReady = false;
             }
 
         }
+
         private Tile ChoiseTileToSpawn() {
             return GetRandomTile();
         }
 
+
         private bool CanSpawnOn(Tile tile) {
-            if (tile != _player.CurrentTile && tile != _player.PointedTile && tile.IsFree())
+            if (tile != player.CurrentTile && tile != player.PointedTile && tile.IsFree())
                 return true;
 
             return false;
         }
 
+
         private Tile GetRandomTile() {
             var rng = new System.Random();
-            var tiles = TilePromter.Instance.GetTiles().OrderBy(tile => rng.Next()).ToList();
+            var tiles = tileField.GetTiles().OrderBy(tile => rng.Next()).ToList();
 
             foreach (var tile in tiles)
                 if (CanSpawnOn(tile))

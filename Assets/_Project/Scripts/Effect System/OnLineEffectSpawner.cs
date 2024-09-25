@@ -1,4 +1,5 @@
 using MEC;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,39 +7,49 @@ namespace TicTacMagic
 {
     public class OnLineEffectSpawner : EffectSpawner
     {
+        public event Action OnSpawn;
+
         [SerializeField] 
-        private Transform _spawnpoint;
+        private Transform spawnpoint;
         [SerializeField]
-        private Vector2 _direction;
+        private Vector2 direction;
         [SerializeField]
-        private List<LineEffect> _effects;        
+        private List<LineEffect> effects;        
         [SerializeField]
         public float MinCooldown = 0.5f;
         [SerializeField]
         public float MaxCooldown = 2.0f;
 
-        private LineEffect _lastSpawned;
-        private bool _isReady = true;
+        private OnLineEffectSpawnerView view;
+        private LineEffect lastSpawned;
+        private bool isReady = true;
+
+        private void Start() {
+            this.view = GetComponentInChildren<OnLineEffectSpawnerView>();
+
+            view.OnSpawnTiming += Spawn;
+        }
 
         public override void Spawn() {
+
             Timing.RunCoroutine(_Spawn().CancelWith(this.gameObject));
         }
 
-        private IEnumerator<float> _Spawn() {
-            _isReady = false;
+        public IEnumerator<float> _Spawn() {
+            this.isReady = false;
 
-            var effect = Instantiate(_effects[0], _spawnpoint);
-            var cooldown = Random.Range(MinCooldown, MaxCooldown);
+            var effect = Instantiate(this.effects[0], this.spawnpoint);
+            var cooldown = UnityEngine.Random.Range(this.MinCooldown, this.MaxCooldown);
 
-            effect.Run(_direction);
+            effect.RunOnLine(direction);
             yield return Timing.WaitForSeconds(cooldown);
 
-            _isReady = true;
+            this.isReady = true;
         }
 
         private void Update() {
-            if( _isReady ) {
-                Spawn();
+            if( isReady ) {
+                view.Blink();
             }
         }
 

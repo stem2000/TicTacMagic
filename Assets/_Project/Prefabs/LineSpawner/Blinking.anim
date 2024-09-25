@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spawner Waving
+  m_Name: Blinking
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,11 +24,11 @@ AnimationClip:
       value: {fileID: -1702556879, guid: 95919fb8906de16448751370912f094a, type: 3}
     - time: 0.16666667
       value: {fileID: 893109833, guid: 95919fb8906de16448751370912f094a, type: 3}
-    - time: 0.5
+    - time: 0.41666666
       value: {fileID: -1163941173, guid: 95919fb8906de16448751370912f094a, type: 3}
     - time: 0.6666667
       value: {fileID: 1571630132, guid: 95919fb8906de16448751370912f094a, type: 3}
-    - time: 0.9166667
+    - time: 1
       value: {fileID: 41171419, guid: 95919fb8906de16448751370912f094a, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.0833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -81,4 +81,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5833333
+    functionName: InvokeOnSpawnTiming
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

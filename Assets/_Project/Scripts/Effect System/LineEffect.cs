@@ -6,19 +6,19 @@ namespace TicTacMagic
 {
     public abstract class LineEffect : MonoBehaviour
     {
-        public float SpawnWeight => _spawnWeight;
+        public float SpawnWeight => spawnWeight;
 
         [SerializeField]
-        protected float _destroyTime = 2f;
+        protected float destroyTime = 2f;
         [SerializeField] [Range(0f, 1f)] 
-        protected float _spawnWeight = 0.6f;
+        protected float spawnWeight = 0.6f;
 
-        protected Vector2 _direction;
+        protected Vector2 direction;
 
-        public abstract void Run(Vector2 direction);
+        public abstract void RunOnLine(Vector2 direction);
         protected IEnumerator<float> _DelayedDestroy() {
-            yield return Timing.WaitForSeconds(_destroyTime);
-            Destroy(gameObject);
+            yield return Timing.WaitForSeconds(this.destroyTime);
+            Destroy(this.gameObject);
         }
     }
 }

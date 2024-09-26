@@ -31,9 +31,8 @@ namespace TicTacMagic
         }
 
         public override void SpawnWithCooldown() {
-            var effect = pool.Get(SelectLineEffectByWeight());
+            var effect = Instantiate(SelectLineEffectByWeight(), spawnpoint);
 
-            effect.Initialize(spawnpoint.position);
             effect.RunEffect(direction);
             Timing.RunCoroutine(_Cooldown());
         }

@@ -19,13 +19,12 @@ namespace TicTacMagic
 
 
         public abstract void RunEffect(Vector2 direction);
-        protected abstract void DisableEffect();
         public void Initialize(Vector3 spawnpoint) {
             transform.position = spawnpoint;
         }
         protected IEnumerator<float> _DelayedDestroy() {
             yield return Timing.WaitForSeconds(this.destroyTime);
-            DisableEffect();
+            Destroy(this.gameObject);
         }
     }
 }

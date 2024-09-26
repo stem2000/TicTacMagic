@@ -27,7 +27,7 @@ namespace TicTacMagic
             Timing.RunCoroutine(_DelayedDestroy().CancelWith(this.gameObject));
         }
 
-        protected override void DisableEffect() {
+        protected void DisableEffect() {
             this.myCollider.enabled = false;
             this.speed = 1;
             this.view.Explode();

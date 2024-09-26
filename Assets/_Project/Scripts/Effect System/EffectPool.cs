@@ -14,7 +14,7 @@ namespace TicTacMagic
         public void Initialize(List<T> effects) {
             foreach (var effect in effects) {
                 for(int i = 0; i < effects.Count; i++) { 
-                    
+                    effects.Add(Create(effect));
                 }
             }
         }

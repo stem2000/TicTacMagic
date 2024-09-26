@@ -31,7 +31,7 @@ namespace TicTacMagic
 
 
         private void ae_DisableProjectile() {
-            projectile.gameObject.SetActive(false);
+            Destroy(projectile.gameObject);
         }
     }
 }

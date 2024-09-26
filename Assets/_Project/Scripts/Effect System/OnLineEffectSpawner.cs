@@ -1,5 +1,6 @@
 using MEC;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,42 +15,46 @@ namespace TicTacMagic
         [SerializeField]
         private Vector2 direction;
         [SerializeField]
-        private List<LineEffect> effects;        
+        private List<OnLineEffect> effects;        
         [SerializeField]
         public float MinCooldown = 0.5f;
         [SerializeField]
         public float MaxCooldown = 2.0f;
 
         private OnLineEffectSpawnerView view;
-        private LineEffect lastSpawned;
+        private EffectPool<OnLineEffect> pool;
         private bool isReady = true;
 
         private void Start() {
             this.view = GetComponentInChildren<OnLineEffectSpawnerView>();
-
-            view.OnSpawnTiming += Spawn;
+            this.pool = new EffectPool<OnLineEffect>();
         }
 
-        public override void Spawn() {
+        public override void SpawnWithCooldown() {
+            var effect = pool.Get(SelectLineEffectByWeight());
 
-            Timing.RunCoroutine(_Spawn().CancelWith(this.gameObject));
+            effect.Initialize(spawnpoint.position);
+            effect.RunEffect(direction);
+            Timing.RunCoroutine(_Cooldown());
         }
 
-        public IEnumerator<float> _Spawn() {
-            this.isReady = false;
-
-            var effect = Instantiate(this.effects[0], this.spawnpoint);
+        private IEnumerator<float> _Cooldown() {
             var cooldown = UnityEngine.Random.Range(this.MinCooldown, this.MaxCooldown);
 
-            effect.RunOnLine(direction);
             yield return Timing.WaitForSeconds(cooldown);
-
             this.isReady = true;
+        }
+
+        private OnLineEffect SelectLineEffectByWeight() {
+            var effect = SelectEffectByWeight(effects.Cast<IEffect>().ToList());
+
+            return (OnLineEffect)effect;
         }
 
         private void Update() {
             if( isReady ) {
-                view.Blink();
+                this.isReady = false;
+                this.view.Blink();
             }
         }
 

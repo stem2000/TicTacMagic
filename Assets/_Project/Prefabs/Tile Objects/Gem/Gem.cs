@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace TicTacMagic
 {
-    public class Gem : TileObject
+    public class Gem : TileEffect
     {
         public static UnityEvent OnCollect = new UnityEvent();
 

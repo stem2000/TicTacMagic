@@ -7,25 +7,31 @@ namespace TicTacMagic
     public class ProjectileView : MonoBehaviour
     {       
         private SpriteRenderer sRenderer;
+        private Projectile projectile;
+        private ProjectileAnimator animator;
 
 
         private void Awake() {
             this.sRenderer = GetComponent<SpriteRenderer>();
+            this.projectile = GetComponentInParent<Projectile>();
+            this.animator = new ProjectileAnimator(GetComponent<Animator>());
         }
 
 
         public void LookDirection(Vector2 direction) {
             if (direction == Vector2.right) {
-                sRenderer.flipX = true;
+                this.sRenderer.flipX = true;
             }
-            if(direction == Vector2.up) {
-                var angle = new Vector3(0, 0, -90);
-                transform.Rotate(angle);
-            }
-            if(direction == Vector2.down) {
-                var angle = new Vector3(0, 0, 90);
-                transform.Rotate(angle);
-            }
+        }
+
+
+        public void Explode() {
+            this.animator.Explode();
+        }
+
+
+        private void ae_DisableProjectile() {
+            projectile.gameObject.SetActive(false);
         }
     }
 }

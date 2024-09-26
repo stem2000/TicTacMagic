@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 
-namespace TicTacMagic
-{
+namespace TicTacMagic {
     public class Player : MonoBehaviour, IDamageable, IHealable
     {
-        public event Action OnDead;
+        public event Action OnDeath;
         public event Action<float> OnDamaged;
         public event Action<float> OnHealed;
 
         [SerializeField] 
-        private PlayerModel playerModel;
+        private PlayerData playerData;
+
         [SerializeField] 
         private PlayerView playerView;
 
@@ -22,27 +22,28 @@ namespace TicTacMagic
         public Tile PointedTile { get => movement.PointedTile; }
         public Tile CurrentTile { get => movement.CurrentTile; }
 
+
         public void GetDamage(float damage)
         {
-            this.playerModel.Hp -= damage;
-            this.OnDamaged?.Invoke(playerModel.Hp);
+            this.playerData.Hp -= damage;
+            this.OnDamaged?.Invoke(playerData.Hp);
 
-            if (this.playerModel.Hp <= 0)
+            if (this.playerData.Hp <= 0)
                 SelfDestroy();
         }
 
         public void GetHp(float hp)
         {
-            this.playerModel.Hp += hp;
-            if(this.playerModel.Hp > 100)
-                this.playerModel.Hp = 100;
+            this.playerData.Hp += hp;
+            if(this.playerData.Hp > 100)
+                this.playerData.Hp = 100;
 
-            this.OnHealed?.Invoke(this.playerModel.Hp);
+            this.OnHealed?.Invoke(this.playerData.Hp);
         }
 
         private void SelfDestroy()
         {
-            this.OnDead?.Invoke();
+            this.OnDeath?.Invoke();
         }
 
         private void Awake() {
@@ -71,7 +72,7 @@ namespace TicTacMagic
                 this.player = Instantiate(player, tile.transform.position, Quaternion.identity);
                 this.player.movement.CurrentTile = this.player.movement.PointedTile = tile;
                 this.player.movement.Rbody = this.player.GetComponent<Rigidbody2D>();
-                this.player.movement.Model = this.player.playerModel;
+                this.player.movement.Data = this.player.playerData;
                 return this;
             }
 
@@ -81,11 +82,14 @@ namespace TicTacMagic
                 return this;
             }
 
-            public PlayerBuilder SetDefaultInputProvider() {
-                InputActionsWrapper actionsWrapper = new InputActionsWrapper();
+            public PlayerBuilder SetInputProvider(IInputProvider inputProvider) {
+                this.player.inputProvider = inputProvider;
 
-                this.player.inputProvider = actionsWrapper;
                 return this;
+            }
+
+            public Player GetInstance() {
+                return this.player;
             }
         }
     }

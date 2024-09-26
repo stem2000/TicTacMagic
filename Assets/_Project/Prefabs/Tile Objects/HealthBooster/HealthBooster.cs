@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class HealthBooster : TileObject
+    public class HealthBooster : TileEffect
     {
         [SerializeField] float hpBoost = 15;
         [SerializeField] CircleCollider2D myCollider;

@@ -47,7 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0e41488ea056e4aafe761c84c4ccf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7529248049378539137}
+  destroyTime: 1.2
+  spawnWeight: 0.3
+  speed: 7
+  damage: 4
 --- !u!50 &4428599081090638930
 Rigidbody2D:
   serializedVersion: 4
@@ -119,6 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7334768330643080727}
+  - component: {fileID: 1099114616542944591}
   - component: {fileID: 7529248049378539137}
   - component: {fileID: 2580947206046132345}
   m_Layer: 0
@@ -143,6 +147,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4661436291726347615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1099114616542944591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547789951110239941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72ff03006eb73947a63e6f97a4637a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &7529248049378539137
 SpriteRenderer:
   m_ObjectHideFlags: 0

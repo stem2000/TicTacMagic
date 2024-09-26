@@ -5,7 +5,7 @@ using MEC;
 
 namespace TicTacMagic
 {
-    public class Stone : TileObject
+    public class Stone : TileEffect
     {
         [SerializeField] float damage = 100f;
         public override bool IsMoveBlocker()

@@ -5,21 +5,20 @@ namespace TicTacMagic
 {    
     public class OnLineEffectSpawnerView : MonoBehaviour
     {
-        public event Action OnSpawnTiming;
         OnLineEffectSpawnerAnimator animator;
+        OnLineEffectSpawner spawner;
 
         private void Awake() {
-            var animator = GetComponent<Animator>();
-
-            this.animator = new OnLineEffectSpawnerAnimator(animator);
+            this.spawner = GetComponentInParent<OnLineEffectSpawner>();
+            this.animator = new OnLineEffectSpawnerAnimator(GetComponent<Animator>());
         }
 
         public void Blink() {
             this.animator.Blink();
         }
 
-        private void InvokeOnSpawnTiming() {
-            OnSpawnTiming?.Invoke();
+        private void ae_Spawn() {
+            this.spawner.SpawnWithCooldown();
         }
     }
 }

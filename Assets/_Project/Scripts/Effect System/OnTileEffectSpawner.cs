@@ -18,7 +18,7 @@ namespace TicTacMagic
             this.tileField = tileField;
         }
 
-        public override void Spawn() {
+        public override void SpawnWithCooldown() {
             var tile = ChoiseTileToSpawn();
 
             if (tile != null) {

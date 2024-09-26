@@ -14,7 +14,7 @@ namespace TicTacMagic
 
         [SerializeField] public List<Tile> neighbours;
 
-        private TileObject tileObject;
+        private TileEffect tileObject;
 
         public Vector2 GetPosition()
         {
@@ -60,7 +60,7 @@ namespace TicTacMagic
             return null;
         }
 
-        public void MakeUnfreeWith(TileObject @object)
+        public void MakeUnfreeWith(TileEffect @object)
         {
             if(tileObject != null)
                 tileObject.DestroyImmediately();

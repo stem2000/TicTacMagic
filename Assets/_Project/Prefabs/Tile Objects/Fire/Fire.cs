@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class Fire : TileObject
+    public class Fire : TileEffect
     {
         [SerializeField] float damage = 10;
         [SerializeField] float damageCooldown = 1f;

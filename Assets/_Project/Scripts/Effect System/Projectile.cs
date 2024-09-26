@@ -3,7 +3,7 @@ using MEC;
 
 namespace TicTacMagic
 {
-    public class Projectile : LineEffect
+    public class Projectile : OnLineEffect
     {
         [SerializeField]
         private float speed = 7;
@@ -11,18 +11,26 @@ namespace TicTacMagic
         public float damage = 15;
 
         private Rigidbody2D rBody;
+        private CircleCollider2D myCollider;
         private ProjectileView view;
 
         private void Awake() {
             this.rBody = GetComponent<Rigidbody2D>();
+            this.myCollider = GetComponent<CircleCollider2D>();
             this.view = GetComponentInChildren<ProjectileView>();
         }
 
-        public override void RunOnLine(Vector2 direction) {
+        public override void RunEffect(Vector2 direction) {
             base.direction = direction;
 
             this.view.LookDirection(direction);
             Timing.RunCoroutine(_DelayedDestroy().CancelWith(this.gameObject));
+        }
+
+        protected override void DisableEffect() {
+            this.myCollider.enabled = false;
+            this.speed = 1;
+            this.view.Explode();
         }
 
         private void FixedUpdate()
@@ -33,11 +41,15 @@ namespace TicTacMagic
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var damageable = collision.gameObject.GetComponent<IDamageable>();
+            var projectile = collision.gameObject.GetComponent<Projectile>();
 
-            if (damageable != null)
-            {
+            if (damageable != null) {
                 damageable.GetDamage(this.damage);
-                Destroy(this.gameObject);
+                DisableEffect();
+            }
+
+            if(projectile != null) {
+                DisableEffect();
             }
         }
     }

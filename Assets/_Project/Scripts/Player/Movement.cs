@@ -10,7 +10,7 @@ namespace TicTacMagic
         public Tile CurrentTile;
         public TileField Field;
         public Rigidbody2D Rbody;
-        public PlayerModel Model;
+        public PlayerData Data;
 
 
         public void Move(MoveDirection direction)
@@ -26,7 +26,7 @@ namespace TicTacMagic
             {
                 PointedTile = tile;
                 Timing.KillCoroutines("MoveTo");
-                Timing.RunCoroutine(MoveRoutine(tile, Model.Speed).CancelWith(Rbody.gameObject), Segment.FixedUpdate, "MoveTo");
+                Timing.RunCoroutine(MoveRoutine(tile, Data.Speed).CancelWith(Rbody.gameObject), Segment.FixedUpdate, "MoveTo");
             }
         }
 

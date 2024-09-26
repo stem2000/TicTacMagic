@@ -50,7 +50,7 @@ MonoBehaviour:
   destroyTime: 2
   spawnWeight: 0.6
   speed: 4
-  damage: 15
+  damage: 7
 --- !u!50 &4428599081090638930
 Rigidbody2D:
   serializedVersion: 4

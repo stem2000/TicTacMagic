@@ -978,6 +978,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1471144725}
     m_Modifications:
+    - target: {fileID: 1814886801602944123, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814886801602944123, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814886801602944123, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 4310050451296873825, guid: 89ac3cda242cf3f43a012f62a5578ca5, type: 3}
     - target: {fileID: 5335852361001889767, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
       propertyPath: m_Name
       value: OnPlayerSpawner
@@ -1022,10 +1034,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1814886801602944123, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5335852361001889767, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249683098}
   m_SourcePrefab: {fileID: 100100000, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
 --- !u!4 &247013576 stripped
 Transform:
@@ -1648,7 +1664,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000c32705993f4164b58331ebc277d68722
+  m_ApplyToSortingLayers: 00000000c32705993f4164b58331ebc277d68722e13d5426
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2932,6 +2948,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4930014394053787073, guid: c98a81eafada6054f83446d051de6b18, type: 3}
   m_PrefabInstance: {fileID: 1222491813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1249683097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5335852361001889767, guid: 1daa6ea1ac7c42448afe95b7b933c108, type: 3}
+  m_PrefabInstance: {fileID: 247013575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249683098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249683097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1e058fac2afaf49b2d0113825fb30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 4310050451296873825, guid: 89ac3cda242cf3f43a012f62a5578ca5, type: 3}
+  cooldown: 2
 --- !u!1 &1279141410
 GameObject:
   m_ObjectHideFlags: 0

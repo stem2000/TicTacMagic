@@ -6,8 +6,8 @@ namespace TicTacMagic
 {
     public class Lightning : OnPlayerEffect
     {
-        [SerializeField] 
-        private ParticleSystem lightningPS;
+        [SerializeField]
+        private ParticleSystem particles;
 
         [SerializeField] 
         private CircleCollider2D myCollider;
@@ -15,24 +15,34 @@ namespace TicTacMagic
         [SerializeField]
         private float damage;
 
-        public override void RunOnPlayer() {
-            Timing.RunCoroutine(_StrikeRoutine().CancelWith(this.gameObject));
+        public override void Run() {
+            Timing.RunCoroutine(_Run().CancelWith(this.gameObject));
         }
 
-        private IEnumerator<float> _StrikeRoutine()
+        private IEnumerator<float> _Run()
         {
-            this.myCollider.enabled = true;
+            yield return Timing.WaitUntilDone(
+                Timing.RunCoroutine(this.marker._ShowMarker().CancelWith(this.gameObject))
+            );
 
-            var marker = Instantiate(this.marker, this.transform);
-            yield return Timing.WaitForSeconds(this.markerDelay);
-            Destroy(marker);
-
-            Instantiate(this.lightningPS, this.transform);
-            yield return Timing.WaitForSeconds(this.lightningPS.main.duration);
-            Destroy(this.gameObject);
+            EnableEffect();
+            yield return Timing.WaitForSeconds(this.particles.main.duration);
+            DisableEffect();
         }
 
-        private void Awake()
+        private void EnableEffect() {
+            this.myCollider.enabled = true;
+            this.particles.gameObject.SetActive(true);
+            this.particles.Play();
+        }
+
+        private void DisableEffect() {
+            this.myCollider.enabled = false;
+            this.particles.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
+
+        private void OnEnable()
         {
             this.myCollider.enabled = false;
         }

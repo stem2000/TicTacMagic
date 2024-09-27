@@ -27,7 +27,7 @@ namespace TicTacMagic
 
         private void Start() {
             this.view = GetComponentInChildren<OnLineEffectSpawnerView>();
-            this.pool = new EffectPool<OnLineEffect>();
+            this.pool = new EffectPool<OnLineEffect>(this.transform);
         }
 
         public override void SpawnWithCooldown() {

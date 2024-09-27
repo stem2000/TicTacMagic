@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace TicTacMagic
 {
-    public class OnPlayerEffectSpawner : EffectSpawner {
+    public class LightningSpawner : EffectSpawner {
 
         [SerializeField]
         private List<OnPlayerEffect> effects;
@@ -14,9 +14,16 @@ namespace TicTacMagic
         [SerializeField]
         private float cooldown = 2f;
 
+        private EffectPool<OnPlayerEffect> pool;
+
+        private OnTileEffectSpawner onTileSpawner;
+
         private TileField tileField;
+
         private Player player;
+
         private bool isReady = true;
+
 
         [Inject]
         public void Construct(TileField tileField, PlayerSpawner playerSpawner) {
@@ -24,15 +31,18 @@ namespace TicTacMagic
             playerSpawner.OnPlayerSpawned += SetPlayer;
         }
 
+        private void Start() {
+            this.onTileSpawner = GetComponent<OnTileEffectSpawner>();
+            this.pool = new EffectPool<OnPlayerEffect>(this.transform);
+            this.pool.Initialize(effects);
+        }
+
 
         public override void SpawnWithCooldown() {
-            var effect = Instantiate(
-                SelectPlayerEffectByWeight(), 
-                this.player.transform.position,
-                Quaternion.identity,
-                this.transform);
-
-            effect.RunOnPlayer();
+            var effect = this.pool.Get(SelectPlayerEffectByWeight());
+                
+            effect.Activate(player.transform.position);
+            effect.Run();
             Timing.RunCoroutine(_Cooldown());
         }
 

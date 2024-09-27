@@ -5,23 +5,25 @@ namespace TicTacMagic
 {
     public class EffectPool<T> where T : MonoBehaviour, IEffect {
         private List<T> effects;
+        private Transform effectParent;
 
 
-        public EffectPool() { 
-            effects = new List<T>();    
+        public EffectPool(Transform effectParent) { 
+            this.effects = new List<T>();  
+            this.effectParent = effectParent;
         }
 
         public void Initialize(List<T> effects) {
             foreach (var effect in effects) {
                 for(int i = 0; i < effects.Count; i++) { 
-                    effects.Add(Create(effect));
+                    this.effects.Add(Create(effect));
                 }
             }
         }
 
         public T Get(T prefab){
-            foreach (var effect in effects) { 
-                if(effect.Active && effect is T) {
+            foreach (var effect in this.effects) { 
+                if(!effect.Active && effect is T) {
                     return effect;
                 }
             }
@@ -30,7 +32,7 @@ namespace TicTacMagic
         }
 
         private T Create(T prefab){
-            var effect = Object.Instantiate(prefab);
+            var effect = Object.Instantiate(prefab, effectParent);
 
             this.effects.Add(effect);
             return effect;

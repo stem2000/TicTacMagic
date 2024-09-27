@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - asteroid
+  - ship
   layers:
   - Default
   - TransparentFX
@@ -47,9 +49,12 @@ TagManager:
   - name: Player
     uniqueID: 2567251907
     locked: 0
-  - name: Markers
-    uniqueID: 579327607
-    locked: 0
   - name: Effects
     uniqueID: 3270193539
+    locked: 0
+  - name: Upper Effects
+    uniqueID: 643055073
+    locked: 0
+  - name: Markers
+    uniqueID: 579327607
     locked: 0

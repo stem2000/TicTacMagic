@@ -196,11 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd0144b6220e5c46aeed290d6f6972a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnpoint: {fileID: 2461881470942567052}
-  direction: {x: 0, y: 0}
-  effects:
+  _spawnpoint: {fileID: 2461881470942567052}
+  _direction: {x: 0, y: 0}
+  _effects:
   - {fileID: 8389433308789224605, guid: 75b62792ee560214793e40ece0643016, type: 3}
-  - {fileID: 8389433308789224605, guid: fda13efde5516b1428b90b462f246c19, type: 3}
-  - {fileID: 8389433308789224605, guid: 321c198335b12004dbad8c7dc1f07214, type: 3}
-  MinCooldown: 0.5
-  MaxCooldown: 2
+  _minCooldown: 0.5
+  _maxCooldown: 2

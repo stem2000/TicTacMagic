@@ -4854,7 +4854,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 643055073
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9753,7 +9753,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1024773757
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14644,7 +14644,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1024773757
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14746,7 +14746,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!114 &4310050451296873825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14760,12 +14760,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWeight: 0.6
-  marker: {fileID: 8241781252261097049}
-  markerDelay: 0.7
-  particles: {fileID: 69040010605776276}
-  myCollider: {fileID: 43813338273342002}
-  damage: 10
-  duration: 0.5
+  _marker: {fileID: 8241781252261097049}
+  _particles: {fileID: 69040010605776276}
+  _myCollider: {fileID: 43813338273342002}
+  _damage: 10
 --- !u!1 &4607358165061707919
 GameObject:
   m_ObjectHideFlags: 0
@@ -19656,7 +19654,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 643055073
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24544,7 +24542,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1024773757
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0

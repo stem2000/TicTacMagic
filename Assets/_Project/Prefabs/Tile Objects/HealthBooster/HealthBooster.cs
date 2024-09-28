@@ -7,11 +7,13 @@ namespace TicTacMagic
 {
     public class HealthBooster : TileEffect
     {
-        [SerializeField] float hpBoost = 15;
-        [SerializeField] CircleCollider2D myCollider;
+        [SerializeField] 
+        float _hp = 15;
 
-        public override bool IsMoveBlocker()
-        {
+        [SerializeField] 
+        CircleCollider2D _myCollider;
+
+        public override bool IsMoveBlocker() {
             return false;
         }
 
@@ -21,16 +23,14 @@ namespace TicTacMagic
 
             if (collision.TryGetComponent(out healable))
             {
-                healable.GetHp(hpBoost);
-                myCollider.enabled = false;
-                SelfDestroy();
+                healable.GetHp(_hp);
+                _myCollider.enabled = false;
+                gameObject.SetActive(false);
             }
         }
 
-
-        private void SelfDestroy()
-        {
-            Destroy(gameObject);
+        public override void Run() {
+            Timing.RunCoroutine(_DelayedDisable().CancelWith(gameObject));
         }
     }
 }

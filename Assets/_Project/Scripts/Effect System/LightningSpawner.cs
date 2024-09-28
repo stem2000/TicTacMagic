@@ -11,45 +11,30 @@ namespace TicTacMagic
         [SerializeField]
         private List<OnPlayerEffect> effects;
 
-        [SerializeField]
-        private float cooldown = 2f;
+        private EffectPool<OnPlayerEffect> _pool;
 
-        private EffectPool<OnPlayerEffect> pool;
+        private TileField _tileField;
 
-        private OnTileEffectSpawner onTileSpawner;
-
-        private TileField tileField;
-
-        private Player player;
-
-        private bool isReady = true;
+        private Player _player;
 
 
         [Inject]
         public void Construct(TileField tileField, PlayerSpawner playerSpawner) {
-            this.tileField = tileField;
+            _tileField = tileField;
             playerSpawner.OnPlayerSpawned += SetPlayer;
         }
 
         private void Start() {
-            this.onTileSpawner = GetComponent<OnTileEffectSpawner>();
-            this.pool = new EffectPool<OnPlayerEffect>(this.transform);
-            this.pool.Initialize(effects);
+            _pool = new EffectPool<OnPlayerEffect>(transform);
+            _pool.Initialize(effects);
         }
-
 
         public override void SpawnWithCooldown() {
-            var effect = this.pool.Get(SelectPlayerEffectByWeight());
+            var effect = _pool.Get(SelectPlayerEffectByWeight());
                 
-            effect.Activate(player.transform.position);
+            effect.Initialize(_player.transform.position);
             effect.Run();
             Timing.RunCoroutine(_Cooldown());
-        }
-
-
-        private IEnumerator<float> _Cooldown() {
-            yield return Timing.WaitForSeconds(cooldown);
-            isReady = true;
         }
 
         private OnPlayerEffect SelectPlayerEffectByWeight() {
@@ -59,12 +44,12 @@ namespace TicTacMagic
         }
 
         private void SetPlayer(Player player) {
-            this.player = player;
+            _player = player;
         }
 
         private void Update() {
-            if(player != null && isReady) {
-                isReady = false;
+            if(_player != null && _isReady) {
+                _isReady = false;
                 SpawnWithCooldown();
             }
         }

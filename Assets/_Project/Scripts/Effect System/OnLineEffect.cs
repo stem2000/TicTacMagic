@@ -6,16 +6,17 @@ namespace TicTacMagic
 {
     public abstract class OnLineEffect : MonoBehaviour, IEffect
     {
-        public float SpawnWeight => this.spawnWeight;
+        public float SpawnWeight => _spawnWeight;
 
-        public bool Active => this.gameObject.activeSelf;
+        public bool Active => gameObject.activeSelf;
 
         [SerializeField]
-        protected float destroyTime = 2f;
-        [SerializeField] [Range(0f, 1f)] 
-        protected float spawnWeight = 0.6f;
+        protected float _destroyTime = 2f;
 
-        protected Vector2 direction;
+        [SerializeField] [Range(0f, 1f)] 
+        protected float _spawnWeight = 0.6f;
+
+        protected Vector2 _direction;
 
 
         public abstract void RunEffect(Vector2 direction);
@@ -23,8 +24,12 @@ namespace TicTacMagic
             transform.position = spawnpoint;
         }
         protected IEnumerator<float> _DelayedDestroy() {
-            yield return Timing.WaitForSeconds(this.destroyTime);
-            Destroy(this.gameObject);
+            yield return Timing.WaitForSeconds(_destroyTime);
+            Destroy(gameObject);
+        }
+
+        public void Run() {
+            throw new System.NotImplementedException();
         }
     }
 }

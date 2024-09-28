@@ -7,14 +7,22 @@ namespace TicTacMagic
 {
     public class Tile : MonoBehaviour
     {
-        [SerializeField] public Tile up;
-        [SerializeField] public Tile down;
-        [SerializeField] public Tile left;
-        [SerializeField] public Tile right;
+        [SerializeField] 
+        public Tile up;
 
-        [SerializeField] public List<Tile> neighbours;
+        [SerializeField] 
+        public Tile down;
 
-        private TileEffect tileObject;
+        [SerializeField] 
+        public Tile left;
+
+        [SerializeField] 
+        public Tile right;
+
+        [SerializeField] 
+        public List<Tile> neighbours;
+
+        private TileEffect _tileEffect;
 
         public Vector2 GetPosition()
         {
@@ -41,8 +49,7 @@ namespace TicTacMagic
             return down;
         }
 
-        public bool IsMyNeighbor(Tile tile)
-        {
+        public bool IsMyNeighbor(Tile tile) {
             foreach(var neighbour in neighbours)
                 if(tile == neighbour)
                     return true;
@@ -50,8 +57,7 @@ namespace TicTacMagic
             return false;
         }
 
-        public Tile GetNeighborByDirection(MoveDirection direction)
-        {
+        public Tile GetNeighborByDirection(MoveDirection direction) {
             if (direction == MoveDirection.Up) return up;
             if (direction == MoveDirection.Down) return down;
             if (direction == MoveDirection.Left) return left;
@@ -60,30 +66,28 @@ namespace TicTacMagic
             return null;
         }
 
-        public void MakeUnfreeWith(TileEffect @object)
-        {
-            if(tileObject != null)
-                tileObject.DestroyImmediately();
-
-            tileObject = @object;
+        public void UnfreeWith(TileEffect @object) {
+            _tileEffect = @object;
         }
 
-        public bool IsMoveBlocked()
-        {
-            if(tileObject != null)
-                return tileObject.IsMoveBlocker();
+        public void Free() {
+            _tileEffect = null;
+        }
+
+        public bool IsMoveBlocked() {
+            if(_tileEffect != null)
+                return _tileEffect.IsMoveBlocker();
             return false;
         }
 
-        public bool IsFree()
-        {
-            if (tileObject == null)
+        public bool IsFree() {
+            if(_tileEffect == null)
                 return true;
+            
             return false;
         }
 
-        public List<Tile> GetNeighbours()
-        {
+        public List<Tile> GetNeighbours() {
             return neighbours;
         }
 

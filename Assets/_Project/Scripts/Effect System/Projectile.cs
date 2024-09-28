@@ -21,7 +21,7 @@ namespace TicTacMagic
         }
 
         public override void RunEffect(Vector2 direction) {
-            base.direction = direction;
+            base._direction = direction;
 
             this.view.LookDirection(direction);
             Timing.RunCoroutine(_DelayedDestroy().CancelWith(this.gameObject));
@@ -35,7 +35,7 @@ namespace TicTacMagic
 
         private void FixedUpdate()
         {
-            this.rBody.MovePosition(this.rBody.position + this.direction * this.speed * Time.fixedDeltaTime);
+            this.rBody.MovePosition(this.rBody.position + this._direction * this.speed * Time.fixedDeltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

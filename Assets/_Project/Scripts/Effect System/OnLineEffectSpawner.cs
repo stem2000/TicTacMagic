@@ -11,49 +11,41 @@ namespace TicTacMagic
         public event Action OnSpawn;
 
         [SerializeField] 
-        private Transform spawnpoint;
-        [SerializeField]
-        private Vector2 direction;
-        [SerializeField]
-        private List<OnLineEffect> effects;        
-        [SerializeField]
-        public float MinCooldown = 0.5f;
-        [SerializeField]
-        public float MaxCooldown = 2.0f;
+        private Transform _spawnpoint;
 
-        private OnLineEffectSpawnerView view;
-        private EffectPool<OnLineEffect> pool;
-        private bool isReady = true;
+        [SerializeField]
+        private Vector2 _direction;
+
+        [SerializeField]
+        private List<OnLineEffect> _effects; 
+
+        private OnLineEffectSpawnerView _view;
+
+        private EffectPool<OnLineEffect> _pool;
+
 
         private void Start() {
-            this.view = GetComponentInChildren<OnLineEffectSpawnerView>();
-            this.pool = new EffectPool<OnLineEffect>(this.transform);
+            _view = GetComponentInChildren<OnLineEffectSpawnerView>();
+            _pool = new EffectPool<OnLineEffect>(this.transform);
         }
 
         public override void SpawnWithCooldown() {
-            var effect = Instantiate(SelectLineEffectByWeight(), spawnpoint);
+            var effect = Instantiate(SelectLineEffectByWeight(), _spawnpoint);
 
-            effect.RunEffect(direction);
+            effect.RunEffect(_direction);
             Timing.RunCoroutine(_Cooldown());
         }
 
-        private IEnumerator<float> _Cooldown() {
-            var cooldown = UnityEngine.Random.Range(this.MinCooldown, this.MaxCooldown);
-
-            yield return Timing.WaitForSeconds(cooldown);
-            this.isReady = true;
-        }
-
         private OnLineEffect SelectLineEffectByWeight() {
-            var effect = SelectEffectByWeight(effects.Cast<IEffect>().ToList());
+            var effect = SelectEffectByWeight(_effects.Cast<IEffect>().ToList());
 
             return (OnLineEffect)effect;
         }
 
         private void Update() {
-            if( isReady ) {
-                this.isReady = false;
-                this.view.Blink();
+            if( _isReady ) {
+                _isReady = false;
+                _view.Blink();
             }
         }
 

@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\TicTacMagic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\onplayereffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\onplayereffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\ieffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\ieffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\tileeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\tileeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\tileeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\effectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\effectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\effectmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\effectmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\prefabs\\tile\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\prefabs\\tile\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\lightningspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\prefabs\\tile objects\\gem\\gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\prefabs\\tile objects\\gem\\gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\prefabs\\tile objects\\healthbooster\\healthbooster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\prefabs\\tile objects\\healthbooster\\healthbooster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\lightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\lightningspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\lightningspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\TicTacMagic\\assets\\_project\\scripts\\effect system\\onlineeffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\onlineeffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\ontileeffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\ontileeffectspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|d:\\unity\\projects\\tictacmagic\\assets\\_project\\scripts\\effect system\\onplayereffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98F677BD-821C-433D-864D-1DDAC99BCBE2}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\effect system\\onplayereffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IEffect.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\IEffect.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\IEffect.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\IEffect.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\IEffect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T11:22:43.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EffectMarker.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\EffectMarker.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\EffectMarker.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\EffectMarker.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\EffectMarker.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T11:16:07.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OnLineEffectSpawner.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnLineEffectSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\OnLineEffectSpawner.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnLineEffectSpawner.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\OnLineEffectSpawner.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAD4vyUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T10:41:27.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EffectPool.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\EffectPool.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\EffectPool.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\EffectPool.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\EffectPool.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T10:34:17.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OnPlayerEffect.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAA5wBgAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T10:32:12.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LightningSpawner.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T12:27:44.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Lightning.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
-              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAowBkAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T13:15:13.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "TileEffect.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\TileEffect.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\TileEffect.cs",
               "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\TileEffect.cs",
               "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\TileEffect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA6AAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAA0wBMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T15:00:28.782Z",
+              "WhenOpened": "2024-09-28T08:48:14.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HealthBooster.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile Objects\\HealthBooster\\HealthBooster.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Prefabs\\Tile Objects\\HealthBooster\\HealthBooster.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile Objects\\HealthBooster\\HealthBooster.cs",
+              "RelativeToolTip": "Assets\\_Project\\Prefabs\\Tile Objects\\HealthBooster\\HealthBooster.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwAcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T08:42:32.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Gem.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile Objects\\Gem\\Gem.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Prefabs\\Tile Objects\\Gem\\Gem.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile Objects\\Gem\\Gem.cs",
+              "RelativeToolTip": "Assets\\_Project\\Prefabs\\Tile Objects\\Gem\\Gem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T08:42:10.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stone.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Stone.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\Stone.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Stone.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\Stone.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowBMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T08:35:50.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\Player.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\Player.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAWwDYAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:55:37.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Fire.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Fire.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\Fire.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Fire.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\Fire.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwB8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:15:21.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OnTileEffectSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnTileEffectSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\OnTileEffectSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnTileEffectSpawner.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\OnTileEffectSpawner.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAD4vy8AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:05:04.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OnPlayerEffect.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\OnPlayerEffect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:30:00.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Lightning.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\Lightning.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAmwBEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:29:10.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tile.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile\\Tile.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Prefabs\\Tile\\Tile.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Prefabs\\Tile\\Tile.cs",
+              "RelativeToolTip": "Assets\\_Project\\Prefabs\\Tile\\Tile.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:22:35.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LightningSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\TicTacMagic\\Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Effect System\\LightningSpawner.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwC0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T07:19:41.869Z",
               "EditorCaption": ""
             }
           ]

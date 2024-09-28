@@ -7,44 +7,48 @@ namespace TicTacMagic
     public class Lightning : OnPlayerEffect
     {
         [SerializeField]
-        private ParticleSystem particles;
+        private ParticleSystem _particles;
 
         [SerializeField] 
-        private CircleCollider2D myCollider;
+        private CircleCollider2D _myCollider;
 
         [SerializeField]
-        private float damage;
+        private float _damage;
 
         public override void Run() {
-            Timing.RunCoroutine(_Run().CancelWith(this.gameObject));
+            gameObject.SetActive(true);
+
+            Timing.RunCoroutine(_Run().CancelWith(gameObject));
         }
 
         private IEnumerator<float> _Run()
         {
             yield return Timing.WaitUntilDone(
-                Timing.RunCoroutine(this.marker._ShowMarker().CancelWith(this.gameObject))
+                Timing.RunCoroutine(_marker._ShowMarker().CancelWith(gameObject))
             );
 
-            EnableEffect();
-            yield return Timing.WaitForSeconds(this.particles.main.duration);
-            DisableEffect();
+            EnableComponents();
+
+            yield return Timing.WaitForSeconds(_particles.main.duration);
+
+            DisableComponents();
+            gameObject.SetActive(false);
         }
 
-        private void EnableEffect() {
-            this.myCollider.enabled = true;
-            this.particles.gameObject.SetActive(true);
-            this.particles.Play();
+        private void EnableComponents() {
+            _myCollider.enabled = true;
+            _particles.gameObject.SetActive(true);
+            _particles.Play();
         }
 
-        private void DisableEffect() {
-            this.myCollider.enabled = false;
-            this.particles.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
+        private void DisableComponents() {
+            _myCollider.enabled = false;
+            _particles.gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
-            this.myCollider.enabled = false;
+            _myCollider.enabled = false;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -53,8 +57,8 @@ namespace TicTacMagic
 
             if (damageable != null)
             {
-                damageable.GetDamage(this.damage);
-                this.myCollider.enabled = false;
+                damageable.GetDamage(_damage);
+                _myCollider.enabled = false;
             }
         }
     }

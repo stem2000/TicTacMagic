@@ -4,16 +4,19 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public abstract class OnLineEffect : MonoBehaviour, IEffect
-    {
+    public abstract class OnLineEffect : MonoBehaviour, IEffect {
         public float Weight => _spawnWeight;
         public bool Active => gameObject.activeSelf;
+        public EffectType Type => _type;
 
         [SerializeField]
         protected float _destroyTime = 2f;
 
         [SerializeField] [Range(0f, 1f)] 
         protected float _spawnWeight = 0.6f;
+
+        [SerializeField]
+        protected EffectType _type;
 
         protected Vector2 _direction;
 

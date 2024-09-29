@@ -6,6 +6,7 @@ namespace TicTacMagic {
     public abstract class TileEffect : MonoBehaviour, IEffect {
         public float Weight => _spawnWeight;
         public bool Active => gameObject.activeSelf;
+        public EffectType Type => _type;
 
         [SerializeField] [Range(0f, 1f)]
         protected float _spawnWeight = 0.6f;
@@ -18,6 +19,9 @@ namespace TicTacMagic {
 
         [SerializeField]
         protected GameObject _view;
+
+        [SerializeField]
+        protected EffectType _type;
 
         protected Tile _tilespot;
 

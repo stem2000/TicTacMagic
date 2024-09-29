@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4428599081090638930}
   - component: {fileID: -2107730870516332449}
   m_Layer: 0
-  m_Name: Fireskull Red
+  m_Name: Fireball Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0e41488ea056e4aafe761c84c4ccf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 2
-  spawnWeight: 0.6
+  _destroyTime: 2
+  _spawnWeight: 0.6
+  _type: 3
   speed: 4
   damage: 7
 --- !u!50 &4428599081090638930
@@ -198,7 +199,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1024773757
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 1974412353, guid: c0fb7f7053f4aea429e8bf9a3d693894, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

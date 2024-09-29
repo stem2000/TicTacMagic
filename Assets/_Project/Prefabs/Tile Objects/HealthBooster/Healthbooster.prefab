@@ -131,10 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba5472492225994a8e13ad948d5752c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnWeight: 0.1
+  _spawnWeight: 0.2
   _timeOnTile: 2
   _marker: {fileID: 5602388910666043662}
   _view: {fileID: 4696627760349437424}
+  _type: 2
   _hp: 15
   _myCollider: {fileID: 3528604684492184473}
 --- !u!58 &3528604684492184473

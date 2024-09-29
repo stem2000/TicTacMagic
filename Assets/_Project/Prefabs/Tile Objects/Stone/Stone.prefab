@@ -51,7 +51,9 @@ MonoBehaviour:
   _timeOnTile: 3
   _marker: {fileID: 1059506386404089910}
   _view: {fileID: 8400764317392879184}
+  _type: 1
   _damage: 100
+  _myCollider: {fileID: 6808480602640751994}
 --- !u!58 &6808480602640751994
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TicTacMagic
 {
-    public class HealthBooster : TileEffect
+    public class HpBooster : TileEffect
     {
         [SerializeField] 
         float _hp = 15;
@@ -24,13 +24,21 @@ namespace TicTacMagic
             if (collision.TryGetComponent(out healable))
             {
                 healable.GetHp(_hp);
-                _myCollider.enabled = false;
+
+                UnfreeTilespot();
+                DisableComponents();                
                 gameObject.SetActive(false);
             }
         }
 
-        public override void Run() {
-            Timing.RunCoroutine(_DelayedDisable().CancelWith(gameObject));
+        protected override void DisableComponents() {
+            _view.SetActive(false);
+            _myCollider.enabled = false;
+        }
+
+        protected override void EnableComponents() {
+            _view.SetActive(true);
+            _myCollider.enabled = true;
         }
     }
 }

@@ -4,7 +4,7 @@ using MEC;
 
 namespace TicTacMagic {
     public abstract class TileEffect : MonoBehaviour, IEffect {
-        public float SpawnWeight => _spawnWeight;
+        public float Weight => _spawnWeight;
         public bool Active => gameObject.activeSelf;
 
         [SerializeField] [Range(0f, 1f)]
@@ -24,9 +24,13 @@ namespace TicTacMagic {
 
         public abstract bool IsMoveBlocker();
 
-        protected virtual void EnableComponents() { }
+        protected virtual void DisableComponents() {
+            _view.SetActive(false);
+        }
 
-        protected virtual void DisableComponents() { }
+        protected virtual void EnableComponents() {
+            _view.SetActive(true);
+        }
 
         protected void FreeTilespot() {
             _tilespot.Free();

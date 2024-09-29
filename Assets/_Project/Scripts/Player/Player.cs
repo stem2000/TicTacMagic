@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using Zenject;
 
 namespace TicTacMagic {
-    public class Player : MonoBehaviour, IDamageable, IHealable
+    public class Player : MonoBehaviour, IDamageable, IHealable, IGameStateListener
     {
         public event Action OnDeath;
         public event Action<float> OnDamaged;
@@ -22,6 +22,14 @@ namespace TicTacMagic {
         public Tile PointedTile { get => movement.PointedTile; }
         public Tile CurrentTile { get => movement.CurrentTile; }
 
+        private void ListenToGameState(GameState gameState) { 
+            if(gameState == GameState.Paused) {
+                gameObject.SetActive(false);
+            }    
+            if(gameState == GameState.Active) {
+                gameObject.SetActive(true);
+            }
+        }
 
         public void GetDamage(float damage)
         {

@@ -6,29 +6,36 @@ namespace TicTacMagic
     public class GameSceneInstaller : MonoInstaller
     {
         [SerializeField]
-        private TileField tileField;
+        private TileField _tileField;
 
         [SerializeField]
-        private GameManager gameManager;
+        private GameManager _gameManager;
 
         [SerializeField]
-        private PlayerSpawner playerSpawner;
+        private UiManager _uiManager;
+
+        [SerializeField]
+        private PlayerSpawner _playerSpawner;
 
 
         public override void InstallBindings() {
-            this.Container
-                .BindInstance(this.tileField)
+            Container
+                .BindInstance(_tileField)
                 .AsSingle();
 
-            this.Container
-                .BindInstance(this.gameManager)
+            Container
+                .BindInstance(_gameManager)
                 .AsSingle();
 
-            this.Container
-                .BindInstance(this.playerSpawner)
+            Container
+                .BindInstance(_uiManager)
                 .AsSingle();
 
-            this.Container
+            Container
+                .BindInstance(_playerSpawner)
+                .AsSingle();
+
+            Container
                 .Bind<IInputProvider>()
                 .To<InputActionsWrapper>()
                 .AsSingle();

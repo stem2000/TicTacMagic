@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4bc491f24c019449be62ba82d9d591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnWeight: 0.3
+  _spawnWeight: 0.6
   _timeOnTile: 3
   _marker: {fileID: 1059506386404089910}
   _view: {fileID: 8400764317392879184}

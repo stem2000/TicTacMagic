@@ -19,13 +19,5 @@ namespace TicTacMagic
         public override bool IsMoveBlocker() {
             return _view.activeSelf;
         }
-
-        protected override void DisableComponents() {
-            _view.SetActive(false);
-        }
-
-        protected override void EnableComponents() {
-            _view.SetActive(true);
-        }
     }
 }

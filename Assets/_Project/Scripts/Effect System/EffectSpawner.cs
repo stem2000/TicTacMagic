@@ -26,20 +26,23 @@ namespace TicTacMagic
 
         protected virtual IEffect SelectEffectByWeight(List<IEffect> effects) {
             var totalWeight = 0f;
-            var pointedWeight = 0f;
-            var incrementalWeight = 0f;
+            var leftBorder = 0f;
+            var rightBorder = 0f;
+            var weightPoint = 0f;
 
             foreach(var effect in effects) {
-                totalWeight += effect.SpawnWeight;
+                totalWeight += effect.Weight;
             }
                 
-            pointedWeight = Random.Range(0f, totalWeight);
+            weightPoint = Random.Range(0f, totalWeight);
 
             foreach (var effect in effects) {
-                incrementalWeight += effect.SpawnWeight;
-                if(pointedWeight < incrementalWeight) { 
+                rightBorder += effect.Weight;
+                if(leftBorder <= weightPoint && weightPoint <= rightBorder) {
+                    Debug.Log("pointed weight - " + weightPoint.ToString() + " " + effect.ToString());
                     return effect;
                 }
+                leftBorder = rightBorder;
             }
 
             return effects[0];

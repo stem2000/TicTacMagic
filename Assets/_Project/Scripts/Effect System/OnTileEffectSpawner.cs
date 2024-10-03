@@ -29,6 +29,8 @@ namespace TicTacMagic
         private void Start() {
             _pool = new EffectPool<TileEffect>(transform);
             _pool.Initialize(_effects);
+
+            RunCooldownOnStart();
         }
 
         private void Update() {
@@ -43,11 +45,16 @@ namespace TicTacMagic
         }
 
         public override void SpawnWithCooldown() {
-            var effect = _pool.Get(SelectTileEffectByWeight());
+            var effect = _pool.GetInactive(SelectTileEffectByWeight());
 
-            effect.Initialize(_spawnTile);
+            effect.SetTile(_spawnTile);
             effect.Run();
 
+            Timing.RunCoroutine(_Cooldown().CancelWith(gameObject));
+        }
+
+        private void RunCooldownOnStart() {
+            _isReady = false;
             Timing.RunCoroutine(_Cooldown().CancelWith(gameObject));
         }
 

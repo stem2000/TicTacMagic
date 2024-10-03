@@ -30,8 +30,11 @@ namespace TicTacMagic
         }
 
         public override void SpawnWithCooldown() {
-            var effect = Instantiate(SelectLineEffectByWeight(), _spawnpoint);
+            var effect = _pool.GetInactive(SelectLineEffectByWeight());
 
+            effect.gameObject.SetActive(true);
+
+            effect.SetSpawnPoint(_spawnpoint.position);
             effect.RunEffect(_direction);
             Timing.RunCoroutine(_Cooldown());
         }

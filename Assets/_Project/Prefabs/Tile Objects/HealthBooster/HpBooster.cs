@@ -13,6 +13,10 @@ namespace TicTacMagic
         [SerializeField] 
         CircleCollider2D _myCollider;
 
+        private void Awake() {
+            DisableComponents();
+        }
+
         public override bool IsMoveBlocker() {
             return false;
         }
@@ -24,10 +28,8 @@ namespace TicTacMagic
             if (collision.TryGetComponent(out healable))
             {
                 healable.GetHp(_hp);
-
-                UnfreeTilespot();
-                DisableComponents();                
-                gameObject.SetActive(false);
+                DisableObject();
+                Timing.KillCoroutines(_disableRutineTag);
             }
         }
 
@@ -39,6 +41,6 @@ namespace TicTacMagic
         protected override void EnableComponents() {
             _view.SetActive(true);
             _myCollider.enabled = true;
-        }
+        }        
     }
 }

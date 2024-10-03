@@ -20,8 +20,8 @@ namespace TicTacMagic {
         }
 
         private void SubscribeToUi(UiManager uiManager) {
-            uiManager.OnMenuOpened += ChangeStateToActive;
-            uiManager.OnMenuClosed += ChangeStateToPause;
+            uiManager.OnUiOpened += ChangeStateToActive;
+            uiManager.OnUiClosed += ChangeStateToPause;
         }
 
         private void ChangeStateToEnded() {

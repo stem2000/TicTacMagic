@@ -21,7 +21,7 @@ namespace TicTacMagic
             }
         }
 
-        public T Get(T prefab) {
+        public T GetInactive(T prefab) {
             foreach (var effect in this.effects) { 
                 if(!effect.Active && effect.Type == prefab.Type) {
                     return effect;

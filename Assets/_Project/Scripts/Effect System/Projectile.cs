@@ -1,56 +1,70 @@
 using UnityEngine;
 using MEC;
+using System.Collections.Generic;
 
 namespace TicTacMagic
 {
     public class Projectile : OnLineEffect
     {
         [SerializeField]
-        private float speed = 7;
+        private float _speed = 7;
         [SerializeField]
-        public float damage = 15;
+        public float _damage = 15;
 
-        private Rigidbody2D rBody;
-        private CircleCollider2D myCollider;
-        private ProjectileView view;
+        private Rigidbody2D _rBody;
+        private CircleCollider2D _myCollider;
+        private ProjectileView _view;
 
         private void Awake() {
-            this.rBody = GetComponent<Rigidbody2D>();
-            this.myCollider = GetComponent<CircleCollider2D>();
-            this.view = GetComponentInChildren<ProjectileView>();
+            _rBody = GetComponent<Rigidbody2D>();
+            _myCollider = GetComponent<CircleCollider2D>();
+            _view = GetComponentInChildren<ProjectileView>();
         }
 
-        public override void RunEffect(Vector2 direction) {
-            base._direction = direction;
-
-            this.view.LookDirection(direction);
-            Timing.RunCoroutine(_DelayedDestroy().CancelWith(this.gameObject));
+        private void OnEnable() {
+            EnableObject();
         }
 
-        protected void DisableEffect() {
-            this.myCollider.enabled = false;
-            this.speed = 1;
-            this.view.Explode();
+        private void FixedUpdate() {
+            _rBody.MovePosition(_rBody.position + _direction * _speed * Time.fixedDeltaTime);
         }
 
-        private void FixedUpdate()
-        {
-            this.rBody.MovePosition(this.rBody.position + this._direction * this.speed * Time.fixedDeltaTime);
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
+        private void OnTriggerEnter2D(Collider2D collision) {
             var damageable = collision.gameObject.GetComponent<IDamageable>();
             var projectile = collision.gameObject.GetComponent<Projectile>();
 
             if (damageable != null) {
-                damageable.GetDamage(this.damage);
-                DisableEffect();
+                damageable.GetDamage(_damage);
+                DisableObject();
+                Timing.KillCoroutines(_disableRutineTag);
             }
 
-            if(projectile != null) {
-                DisableEffect();
+            if (projectile != null) {
+                DisableObject();
+                Timing.KillCoroutines(_disableRutineTag);
             }
+        }
+
+        public override void RunEffect(Vector2 direction) {
+            _direction = direction;
+
+            _view.LookDirection(direction);
+            Timing.RunCoroutine(_DelayedDisable().CancelWith(gameObject));
+        }
+
+        protected override IEnumerator<float> _DelayedDisable() {
+            yield return Timing.WaitForSeconds(_disableTime);
+
+            DisableObject();
+        }
+
+        private void DisableObject() {
+            _myCollider.enabled = false;
+            _view.Explode();
+        }
+
+        private void EnableObject() {
+            _myCollider.enabled = true;
         }
     }
 }

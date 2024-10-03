@@ -10,7 +10,7 @@ namespace TicTacMagic
         public EffectType Type => _type;
 
         [SerializeField]
-        protected float _destroyTime = 2f;
+        protected float _disableTime = 2f;
 
         [SerializeField] [Range(0f, 1f)] 
         protected float _spawnWeight = 0.6f;
@@ -20,14 +20,22 @@ namespace TicTacMagic
 
         protected Vector2 _direction;
 
+        protected string _disableRutineTag;
+
+
+        private void Awake() {
+            _disableRutineTag = gameObject.GetInstanceID().ToString() + "Delayed Disable";
+        }
 
         public abstract void RunEffect(Vector2 direction);
-        public void Initialize(Vector3 spawnpoint) {
+
+        public void SetSpawnPoint(Vector3 spawnpoint) {
             transform.position = spawnpoint;
         }
-        protected IEnumerator<float> _DelayedDestroy() {
-            yield return Timing.WaitForSeconds(_destroyTime);
-            Destroy(gameObject);
+
+        protected virtual IEnumerator<float> _DelayedDisable() {
+            yield return Timing.WaitForSeconds(_disableTime);
+            gameObject.SetActive(false);
         }
 
         public void Run() {

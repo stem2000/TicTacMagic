@@ -23,8 +23,16 @@ namespace TicTacMagic {
         [SerializeField]
         protected EffectType _type;
 
-        protected Tile _tilespot;
+        protected Tile _tile;
 
+        protected string _disableRutineTag;
+
+
+        private void Awake() {
+            gameObject.SetActive(false);
+
+            _disableRutineTag = gameObject.GetInstanceID().ToString() + "Delayed Disable";
+        }
 
         public abstract bool IsMoveBlocker();
 
@@ -36,37 +44,25 @@ namespace TicTacMagic {
             _view.SetActive(true);
         }
 
-        protected void FreeTilespot() {
-            _tilespot.Free();
+        protected void FreeTile() {
+            _tile.Free();
         }
 
-        protected void UnfreeTilespot() {
-            _tilespot.UnfreeWith(this);
+        protected void UnfreeTile() {
+            _tile.UnfreeWith(this);
         }
 
-        private void Awake() {
-            gameObject.SetActive(false);
-        }
+        public virtual void SetTile(Tile tile) {
+            _tile = tile;
 
-        public virtual void Initialize(Tile tile) {
-            _tilespot = tile;
-
-            UnfreeTilespot();
-            transform.position = _tilespot.transform.position;
+            UnfreeTile();
+            transform.position = _tile.transform.position;
         }
 
         public virtual void Run() {
             gameObject.SetActive(true);
 
             Timing.RunCoroutine(_Run().CancelWith(gameObject));
-        }
-
-        public virtual IEnumerator<float> _DelayedDisable() {
-            yield return Timing.WaitForSeconds(_timeOnTile);
-
-            FreeTilespot();
-            DisableComponents();
-            gameObject.SetActive(false);
         }
 
         protected virtual IEnumerator<float> _Run() {
@@ -76,8 +72,19 @@ namespace TicTacMagic {
 
             EnableComponents();
 
-            Timing.RunCoroutine(_DelayedDisable().CancelWith(gameObject));
+            Timing.RunCoroutine(_DelayedDisable().CancelWith(gameObject), _disableRutineTag);
         }
 
+        public virtual IEnumerator<float> _DelayedDisable() {
+            yield return Timing.WaitForSeconds(_timeOnTile);
+
+            DisableObject();
+        }
+
+        protected void DisableObject() {
+            FreeTile();
+            DisableComponents();
+            gameObject.SetActive(false);
+        }
     }
 }

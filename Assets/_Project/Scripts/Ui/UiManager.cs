@@ -8,18 +8,27 @@ namespace TicTacMagic
 {
     public class UiManager : MonoBehaviour, IGameStateListener
     {
-        public event Action OnMenuOpened;
+        public event Action OnUiOpened;
 
-        public event Action OnMenuClosed;
+        public event Action OnUiClosed;
 
-        private IInputProvider inputProvider;
+        [SerializeField]
+        private UiPanel _pausePanel;
+
+        private IInputProvider _inputProvider;
+
 
         [Inject]
-        public void Construct(GameManager gameManager) {
+        public void Construct(GameManager gameManager, IInputProvider inputProvider) {
             gameManager.OnGameStateChanged += ListenToGameState;
+            _inputProvider = inputProvider;
         }
 
         private void ListenToGameState(GameState gameState) {
+        }
+
+        private void OpenPauseMenu() {
+
         }
     }
 }

@@ -39,7 +39,6 @@ namespace TicTacMagic
             foreach (var effect in effects) {
                 rightBorder += effect.Weight;
                 if(leftBorder <= weightPoint && weightPoint <= rightBorder) {
-                    Debug.Log("pointed weight - " + weightPoint.ToString() + " " + effect.ToString());
                     return effect;
                 }
                 leftBorder = rightBorder;

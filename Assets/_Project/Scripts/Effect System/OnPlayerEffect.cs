@@ -5,7 +5,7 @@ namespace TicTacMagic
     public abstract class OnPlayerEffect : MonoBehaviour, IEffect
     {
         public float Weight => spawnWeight;
-        public bool Active => gameObject.activeSelf;
+        public bool Disabled => gameObject.activeSelf;
         public EffectType Type => _type;
 
         [SerializeField] [Range(0f, 1f)]

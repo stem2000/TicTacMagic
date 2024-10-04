@@ -30,7 +30,7 @@ namespace TicTacMagic
         }
 
         public override void SpawnWithCooldown() {
-            var effect = _pool.GetInactive(SelectPlayerEffectByWeight());
+            var effect = _pool.GetDisabled(SelectPlayerEffectByWeight());
                 
             effect.Initialize(_player.transform.position);
             effect.Run();

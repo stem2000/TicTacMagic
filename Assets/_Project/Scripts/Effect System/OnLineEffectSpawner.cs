@@ -26,16 +26,13 @@ namespace TicTacMagic
 
         private void Start() {
             _view = GetComponentInChildren<OnLineEffectSpawnerView>();
-            _pool = new EffectPool<OnLineEffect>(this.transform);
+            _pool = new EffectPool<OnLineEffect>(transform);
         }
 
         public override void SpawnWithCooldown() {
-            var effect = _pool.GetInactive(SelectLineEffectByWeight());
+            var effect = _pool.GetDisabled(SelectLineEffectByWeight(), _spawnpoint.position);
 
-            effect.gameObject.SetActive(true);
-
-            effect.SetSpawnPoint(_spawnpoint.position);
-            effect.RunEffect(_direction);
+            effect.Activate(_direction);
             Timing.RunCoroutine(_Cooldown());
         }
 

@@ -45,7 +45,7 @@ namespace TicTacMagic
         }
 
         public override void SpawnWithCooldown() {
-            var effect = _pool.GetInactive(SelectTileEffectByWeight());
+            var effect = _pool.GetDisabled(SelectTileEffectByWeight());
 
             effect.SetTile(_spawnTile);
             effect.Run();

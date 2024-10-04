@@ -5,7 +5,7 @@ using MEC;
 namespace TicTacMagic {
     public abstract class TileEffect : MonoBehaviour, IEffect {
         public float Weight => _spawnWeight;
-        public bool Active => gameObject.activeSelf;
+        public bool Disabled => gameObject.activeSelf;
         public EffectType Type => _type;
 
         [SerializeField] [Range(0f, 1f)]

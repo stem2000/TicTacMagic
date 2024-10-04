@@ -21,14 +21,21 @@ namespace TicTacMagic
             }
         }
 
-        public T GetInactive(T prefab) {
+        public T GetDisabled(T prefab) {
             foreach (var effect in this.effects) { 
-                if(!effect.Active && effect.Type == prefab.Type) {
+                if(!effect.Disabled && effect.Type == prefab.Type) {
                     return effect;
                 }
             }
 
             return Create(prefab);
+        }
+
+        public T GetDisabled(T prefab, Vector3 position) {
+            var effect = GetDisabled(prefab);
+
+            effect.transform.position = position;
+            return effect;
         }
 
         private T Create(T prefab){
